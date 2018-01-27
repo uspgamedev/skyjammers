@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Instruments/Instrument.gd" type="Script" id=1]
 
@@ -7,7 +7,12 @@
 custom_solver_bias = 0.0
 extents = Vector2( 10, 10 )
 
-[node name="Instrument" type="KinematicBody2D" groups=[
+[sub_resource type="RectangleShape2D" id=2]
+
+custom_solver_bias = 0.0
+extents = Vector2( 10, 10 )
+
+[node name="Instrument" type="KinematicBody2D" index="0" groups=[
 "bards",
 ]]
 
@@ -24,5 +29,10 @@ _sections_unfolded = [ "Transform" ]
 
 shape = SubResource( 1 )
 _sections_unfolded = [ "Visibility" ]
+
+[node name="SoundWaveShape" type="CollisionShape2D" parent="." index="2"]
+
+visible = false
+shape = SubResource( 2 )
 
 

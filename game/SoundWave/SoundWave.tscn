@@ -1,11 +1,6 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=2 format=2]
 
 [ext_resource path="res://SoundWave/SoundWave.gd" type="Script" id=1]
-
-[sub_resource type="CircleShape2D" id=1]
-
-custom_solver_bias = 0.0
-radius = 10.0
 
 [node name="SoundWave" type="Area2D"]
 
@@ -27,10 +22,6 @@ playback_speed = 1.0
 playback/active = false
 playback/repeat = false
 playback/speed = 1.0
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
-
-shape = SubResource( 1 )
 
 [connection signal="body_entered" from="." to="." method="_on_SoundWave_body_entered"]
 
