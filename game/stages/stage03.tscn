@@ -141,8 +141,7 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="IslandGoal" type="TileMap" parent="Instruments" index="4"]
 
-editor/display_folded = true
-position = Vector2( 720, 20 )
+position = Vector2( 700, 20 )
 mode = 0
 tile_set = ExtResource( 2 )
 cell_size = Vector2( 32, 32 )
