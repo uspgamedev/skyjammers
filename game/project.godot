@@ -12,7 +12,6 @@ config_version=3
 
 config/name="GGJ18"
 run/main_scene="res://test/Test.tscn"
-run/disable_stdout=true
 config/icon="res://icon.png"
 
 [input]
