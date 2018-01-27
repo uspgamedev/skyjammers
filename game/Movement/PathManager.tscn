@@ -3,16 +3,16 @@
 [ext_resource path="res://Movement/path.gd" type="Script" id=1]
 [ext_resource path="res://Movement/path_manager.gd" type="Script" id=2]
 
-
-
 [sub_resource type="Curve2D" id=1]
 
+resource_local_to_scene = true
 bake_interval = 5.0
 _data = {
 "points": PoolVector2Array(  )
 }
+_sections_unfolded = [ "Resource" ]
 
-[node name="Path2D" type="Path2D" index="0"]
+[node name="Path2D" type="Path2D"]
 
 curve = SubResource( 1 )
 script = ExtResource( 1 )
@@ -29,5 +29,7 @@ cubic_interp = true
 loop = true
 lookahead = 4.0
 script = ExtResource( 2 )
+speed = 1
+override_parent_speed = false
 
 
