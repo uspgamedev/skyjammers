@@ -5,7 +5,8 @@ export(NodePath) var initial_bard_path
 onready var activeInstrument = null
 onready var camera = $Camera2D
 onready var audioManager = get_node("AudioManager")
-var game_over = false
+var win = false
+var lose = false
 
 func _ready():
 	activeInstrument = get_node(initial_bard_path)
@@ -29,17 +30,17 @@ func changeActive(body):
 	if activeInstrument.is_in_group("sentinels"):
 		_failed()
 	elif activeInstrument.is_in_group("goal"):
-		game_over = true
-		OS.alert("very gud job", "so pretty")
+		win = true
+		#OS.alert("very gud job", "so pretty")
 
 func _failed():
 	get_tree().reload_current_scene()
-	#game_over = true
-	#OS.alert("GAME OVER", "u suk")
 
 func _on_Input_played():
-	if not game_over and not activeInstrument.hasSoundwave and activeInstrument.frequency == 0:
-			activeInstrument.pulse()
+	if not win and not activeInstrument.hasSoundwave and activeInstrument.frequency == 0:
+		activeInstrument.pulse()
+	elif win:
+		get_tree().change_scene("res://menus/stage-selector/main.tscn")
 
 func _process(delta):
 	self.camera.position = self.activeInstrument.get_global_position()
