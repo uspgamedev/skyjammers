@@ -4,10 +4,13 @@
 [ext_resource path="res://input/input.tscn" type="PackedScene" id=2]
 [ext_resource path="res://audio/AudioManager.tscn" type="PackedScene" id=3]
 
-[node name="Stage" type="Node2D"]
+[node name="Stage" type="Node2D" index="0"]
 
-position = Vector2( 21.1771, 19.5481 )
 script = ExtResource( 1 )
+_sections_unfolded = [ "Transform" ]
+__meta__ = {
+"_edit_lock_": true
+}
 initial_bard_path = null
 riff_set = 0
 
