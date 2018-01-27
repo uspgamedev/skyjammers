@@ -2,12 +2,12 @@
 
 [ext_resource path="res://menus/theme.tres" type="Theme" id=1]
 [ext_resource path="res://menus/stage-selector/button.tscn" type="PackedScene" id=2]
-[ext_resource path="res://stages/first_stage_take1.tscn" type="PackedScene" id=3]
+[ext_resource path="res://stages/stage01.tscn" type="PackedScene" id=3]
 [ext_resource path="res://stages/second_stage_take1.tscn" type="PackedScene" id=4]
 [ext_resource path="res://stages/sample/sample.tscn" type="PackedScene" id=5]
 [ext_resource path="res://test/TheFinalStage.tscn" type="PackedScene" id=6]
 
-[node name="StageSelector" type="Control"]
+[node name="StageSelector" type="Control" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
