@@ -1,31 +1,15 @@
 [gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://stages/base.tscn" type="PackedScene" id=1]
-[ext_resource path="res://islands/tileset.tres" type="TileSet" id=2]
+[ext_resource path="res://Instruments/GameBoy/Gameboy.tscn" type="PackedScene" id=2]
 
 [node name="Stage" index="0" instance=ExtResource( 1 )]
 
-initial_bard_path = NodePath("Instruments/Path2D/PathFollow2D/Instrument")
+initial_bard_path = NodePath("Instruments/Gameboy")
 
-[node name="TileMap" type="TileMap" parent="." index="5"]
+[node name="Gameboy" parent="Instruments" index="0" instance=ExtResource( 2 )]
 
-mode = 0
-tile_set = ExtResource( 2 )
-cell_size = Vector2( 32, 32 )
-cell_quadrant_size = 16
-cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-cell_half_offset = 2
-cell_tile_origin = 0
-cell_y_sort = false
-cell_clip_uv = false
-collision_use_kinematic = false
-collision_friction = 1.0
-collision_bounce = 0.0
-collision_layer = 1
-collision_mask = 1
-occluder_light_mask = 1
-format = 1
-tile_data = PoolIntArray( -65538, 0, 0, -65537, 1, 0, -131072, 2, 0, -131071, 3, 0, -2, 8, 0, -1, 17, 0, -65536, 17, 0, -65535, 11, 0, 65534, 16, 0, 65535, 17, 0, 0, 17, 0, 1, 19, 0, 131070, 24, 0, 131071, 25, 0, 65536, 26, 0, 65537, 27, 0 )
-_sections_unfolded = [ "Cell" ]
+growth = 20.0
+duration = 1.0
 
 
