@@ -4,8 +4,6 @@
 
 [node name="Bass" instance=ExtResource( 1 )]
 
-growth = 15.0
-
 [node name="Label" type="Label" parent="." index="4"]
 
 modulate = Color( 0, 0, 0, 1 )
