@@ -1,0 +1,18 @@
+extends Area2D
+
+var instrument
+
+func _ready():
+	pulse()
+
+func pulse():
+	var tween = get_node("Tween")
+	
+	tween.interpolate_property(self, "scale", get_scale(), get_scale() * 30, 5, Tween.TRANS_LINEAR, Tween.EASE_IN)
+	tween.start()
+	yield(tween, "tween_completed")
+	queue_free()
+
+func _on_SoundWave_body_entered( body ):
+	if body != instrument:
+		get_parent().changeActive()
