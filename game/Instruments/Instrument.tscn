@@ -68,7 +68,7 @@ extents = Vector2( 10, 10 )
 custom_solver_bias = 0.0
 radius = 10.0
 
-[node name="Instrument" type="KinematicBody2D" groups=[
+[node name="Instrument" type="KinematicBody2D" index="0" groups=[
 "bards",
 ]]
 
@@ -126,14 +126,7 @@ visible = false
 shape = SubResource( 3 )
 script = ExtResource( 4 )
 
-[node name="Timer" type="Timer" parent="." index="5"]
-
-process_mode = 1
-wait_time = 1.0
-one_shot = false
-autostart = false
-
-[node name="Riff0" type="AudioStreamPlayer2D" parent="." index="6"]
+[node name="Riff0" type="AudioStreamPlayer2D" parent="." index="5"]
 
 stream = ExtResource( 5 )
 volume_db = -15.0
@@ -143,7 +136,7 @@ attenuation = 3.03143
 bus = "Master"
 area_mask = 1
 
-[node name="Riff1" type="AudioStreamPlayer2D" parent="." index="7"]
+[node name="Riff1" type="AudioStreamPlayer2D" parent="." index="6"]
 
 stream = ExtResource( 6 )
 volume_db = -15.0
@@ -153,7 +146,7 @@ attenuation = 3.03143
 bus = "Master"
 area_mask = 1
 
-[node name="SFX" type="AudioStreamPlayer2D" parent="." index="8"]
+[node name="SFX" type="AudioStreamPlayer2D" parent="." index="7"]
 
 stream = ExtResource( 7 )
 volume_db = -15.0
@@ -162,7 +155,5 @@ max_distance = 800.0
 attenuation = 3.03143
 bus = "Master"
 area_mask = 1
-
-[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
 
 

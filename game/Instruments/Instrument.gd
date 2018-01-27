@@ -10,12 +10,6 @@ var active = false
 var stage
 
 
-func _ready():
-	if frequency != 0:
-		get_node("Timer").set_wait_time(1 / frequency)
-		get_node("Timer").start()
-
-
 func pulse():
 	var sw = soundWave.instance()
 	var shape = get_node("SoundWaveShape").duplicate()
@@ -40,25 +34,22 @@ func pulse():
 	get_node("SFX").play()
 
 
-func update_preview():
+func _physics_process(delta):
 	if get_node("SoundWaveShape").has_node("Rotate"):
 		var rot = get_node("SoundWaveShape/Rotate").get_rotation()
 		
 		get_node("WavePreview").set_rotation(rot)
 
 
-func _on_Timer_timeout():
-	if active:
-		update_preview()
-
-
 func activate():
 	active = true
 	get_node("WavePreview/AnimationPlayer").play("active")
 	get_node("Sprite2").show()
+	set_physics_process(true)
 
 
 func deactivate():
 	active = false
 	get_node("WavePreview/AnimationPlayer").play("off")
 	get_node("Sprite2").hide()
+	set_physics_process(false)
