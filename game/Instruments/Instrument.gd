@@ -1,13 +1,7 @@
 extends KinematicBody2D
 
 onready var soundWave = load("res://SoundWave/SoundWave.tscn")
-
-func _ready():
-	set_process_input(true)
-
-func _input(event):
-	if event.is_action_pressed("ui_accept"):
-		pulse()
+var hasSoundwave = false
 
 func pulse():
 	var sw = soundWave.instance()
