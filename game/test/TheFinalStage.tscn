@@ -60,7 +60,7 @@ _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, 40, -1000, 0, 0, 0, 0, 40, -2170 )
 }
 
-[node name="Stage" index="0" instance=ExtResource( 1 )]
+[node name="Stage" instance=ExtResource( 1 )]
 
 initial_bard_path = NodePath("Instruments/Path2D/PathFollow2D/Gameboy")
 
@@ -134,7 +134,7 @@ speed = -0.25
 
 [node name="PathFollow2D" parent="Instruments/Path2D4" index="0"]
 
-position = Vector2( 1178.81, -540 )
+position = Vector2( 1178.82, -540 )
 offset = 1161.61
 
 [node name="Instrument" parent="Instruments/Path2D4/PathFollow2D" index="0" instance=ExtResource( 7 )]
@@ -150,7 +150,7 @@ speed = -0.25
 
 [node name="PathFollow2D" parent="Instruments/Path2D5" index="0"]
 
-position = Vector2( 1178.81, -700 )
+position = Vector2( 1178.82, -700 )
 offset = 1161.61
 
 [node name="Instrument" parent="Instruments/Path2D5/PathFollow2D" index="0" instance=ExtResource( 7 )]
@@ -203,7 +203,7 @@ curve = SubResource( 7 )
 
 [node name="PathFollow2D" parent="Instruments/Path2D8" index="0"]
 
-position = Vector2( 40, -2158.3 )
+position = Vector2( 40, -2158.29 )
 offset = 1158.54
 
 [node name="Theremin" parent="Instruments/Path2D8/PathFollow2D" index="0" instance=ExtResource( 9 )]

@@ -26,6 +26,7 @@ func pulse():
 	sw.set_rotation(get_parent().get_rotation())
 	sw.instrument = self
 	sw.stage = self.stage
+	shape.is_active = true
 	shape.show()
 	sw.add_child(shape)
 	stage.get_node("Instruments").add_child(sw)

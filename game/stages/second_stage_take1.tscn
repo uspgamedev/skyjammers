@@ -1,15 +1,18 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://stages/base.gd" type="Script" id=1]
 [ext_resource path="res://input/input.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Instruments/Bass/Bass.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Movement/PathManager.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Movement/PathManager.tscn" type="PackedScene" id=3]
+[ext_resource path="res://islands/premade/tiny.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Instruments/Theremin/Theremin.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Sentinels/Sentinel.tscn" type="PackedScene" id=6]
-[ext_resource path="res://goal/Goal.tscn" type="PackedScene" id=7]
-[ext_resource path="res://Instruments/GameBoy/Gameboy.tscn" type="PackedScene" id=8]
-[ext_resource path="res://Instruments/Xylophone/Xylophone.tscn" type="PackedScene" id=9]
-[ext_resource path="res://audio/AudioManager.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Instruments/Xylophone/Xylophone.tscn" type="PackedScene" id=6]
+[ext_resource path="res://islands/premade/mid.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Instruments/Bass/Bass.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Instruments/GameBoy/Gameboy.tscn" type="PackedScene" id=9]
+[ext_resource path="res://islands/Island.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Sentinels/Sentinel.tscn" type="PackedScene" id=11]
+[ext_resource path="res://goal/Goal.tscn" type="PackedScene" id=12]
+[ext_resource path="res://audio/AudioManager.tscn" type="PackedScene" id=13]
 
 [sub_resource type="Curve2D" id=1]
 
@@ -28,17 +31,13 @@ _data = {
 [node name="Stage" type="Node2D" index="0"]
 
 script = ExtResource( 1 )
-initial_bard_path = NodePath("Instruments/Bass")
+initial_bard_path = NodePath("Instruments/Island/Bass")
 
 [node name="Input" parent="." index="0" instance=ExtResource( 2 )]
 
 [node name="Instruments" type="Node2D" parent="." index="1"]
 
-[node name="Bass" parent="Instruments" index="0" instance=ExtResource( 3 )]
-
-position = Vector2( 0, 30 )
-
-[node name="Path2D" parent="Instruments" index="1" instance=ExtResource( 4 )]
+[node name="Path2D" parent="Instruments" index="0" instance=ExtResource( 3 )]
 
 curve = SubResource( 1 )
 cyclic = true
@@ -48,21 +47,11 @@ speed = 0.5
 
 position = Vector2( 120, -20 )
 
-[node name="Theremin" parent="Instruments/Path2D/PathFollow2D" index="0" instance=ExtResource( 5 )]
+[node name="Island" parent="Instruments/Path2D/PathFollow2D" index="0" instance=ExtResource( 4 )]
 
-[node name="Sentinel" parent="Instruments" index="2" instance=ExtResource( 6 )]
+[node name="Theremin" parent="Instruments/Path2D/PathFollow2D/Island" index="0" instance=ExtResource( 5 )]
 
-position = Vector2( 120, 140 )
-
-[node name="Goal" parent="Instruments" index="3" instance=ExtResource( 7 )]
-
-position = Vector2( 120, 220 )
-
-[node name="Gameboy" parent="Instruments" index="4" instance=ExtResource( 8 )]
-
-position = Vector2( 240, 30 )
-
-[node name="Path2D2" parent="Instruments" index="5" instance=ExtResource( 4 )]
+[node name="Path2D2" parent="Instruments" index="1" instance=ExtResource( 3 )]
 
 curve = SubResource( 2 )
 
@@ -70,7 +59,34 @@ curve = SubResource( 2 )
 
 position = Vector2( 240, 70 )
 
-[node name="Xylophone" parent="Instruments/Path2D2/PathFollow2D" index="0" instance=ExtResource( 9 )]
+[node name="Island" parent="Instruments/Path2D2/PathFollow2D" index="0" instance=ExtResource( 4 )]
+
+[node name="Xylophone" parent="Instruments/Path2D2/PathFollow2D/Island" index="0" instance=ExtResource( 6 )]
+
+[node name="Island" parent="Instruments" index="2" instance=ExtResource( 7 )]
+
+position = Vector2( 0, 30 )
+
+[node name="Bass" parent="Instruments/Island" index="0" instance=ExtResource( 8 )]
+
+[node name="Island2" parent="Instruments" index="3" instance=ExtResource( 4 )]
+
+position = Vector2( 240, 30 )
+
+[node name="Gameboy" parent="Instruments/Island2" index="0" instance=ExtResource( 9 )]
+
+[node name="Island3" parent="Instruments" index="4" instance=ExtResource( 10 )]
+
+position = Vector2( 120, 140 )
+tile_data = PoolIntArray( -2, 0, 0, -1, 1, 0, -65536, 1, 0, -65535, 3, 0, 65534, 24, 0, 65535, 5, 0, 0, 6, 0, 1, 27, 0 )
+
+[node name="Sentinel" parent="Instruments/Island3" index="0" instance=ExtResource( 11 )]
+
+[node name="Island4" parent="Instruments" index="5" instance=ExtResource( 7 )]
+
+position = Vector2( 120, 220 )
+
+[node name="Goal" parent="Instruments/Island4" index="0" instance=ExtResource( 12 )]
 
 [node name="Paths" type="Node2D" parent="." index="2"]
 
@@ -107,7 +123,7 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="AudioManager" parent="." index="4" instance=ExtResource( 10 )]
+[node name="AudioManager" parent="." index="4" instance=ExtResource( 13 )]
 
 [connection signal="played" from="Input" to="." method="_on_Input_played"]
 

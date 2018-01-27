@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://stages/base.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Instruments/Bass/Bass.tscn" type="PackedScene" id=2]
+
+[node name="Stage" instance=ExtResource( 1 )]
+
+initial_bard_path = NodePath("Instruments/Bass")
+
+[node name="Bass" parent="Instruments" index="0" instance=ExtResource( 2 )]
+
+growth = 50.0
+duration = 4.0
+
+
