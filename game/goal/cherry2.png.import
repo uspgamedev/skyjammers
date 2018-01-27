@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/cherry.png-f674467de290aeb31b4bf6d0ed0d74fe.stex"
+path="res://.import/cherry2.png-ab88c25965646b75c30d3b1687579295.stex"
 
 [deps]
 
-source_file="res://goal/cherry.png"
-source_md5="d4f072723b98a4e9f6583584ad8a5c30"
+source_file="res://goal/cherry2.png"
+source_md5="1144c35014d06f2cd979dbdde9039688"
 
-dest_files=[ "res://.import/cherry.png-f674467de290aeb31b4bf6d0ed0d74fe.stex" ]
-dest_md5="4b531b9d4dadbe3ef11019371a83e9c1"
+dest_files=[ "res://.import/cherry2.png-ab88c25965646b75c30d3b1687579295.stex" ]
+dest_md5="ed5eb4ba108b69b08ab629c576ffbcc8"
 
 [params]
 
