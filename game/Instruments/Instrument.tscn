@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Instruments/Instrument.gd" type="Script" id=1]
-[ext_resource path="res://assets/img/cat-chara-bass.png" type="Texture" id=2]
-[ext_resource path="res://assets/sound/bass_riff.wav" type="AudioStream" id=3]
-[ext_resource path="res://assets/sound/bass_sfx.wav" type="AudioStream" id=4]
+[ext_resource path="res://assets/img/circle.png" type="Texture" id=2]
+[ext_resource path="res://assets/img/cat-chara-bass.png" type="Texture" id=3]
+[ext_resource path="res://assets/sound/bass_riff.wav" type="AudioStream" id=4]
+[ext_resource path="res://assets/sound/bass_sfx.wav" type="AudioStream" id=5]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -15,7 +16,7 @@ extents = Vector2( 10, 10 )
 custom_solver_bias = 0.0
 radius = 10.0
 
-[node name="Instrument" type="KinematicBody2D" groups=[
+[node name="Instrument" type="KinematicBody2D" index="0" groups=[
 "bards",
 ]]
 
@@ -29,32 +30,40 @@ growth = 12.0
 duration = 0.3
 frequency = 0
 
-[node name="Sprite" type="Sprite" parent="." index="0"]
+[node name="Sprite2" type="Sprite" parent="." index="0"]
+
+visible = false
+position = Vector2( 1, 9 )
+scale = Vector2( 0.25, 0.25 )
+texture = ExtResource( 2 )
+_sections_unfolded = [ "Transform", "Visibility" ]
+
+[node name="Sprite" type="Sprite" parent="." index="1"]
 
 scale = Vector2( 0.5, 0.5 )
-texture = ExtResource( 2 )
+texture = ExtResource( 3 )
 _sections_unfolded = [ "Animation", "Offset", "Transform", "Visibility" ]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="2"]
 
 shape = SubResource( 1 )
 _sections_unfolded = [ "Visibility" ]
 
-[node name="SoundWaveShape" type="CollisionShape2D" parent="." index="2"]
+[node name="SoundWaveShape" type="CollisionShape2D" parent="." index="3"]
 
 visible = false
 shape = SubResource( 2 )
 
-[node name="Timer" type="Timer" parent="." index="3"]
+[node name="Timer" type="Timer" parent="." index="4"]
 
 process_mode = 1
 wait_time = 1.0
 one_shot = false
 autostart = false
 
-[node name="Riff" type="AudioStreamPlayer2D" parent="." index="4"]
+[node name="Riff" type="AudioStreamPlayer2D" parent="." index="5"]
 
-stream = ExtResource( 3 )
+stream = ExtResource( 4 )
 volume_db = -15.0
 autoplay = false
 max_distance = 800.0
@@ -62,9 +71,9 @@ attenuation = 3.03143
 bus = "Master"
 area_mask = 1
 
-[node name="SFX" type="AudioStreamPlayer2D" parent="." index="5"]
+[node name="SFX" type="AudioStreamPlayer2D" parent="." index="6"]
 
-stream = ExtResource( 4 )
+stream = ExtResource( 5 )
 volume_db = -15.0
 autoplay = false
 max_distance = 800.0
