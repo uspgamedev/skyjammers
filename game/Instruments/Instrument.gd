@@ -45,7 +45,7 @@ func mini_pulse():
 	var shape = get_node("SoundWaveShape").duplicate()
 	var rot = get_node("SoundWaveShape").get_rotation()
 	
-	if get_node("SoundWaveShape/Rotate"):
+	if weakref(get_node("SoundWaveShape/Rotate")):
 		rot = get_node("SoundWaveShape/Rotate").get_rotation()
 	
 	sw.growth = self.growth
