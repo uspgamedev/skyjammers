@@ -106,11 +106,11 @@ duration = 0.6
 
 [node name="Island5" parent="Instruments" index="6" instance=ExtResource( 2 )]
 
-tile_data = PoolIntArray( -131048, 0, 0, -131047, 1, 0, -131046, 2, 0, -131045, 3, 0, -65512, 8, 0, -65511, 6, 0, -65510, 16, 0, -65509, 15, 0, 24, 12, 0, 25, 14, 0, 26, 15, 0 )
+tile_data = PoolIntArray( -65512, 0, 0, -65511, 1, 0, -65510, 2, 0, -65509, 3, 0, 23, 0, 0, 24, 31, 0, 25, 9, 0, 26, 9, 0, 27, 28, 0, 28, 3, 0, 65559, 4, 0, 65560, 9, 0, 65561, 9, 0, 65562, 9, 0, 65563, 9, 0, 65564, 11, 0, 131095, 12, 0, 131096, 13, 0, 131097, 14, 0, 131098, 13, 0, 131099, 14, 0, 131100, 15, 0 )
 
 [node name="Goal" parent="Instruments/Island5" index="0" instance=ExtResource( 10 )]
 
-position = Vector2( 830, -30 )
+position = Vector2( 840, -10 )
 
 
 [editable path="Instruments/Path2D"]
