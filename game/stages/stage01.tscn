@@ -18,19 +18,15 @@ _data = {
 }
 _sections_unfolded = [ "Resource" ]
 
-[node name="Stage" instance=ExtResource( 1 )]
+[node name="Stage" index="0" instance=ExtResource( 1 )]
 
 initial_bard_path = NodePath("Instruments/Island/Bass")
 riff_set = 1
 
-[node name="Instruments" parent="." index="1"]
-
-editor/display_folded = true
-
 [node name="Island" parent="Instruments" index="0" instance=ExtResource( 2 )]
 
 position = Vector2( 0.663422, 1.32684 )
-tile_data = PoolIntArray( -131072, 0, 0, -131071, 3, 0, -2, 0, 0, -1, 1, 0, -65536, 31, 0, -65535, 7, 0, 65534, 4, 0, 65535, 5, 0, 0, 16, 0, 1, 15, 0, 131070, 12, 0, 131071, 14, 0, 65536, 15, 0 )
+tile_data = PoolIntArray( -131072, 0, 0, -131071, 3, 0, -2, 0, 0, -1, 1, 0, -65536, 31, 0, -65535, 7, 0, 65534, 4, 0, 65535, 5, 0, 0, 16, 0, 1, 15, 0, 131070, 71, 0, 131071, 14, 0, 65536, 15, 0 )
 
 [node name="Bass" parent="Instruments/Island" index="0" instance=ExtResource( 3 )]
 
@@ -73,5 +69,10 @@ tile_data = PoolIntArray( -1, 0, 0, -65536, 3, 0, 65535, 12, 0, 0, 15, 0 )
 
 position = Vector2( 0, -10 )
 
+[node name="Under" parent="Instruments/Path2D/PathFollow2D/Island" index="1"]
+
+tile_data = PoolIntArray( 65535, 64, 0, 0, 67, 0, 131071, 68, 0, 65536, 71, 0 )
+
 
 [editable path="Instruments/Path2D"]
+[editable path="Instruments/Path2D/PathFollow2D/Island"]
