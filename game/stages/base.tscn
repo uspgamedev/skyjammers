@@ -13,6 +13,10 @@ initial_bard_path = null
 
 [node name="Instruments" type="Node2D" parent="." index="1"]
 
+__meta__ = {
+"_edit_lock_": true
+}
+
 [node name="Paths" type="Node2D" parent="." index="2"]
 
 __meta__ = {
@@ -21,6 +25,7 @@ __meta__ = {
 
 [node name="Camera2D" type="Camera2D" parent="." index="3"]
 
+editor/display_folded = true
 anchor_mode = 1
 rotating = false
 current = true

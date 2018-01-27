@@ -58,7 +58,7 @@ curve = SubResource( 1 )
 
 [node name="PathFollow2D" parent="Instruments/Path2D" index="0"]
 
-position = Vector2( -50, 20 )
+position = Vector2( -70, 20 )
 
 [node name="Island" parent="Instruments/Path2D/PathFollow2D" index="0" instance=ExtResource( 2 )]
 
