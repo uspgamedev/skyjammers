@@ -55,10 +55,9 @@ autostart = false
 [node name="Riff" type="AudioStreamPlayer2D" parent="." index="4"]
 
 stream = ExtResource( 3 )
-volume_db = 1.0
-
+volume_db = -15.0
 autoplay = false
-max_distance = 2000.0
+max_distance = 800.0
 attenuation = 3.03143
 bus = "Master"
 area_mask = 1
@@ -66,10 +65,10 @@ area_mask = 1
 [node name="SFX" type="AudioStreamPlayer2D" parent="." index="5"]
 
 stream = ExtResource( 4 )
-volume_db = 0.0
+volume_db = -15.0
 autoplay = false
-max_distance = 2000.0
-attenuation = 1.0
+max_distance = 800.0
+attenuation = 3.03143
 bus = "Master"
 area_mask = 1
 
