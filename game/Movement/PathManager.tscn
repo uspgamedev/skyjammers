@@ -1,6 +1,7 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://Movement/path_manager.gd" type="Script" id=1]
+[ext_resource path="res://Movement/path.gd" type="Script" id=1]
+[ext_resource path="res://Movement/path_manager.gd" type="Script" id=2]
 
 [sub_resource type="Curve2D" id=1]
 
@@ -9,18 +10,10 @@ _data = {
 "points": PoolVector2Array(  )
 }
 
-[sub_resource type="GDScript" id=2]
-
-script/source = "extends Path2D
-
-export (bool) var cyclic
-export (float) var speed = 1
-"
-
-[node name="Path2D" type="Path2D"]
+[node name="Path2D" type="Path2D" index="0"]
 
 curve = SubResource( 1 )
-script = SubResource( 2 )
+script = ExtResource( 1 )
 cyclic = null
 speed = 1
 
@@ -33,6 +26,6 @@ rotate = true
 cubic_interp = true
 loop = true
 lookahead = 4.0
-script = ExtResource( 1 )
+script = ExtResource( 2 )
 
 
