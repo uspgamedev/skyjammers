@@ -1,0 +1,41 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://stages/base.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Instruments/Instrument.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Movement/PathManager.tscn" type="PackedScene" id=3]
+
+[sub_resource type="Curve2D" id=1]
+
+bake_interval = 5.0
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 98.8508, -31.3744, 0, 0, 0, 0, 65.0164, 48.8995, 0, 0, 0, 0, -23.882, 139.125, 0, 0, 0, 0, -128.702, 17.0553, 0, 0, 0, 0, -58.3798, -20.0962, 0, 0, 0, 0, -13.2672, -93.7359, 0, 0, 0, 0, 68.9969, -63.882, 0, 0, 0, 0, 98.8508, -31.3744 )
+}
+
+[node name="Stage" index="0" instance=ExtResource( 1 )]
+
+initial_bard_path = NodePath("Instruments/Instrument")
+
+[node name="Instrument" parent="Instruments" index="0" instance=ExtResource( 2 )]
+
+position = Vector2( 282.38, 286.063 )
+
+[node name="Instrument2" parent="Instruments" index="1" instance=ExtResource( 2 )]
+
+position = Vector2( 432.969, 188.184 )
+
+[node name="Path2D" parent="Instruments" index="2" instance=ExtResource( 3 )]
+
+position = Vector2( 212.99, 134.472 )
+curve = SubResource( 1 )
+_sections_unfolded = [ "Transform" ]
+cyclic = true
+
+[node name="PathFollow2D" parent="Instruments/Path2D" index="0"]
+
+position = Vector2( 98.8508, -31.3744 )
+rotation = 1.96968
+
+[node name="Instrument" parent="Instruments/Path2D/PathFollow2D" index="0" instance=ExtResource( 2 )]
+
+
+[editable path="Instruments/Path2D"]
