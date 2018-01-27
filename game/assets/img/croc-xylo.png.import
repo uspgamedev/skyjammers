@@ -7,10 +7,10 @@ path="res://.import/croc-xylo.png-c432997d1dfdfaf2f4f442b4d4bf98f2.stex"
 [deps]
 
 source_file="res://assets/img/croc-xylo.png"
-source_md5="2f4aceaebe582d2794301049f2838bb8"
+source_md5="09e3afc9d1737f91028b997717c048c4"
 
 dest_files=[ "res://.import/croc-xylo.png-c432997d1dfdfaf2f4f442b4d4bf98f2.stex" ]
-dest_md5="072f8def84d09f75a91f7a428553ca03"
+dest_md5="0b4d7b5ed19909d667560b584a2ee2f6"
 
 [params]
 
