@@ -14,7 +14,7 @@
 resource_local_to_scene = true
 bake_interval = 5.0
 _data = {
-"points": PoolVector2Array( 0, 0, 0, 0, 110, 20, 0, 0, 0, 0, 640, 20 )
+"points": PoolVector2Array( 0, 0, 0, 0, 108.823, 0.4519, 0, 0, 0, 0, 638.823, 0.4519 )
 }
 _sections_unfolded = [ "Resource" ]
 
@@ -33,6 +33,7 @@ initial_bard_path = NodePath("Instruments/Island/Xylophone")
 
 [node name="Island" type="TileMap" parent="Instruments" index="0"]
 
+editor/display_folded = true
 mode = 0
 tile_set = ExtResource( 2 )
 cell_size = Vector2( 32, 32 )
@@ -60,7 +61,6 @@ position = Vector2( 15, 15 )
 
 [node name="Path2D" parent="Instruments" index="1" instance=ExtResource( 5 )]
 
-editor/display_folded = true
 curve = SubResource( 1 )
 _sections_unfolded = [ "Transform" ]
 speed = 0.4
