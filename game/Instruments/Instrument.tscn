@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Instruments/Instrument.gd" type="Script" id=1]
 [ext_resource path="res://assets/img/circle.png" type="Texture" id=2]
@@ -8,17 +8,67 @@
 [ext_resource path="res://assets/sound/bass_riff2.wav" type="AudioStream" id=6]
 [ext_resource path="res://assets/sound/bass_sfx.wav" type="AudioStream" id=7]
 
-[sub_resource type="RectangleShape2D" id=1]
+[sub_resource type="Animation" id=4]
+
+resource_name = "active"
+length = 1.0
+loop = true
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:scale")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0.2, 0.2 ), Vector2( 0.3, 0.3 ) ]
+}
+
+[sub_resource type="Animation" id=1]
+
+resource_name = "off"
+length = 0.01
+loop = false
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+
+[sub_resource type="RectangleShape2D" id=2]
 
 custom_solver_bias = 0.0
 extents = Vector2( 10, 10 )
 
-[sub_resource type="CircleShape2D" id=2]
+[sub_resource type="CircleShape2D" id=3]
 
 custom_solver_bias = 0.0
 radius = 10.0
 
-[node name="Instrument" type="KinematicBody2D" groups=[
+[node name="Instrument" type="KinematicBody2D" index="0" groups=[
 "bards",
 ]]
 
@@ -46,23 +96,35 @@ scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 3 )
 _sections_unfolded = [ "Animation", "Offset", "Transform", "Visibility" ]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="2"]
-
-shape = SubResource( 1 )
-_sections_unfolded = [ "Visibility" ]
-
-[node name="SoundWaveShape" type="CollisionShape2D" parent="." index="3"]
+[node name="WavePreview" type="Sprite" parent="." index="2"]
 
 visible = false
+modulate = Color( 1, 1, 1, 0.235294 )
+scale = Vector2( 0.206304, 0.206304 )
+_sections_unfolded = [ "Transform", "Visibility" ]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="WavePreview" index="0"]
+
+root_node = NodePath("..")
+autoplay = "off"
+playback_process_mode = 1
+playback_default_blend_time = 0.0
+playback_speed = 1.0
+anims/active = SubResource( 4 )
+anims/off = SubResource( 1 )
+blend_times = [  ]
+autoplay = "off"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="3"]
+
 shape = SubResource( 2 )
+_sections_unfolded = [ "Visibility" ]
+
+[node name="SoundWaveShape" type="CollisionShape2D" parent="." index="4"]
+
+visible = false
+shape = SubResource( 3 )
 script = ExtResource( 4 )
-
-[node name="Timer" type="Timer" parent="." index="4"]
-
-process_mode = 1
-wait_time = 1.0
-one_shot = false
-autostart = false
 
 [node name="Riff0" type="AudioStreamPlayer2D" parent="." index="5"]
 
@@ -93,7 +155,5 @@ max_distance = 800.0
 attenuation = 3.03143
 bus = "Master"
 area_mask = 1
-
-[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
 
 

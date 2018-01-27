@@ -15,7 +15,7 @@ func _ready():
 	audioManager.setRiffSet(self.riff_set)
 	activeInstrument = get_node(initial_bard_path)
 	activeInstrument.get_node("Riff"+str(audioManager.getRiffSet())).play(audioManager.getRiffPos())
-	activeInstrument.active = true
+	activeInstrument.activate()
 	for instrument in get_tree().get_nodes_in_group("bards"):
 		instrument.stage = self
 	for sentinel in get_tree().get_nodes_in_group("sentinels"):
@@ -27,12 +27,10 @@ func _ready():
 	
 func changeActive(body):
 	if activeInstrument.is_in_group("bards"):
-		activeInstrument.active = false
-		activeInstrument.get_node("Sprite2").hide()
+		activeInstrument.deactivate()
 	self.activeInstrument = body
 	if activeInstrument.is_in_group("bards"):
-		activeInstrument.active = true
-		activeInstrument.get_node("Sprite2").show()
+		activeInstrument.activate()
 		body.get_node("Riff"+str(audioManager.getRiffSet())).play(audioManager.getRiffPos())
 		audioManager.playSFX("Transmission")
 	
