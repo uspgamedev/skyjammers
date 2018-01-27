@@ -14,7 +14,7 @@ func _ready():
 	for sentinel in get_tree().get_nodes_in_group("sentinels"):
 		sentinel.connect("caught", self, "_failed")
 		sentinel.stage = self
-	audioManager.resetRiffs()
+	audioManager.resetRiff()
 
 func changeActive(body):
 	if activeInstrument.is_in_group("bards"):
@@ -22,7 +22,7 @@ func changeActive(body):
 	self.activeInstrument = body
 	if activeInstrument.is_in_group("bards"):
 		activeInstrument.active = true
-		audioManager.activateRiff(body.get_name())
+		body.get_node("Riff").play(audioManager.getRiffPos())
 		audioManager.playSFX("Transmission")
 	
 	if activeInstrument.is_in_group("sentinels"):
