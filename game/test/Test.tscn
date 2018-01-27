@@ -6,6 +6,8 @@
 
 [node name="Stage" index="0" instance=ExtResource( 1 )]
 
+initial_bard_path = null
+
 [node name="Instrument" parent="Instruments" index="0" instance=ExtResource( 2 )]
 
 position = Vector2( 282.38, 286.063 )
