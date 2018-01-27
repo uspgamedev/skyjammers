@@ -1,17 +1,15 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://stages/base.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Instruments/Instrument.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Movement/Rotate.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Sentinels/Sentinel.tscn" type="PackedScene" id=4]
+[ext_resource path="res://sentinels/Sentinel.tscn" type="PackedScene" id=4]
+[ext_resource path="res://goal/Goal.tscn" type="PackedScene" id=5]
+
 
 [node name="Stage" index="0" instance=ExtResource( 1 )]
 
 initial_bard_path = NodePath("Instruments/Instrument")
-
-[node name="Instruments" parent="." index="1"]
-
-editor/display_folded = true
 
 [node name="Instrument" parent="Instruments" index="0" instance=ExtResource( 2 )]
 
@@ -19,6 +17,7 @@ position = Vector2( 282.38, 286.063 )
 
 [node name="Rotate" parent="Instruments" index="1" instance=ExtResource( 3 )]
 
+editor/display_folded = true
 position = Vector2( 399.38, 242.167 )
 angular_velocity = 4
 
@@ -26,6 +25,10 @@ angular_velocity = 4
 
 [node name="Sentinel" parent="." index="4" instance=ExtResource( 4 )]
 
-position = Vector2( 247.588, 284.318 )
+position = Vector2( 179.569, 122.434 )
+
+[node name="Goal" parent="." index="5" instance=ExtResource( 5 )]
+
+position = Vector2( 484.293, 299.282 )
 
 

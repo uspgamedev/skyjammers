@@ -4,6 +4,8 @@
 [ext_resource path="res://Instruments/Instrument.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Movement/PathManager.tscn" type="PackedScene" id=3]
 
+
+
 [sub_resource type="Curve2D" id=1]
 
 bake_interval = 5.0
