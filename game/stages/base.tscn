@@ -1,9 +1,10 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://stages/base.gd" type="Script" id=1]
 [ext_resource path="res://input/input.tscn" type="PackedScene" id=2]
+[ext_resource path="res://audio/AudioManager.tscn" type="PackedScene" id=3]
 
-[node name="Stage" type="Node2D" index="0"]
+[node name="Stage" type="Node2D"]
 
 script = ExtResource( 1 )
 initial_bard_path = null
@@ -50,6 +51,8 @@ _sections_unfolded = [ "Limit", "Smoothing" ]
 __meta__ = {
 "_edit_lock_": true
 }
+
+[node name="AudioManager" parent="." index="4" instance=ExtResource( 3 )]
 
 [connection signal="played" from="Input" to="." method="_on_Input_played"]
 

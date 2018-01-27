@@ -29,6 +29,9 @@ func pulse():
 	shape.show()
 	sw.add_child(shape)
 	stage.get_node("Instruments").add_child(sw)
+	
+	#play correspondent sfx
+	stage.get_node("AudioManager").playSFX(self.get_name())
 
 
 func _on_Timer_timeout():

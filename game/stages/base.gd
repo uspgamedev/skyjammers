@@ -4,6 +4,7 @@ export(NodePath) var initial_bard_path
 
 onready var activeInstrument = null
 onready var camera = $Camera2D
+onready var audioManager = get_node("AudioManager")
 var game_over = false
 
 func _ready():
@@ -13,6 +14,7 @@ func _ready():
 	for sentinel in get_tree().get_nodes_in_group("sentinels"):
 		sentinel.connect("caught", self, "_failed")
 		sentinel.stage = self
+	audioManager.resetRiffs()
 
 func changeActive(body):
 	if activeInstrument.is_in_group("bards"):
@@ -20,6 +22,7 @@ func changeActive(body):
 	self.activeInstrument = body
 	if activeInstrument.is_in_group("bards"):
 		activeInstrument.active = true
+		audioManager.activateRiff(body.get_name())
 	
 	if activeInstrument.is_in_group("sentinels"):
 		_failed()

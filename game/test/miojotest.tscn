@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://stages/base.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Instruments/Instrument.tscn" type="PackedScene" id=2]
@@ -6,7 +6,16 @@
 [ext_resource path="res://Movement/FollowOnly.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Sentinels/Watcher/watcher.tscn" type="PackedScene" id=5]
 
-[node name="Stage" index="0" instance=ExtResource( 1 )]
+[sub_resource type="Curve2D" id=1]
+
+resource_local_to_scene = true
+bake_interval = 5.0
+_data = {
+"points": PoolVector2Array( 0, 0, -2.45548, 276.241, -193.847, -171.008, -282.38, 173.111, 257.825, -159.606, 86.0776, -119.443, 106.813, 308.162, 0, 0, 238.317, -190.652 )
+}
+_sections_unfolded = [ "Resource" ]
+
+[node name="Stage" instance=ExtResource( 1 )]
 
 initial_bard_path = NodePath("Instruments/Instrument")
 
@@ -16,9 +25,11 @@ position = Vector2( 104, 70 )
 
 [node name="Path2D" parent="Instruments" index="1" instance=ExtResource( 3 )]
 
+curve = SubResource( 1 )
+
 [node name="PathFollow2D" parent="Instruments/Path2D" index="0" instance=ExtResource( 4 )]
 
-position = Vector2( 108, 193 )
+position = Vector2( -193.847, -171.008 )
 rotation = -0.00289291
 override_parent_speed = true
 
@@ -30,7 +41,7 @@ position = Vector2( 0.202507, -69.9997 )
 
 [node name="PathFollow2D2" parent="Instruments/Path2D" index="1" instance=ExtResource( 4 )]
 
-position = Vector2( 452.515, 187.637 )
+position = Vector2( 66.2214, -107.186 )
 offset = 472.135
 _sections_unfolded = [ "Transform" ]
 speed = 1.5
@@ -46,7 +57,7 @@ position = Vector2( 5.65033, 95.1061 )
 
 [node name="PathFollow2D3" parent="Instruments/Path2D" index="2" instance=ExtResource( 4 )]
 
-position = Vector2( 138, 253 )
+position = Vector2( -163.847, -111.008 )
 h_offset = 30.0
 v_offset = 60.0
 speed = 0.5
