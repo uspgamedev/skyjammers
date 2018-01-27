@@ -50,3 +50,15 @@ func update_preview():
 func _on_Timer_timeout():
 	if active:
 		update_preview()
+
+
+func activate():
+	active = true
+	get_node("WavePreview/AnimationPlayer").play("active")
+	get_node("Sprite2").show()
+
+
+func deactivate():
+	active = false
+	get_node("WavePreview/AnimationPlayer").play("off")
+	get_node("Sprite2").hide()
