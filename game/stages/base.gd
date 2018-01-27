@@ -23,6 +23,7 @@ func changeActive(body):
 	if activeInstrument.is_in_group("bards"):
 		activeInstrument.active = true
 		audioManager.activateRiff(body.get_name())
+		audioManager.playSFX("Transmission")
 	
 	if activeInstrument.is_in_group("sentinels"):
 		_failed()
