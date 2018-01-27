@@ -4,9 +4,6 @@ var is_active = false
 var speed = 10
 var radius = 10
 
-func _ready():
-	pass
-
 func _process(delta):
 	if is_active:
 		radius = get_shape().get_radius()/1.4

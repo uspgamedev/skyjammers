@@ -15,6 +15,7 @@ func _ready():
 	audioManager.setRiffSet(self.riff_set)
 	activeInstrument = get_node(initial_bard_path)
 	activeInstrument.get_node("Riff"+str(audioManager.getRiffSet())).play(audioManager.getRiffPos())
+	activeInstrument.active = true
 	for instrument in get_tree().get_nodes_in_group("bards"):
 		instrument.stage = self
 	for sentinel in get_tree().get_nodes_in_group("sentinels"):
@@ -45,7 +46,7 @@ func _failed():
 	get_tree().reload_current_scene()
 
 func _on_Input_played():
-	if not win and not activeInstrument.hasSoundwave and activeInstrument.frequency == 0:
+	if not win and not activeInstrument.hasSoundwave:
 		activeInstrument.pulse()
 		camera_shake()
 	elif win:
