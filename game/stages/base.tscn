@@ -1,8 +1,29 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://stages/base.gd" type="Script" id=1]
 [ext_resource path="res://input/input.tscn" type="PackedScene" id=2]
 [ext_resource path="res://audio/AudioManager.tscn" type="PackedScene" id=3]
+
+[sub_resource type="GDScript" id=1]
+
+script/source = "extends Camera2D
+
+var z = 1
+
+func _ready():
+	set_process_unhandled_input(true)
+
+func _unhandled_input(event):
+	if event.is_action_pressed(\"zoom_in\"):
+		z -= 0.1
+		z = max(0.1, z)
+	elif event.is_action_pressed(\"zoom_out\"):
+		z += 0.1
+		z = min(2, z)
+
+func _process(delta):
+	self.zoom = Vector2(z,z)
+"
 
 [node name="Stage" type="Node2D"]
 
@@ -47,6 +68,7 @@ drag_margin_bottom = 0.1
 editor_draw_screen = true
 editor_draw_limits = false
 editor_draw_drag_margin = false
+script = SubResource( 1 )
 _sections_unfolded = [ "Drag Margin", "Limit", "Smoothing" ]
 __meta__ = {
 "_edit_lock_": true
