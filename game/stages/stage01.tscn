@@ -21,6 +21,7 @@ _sections_unfolded = [ "Resource" ]
 [node name="Stage" instance=ExtResource( 1 )]
 
 initial_bard_path = NodePath("Instruments/Island/Bass")
+riff_set = 1
 
 [node name="Island" parent="Instruments" index="0" instance=ExtResource( 2 )]
 
