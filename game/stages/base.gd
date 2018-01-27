@@ -39,8 +39,8 @@ func changeActive(body):
 	if activeInstrument.is_in_group("sentinels"):
 		_failed()
 	elif activeInstrument.is_in_group("goal"):
+		activeInstrument.get_node("AnimationPlayer").play("bloom")
 		win = true
-		#OS.alert("very gud job", "so pretty")
 
 func _failed():
 	get_tree().reload_current_scene()
