@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/theremin_riff2.wav-307f1805c77f4091354df2929a234f86.sample"
+
+[deps]
+
+source_file="res://assets/sound/theremin_riff2.wav"
+source_md5="20c889440fd1afe5e614097e8c2c4f0a"
+
+dest_files=[ "res://.import/theremin_riff2.wav-307f1805c77f4091354df2929a234f86.sample" ]
+dest_md5="a094bc7bbe1b620206e1c5d6f5a1e0f8"
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=true
+compress/mode=0

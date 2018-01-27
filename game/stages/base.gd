@@ -10,7 +10,7 @@ var lose = false
 
 func _ready():
 	activeInstrument = get_node(initial_bard_path)
-	activeInstrument.get_node("Riff").play(audioManager.getRiffPos())
+	activeInstrument.get_node("Riff"+str(audioManager.getRiffSet())).play(audioManager.getRiffPos())
 	for instrument in get_tree().get_nodes_in_group("bards"):
 		instrument.stage = self
 	for sentinel in get_tree().get_nodes_in_group("sentinels"):
@@ -24,7 +24,7 @@ func changeActive(body):
 	self.activeInstrument = body
 	if activeInstrument.is_in_group("bards"):
 		activeInstrument.active = true
-		body.get_node("Riff").play(audioManager.getRiffPos())
+		body.get_node("Riff"+str(audioManager.getRiffSet())).play(audioManager.getRiffPos())
 		audioManager.playSFX("Transmission")
 	
 	if activeInstrument.is_in_group("sentinels"):

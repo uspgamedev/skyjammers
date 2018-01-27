@@ -4,21 +4,33 @@
 [ext_resource path="res://assets/sound/transmission_sfx.wav" type="AudioStream" id=2]
 [ext_resource path="res://assets/sound/bass_riff.wav" type="AudioStream" id=3]
 
-[node name="AudioManager" type="Node2D"]
+[node name="AudioManager" type="Node2D" index="0"]
 
 script = ExtResource( 1 )
 
-[node name="TransmissionSFX" type="AudioStreamPlayer" parent="." index="0"]
+[node name="TransmissionSFX" type="AudioStreamPlayer2D" parent="." index="0"]
 
 stream = ExtResource( 2 )
 volume_db = -10.0
 autoplay = false
-mix_target = 0
-bus = "SFX"
+max_distance = 2000.0
+attenuation = 1.0
+bus = "Master"
+area_mask = 1
 
-[node name="SyncRiff" type="AudioStreamPlayer2D" parent="." index="1"]
+[node name="SyncRiff0" type="AudioStreamPlayer2D" parent="." index="1"]
 
 stream = ExtResource( 3 )
+volume_db = 0.0
+autoplay = false
+max_distance = 2000.0
+attenuation = 1.0
+bus = "Master"
+area_mask = 1
+
+[node name="SyncRiff1" type="AudioStreamPlayer2D" parent="." index="2"]
+
+stream = null
 volume_db = 0.0
 autoplay = false
 max_distance = 2000.0

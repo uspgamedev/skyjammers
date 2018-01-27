@@ -1,12 +1,13 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Instruments/Instrument.gd" type="Script" id=1]
 [ext_resource path="res://assets/img/cat-chara-bass.png" type="Texture" id=2]
 [ext_resource path="res://Instruments/Bass/BassWaveShape.gd" type="Script" id=3]
 [ext_resource path="res://assets/sound/bass_riff.wav" type="AudioStream" id=4]
-[ext_resource path="res://assets/sound/bass_sfx.wav" type="AudioStream" id=5]
+[ext_resource path="res://assets/sound/bass_riff2.wav" type="AudioStream" id=5]
+[ext_resource path="res://assets/sound/bass_sfx.wav" type="AudioStream" id=6]
 
-[sub_resource type="RectangleShape2D" id=1]
+[sub_resource type="RectangleShape2D" id=3]
 
 custom_solver_bias = 0.0
 extents = Vector2( 10, 10 )
@@ -38,7 +39,7 @@ _sections_unfolded = [ "Animation", "Offset", "Transform", "Visibility" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
 
-shape = SubResource( 1 )
+shape = SubResource( 3 )
 _sections_unfolded = [ "Visibility" ]
 
 [node name="SoundWaveShape" type="CollisionShape2D" parent="." index="2"]
@@ -55,7 +56,7 @@ wait_time = 1.0
 one_shot = false
 autostart = false
 
-[node name="Riff" type="AudioStreamPlayer2D" parent="." index="4"]
+[node name="Riff0" type="AudioStreamPlayer2D" parent="." index="4"]
 
 stream = ExtResource( 4 )
 volume_db = -15.0
@@ -65,9 +66,19 @@ attenuation = 3.03143
 bus = "Master"
 area_mask = 1
 
-[node name="SFX" type="AudioStreamPlayer2D" parent="." index="5"]
+[node name="Riff1" type="AudioStreamPlayer2D" parent="." index="5"]
 
 stream = ExtResource( 5 )
+volume_db = -15.0
+autoplay = false
+max_distance = 800.0
+attenuation = 3.03143
+bus = "Master"
+area_mask = 1
+
+[node name="SFX" type="AudioStreamPlayer2D" parent="." index="6"]
+
+stream = ExtResource( 6 )
 volume_db = -15.0
 autoplay = false
 max_distance = 800.0
