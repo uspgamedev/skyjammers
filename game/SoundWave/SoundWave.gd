@@ -13,7 +13,6 @@ func _ready():
 func pulse():
 	var tween = get_node("Tween")
 	
-	instrument.hasSoundwave = true
 	tween.interpolate_property(self, "scale", get_scale(), get_scale() * self.growth,
 							   self.duration, Tween.TRANS_LINEAR, Tween.EASE_IN)
 	tween.start()
