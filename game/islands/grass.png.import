@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/grama.png-461793c173f3d0b58fc2b721a52a4e8a.stex"
+path="res://.import/grass.png-56587ab0b46f8452a8d630ef665d2c27.stex"
 
 [deps]
 
-source_file="res://islands/grama.png"
-source_md5="9946b2fca0a07991f2389b48dd57c61a"
+source_file="res://islands/grass.png"
+source_md5="e881e4845d9cbdd28c2122bbf59b2e4e"
 
-dest_files=[ "res://.import/grama.png-461793c173f3d0b58fc2b721a52a4e8a.stex" ]
-dest_md5="1387db3eb970a1329920f831400eb75c"
+dest_files=[ "res://.import/grass.png-56587ab0b46f8452a8d630ef665d2c27.stex" ]
+dest_md5="15738fbddf2b7f7d96b692410e9aa4ab"
 
 [params]
 

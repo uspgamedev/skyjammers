@@ -23,6 +23,10 @@ _sections_unfolded = [ "Resource" ]
 initial_bard_path = NodePath("Instruments/Island/Bass")
 riff_set = 1
 
+[node name="Instruments" parent="." index="1"]
+
+editor/display_folded = true
+
 [node name="Island" parent="Instruments" index="0" instance=ExtResource( 2 )]
 
 position = Vector2( 0.663422, 1.32684 )

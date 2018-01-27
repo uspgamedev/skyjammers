@@ -30,6 +30,10 @@ _data = {
 
 initial_bard_path = NodePath("Instruments/Island/Bass")
 
+[node name="Instruments" parent="." index="1"]
+
+editor/display_folded = true
+
 [node name="Path2D" parent="Instruments" index="0" instance=ExtResource( 2 )]
 
 curve = SubResource( 1 )
@@ -84,7 +88,6 @@ position = Vector2( 120, 220 )
 [node name="Island2" parent="Instruments" index="5" instance=ExtResource( 3 )]
 
 position = Vector2( 241, 18 )
-tile_data = PoolIntArray( -1, 0, 0, -65536, 3, 0, 65535, 12, 0, 0, 15, 0, 458763, 0, 0 )
 _sections_unfolded = [ "Cell", "Transform" ]
 
 [node name="Theremin" parent="Instruments/Island2" index="0" instance=ExtResource( 11 )]

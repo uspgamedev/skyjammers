@@ -46,8 +46,8 @@ func _failed():
 
 func _on_Input_played():
 	if not win and not activeInstrument.hasSoundwave and activeInstrument.frequency == 0:
-		camera_shake()
 		activeInstrument.pulse()
+		camera_shake()
 	elif win:
 		get_tree().change_scene("res://menus/stage-selector/main.tscn")
 

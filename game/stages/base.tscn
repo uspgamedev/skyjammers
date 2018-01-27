@@ -4,7 +4,7 @@
 [ext_resource path="res://input/input.tscn" type="PackedScene" id=2]
 [ext_resource path="res://audio/AudioManager.tscn" type="PackedScene" id=3]
 
-[node name="Stage" type="Node2D"]
+[node name="Stage" type="Node2D" index="0"]
 
 position = Vector2( 21.1771, 19.5481 )
 script = ExtResource( 1 )
@@ -19,13 +19,7 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="Paths" type="Node2D" parent="." index="2"]
-
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="Camera2D" type="Camera2D" parent="." index="3"]
+[node name="Camera2D" type="Camera2D" parent="." index="2"]
 
 editor/display_folded = true
 anchor_mode = 1
@@ -62,7 +56,7 @@ wait_time = 0.05
 one_shot = false
 autostart = false
 
-[node name="AudioManager" parent="." index="4" instance=ExtResource( 3 )]
+[node name="AudioManager" parent="." index="3" instance=ExtResource( 3 )]
 
 [connection signal="played" from="Input" to="." method="_on_Input_played"]
 
