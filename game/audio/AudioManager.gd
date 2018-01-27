@@ -4,6 +4,11 @@ extends Node2D
 var currentRiffSet = 0
 var SyncRiffs = []
 
+onready var BGMs = [
+get_node("Ambience"),
+get_node("LevelSelect")	
+]
+
 #Remember: 0 Db != zero volume :-)
 var menos_muito = -100
 
@@ -12,6 +17,19 @@ func _ready():
 	SyncRiffs.append(get_node("SyncRiff1"))
 	SyncRiffs[0].set_volume_db(menos_muito)
 	SyncRiffs[1].set_volume_db(menos_muito)
+
+func playBGM(bgm):
+	for b in BGMs:
+		if b.get_name() == bgm:
+			get_node(bgm).play()
+		else:
+			get_node(bgm).stop()
+
+func stopBGM(bgm):
+	for b in BGMs:
+		if b.get_name() == bgm:
+			get_node(bgm).stop()
+			return
 
 func resetRiff():
 	SyncRiffs[currentRiffSet].play()

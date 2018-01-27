@@ -22,6 +22,8 @@ func _ready():
 		sentinel.stage = self
 	audioManager.resetRiff()
 	
+	audioManager.playBGM("Ambience")
+	
 func changeActive(body):
 	if activeInstrument.is_in_group("bards"):
 		activeInstrument.active = false
