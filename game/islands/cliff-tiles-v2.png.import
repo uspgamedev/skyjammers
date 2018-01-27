@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/cherry.png-f674467de290aeb31b4bf6d0ed0d74fe.stex"
+path="res://.import/cliff-tiles-v2.png-41c1ed86406b8fa1dae954f392ba6f2c.stex"
 
 [deps]
 
-source_file="res://goal/cherry.png"
-source_md5="d4f072723b98a4e9f6583584ad8a5c30"
+source_file="res://islands/cliff-tiles-v2.png"
+source_md5="5c2452478e3c74788e0864f161b2d5fb"
 
-dest_files=[ "res://.import/cherry.png-f674467de290aeb31b4bf6d0ed0d74fe.stex" ]
-dest_md5="4b531b9d4dadbe3ef11019371a83e9c1"
+dest_files=[ "res://.import/cliff-tiles-v2.png-41c1ed86406b8fa1dae954f392ba6f2c.stex" ]
+dest_md5="f9db2943cb7a6a6cf34083013e712fe6"
 
 [params]
 

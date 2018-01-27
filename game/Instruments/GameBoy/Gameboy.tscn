@@ -27,37 +27,15 @@ _sections_unfolded = [ "Transform", "Visibility", "Z Index" ]
 shape = SubResource( 1 )
 script = ExtResource( 3 )
 
-[node name="Label" type="Label" parent="." index="4"]
-
-modulate = Color( 0, 0, 0, 1 )
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = -28.0
-margin_top = -38.0
-margin_right = 32.0
-margin_bottom = -24.0
-rect_pivot_offset = Vector2( 0, 0 )
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
-text = "Gameboi"
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-_sections_unfolded = [ "Visibility" ]
-
-[node name="Riff0" parent="." index="6"]
+[node name="Riff0" parent="." index="5"]
 
 stream = ExtResource( 4 )
 
-[node name="Riff1" parent="." index="7"]
+[node name="Riff1" parent="." index="6"]
 
 stream = ExtResource( 5 )
 
-[node name="SFX" parent="." index="8"]
+[node name="SFX" parent="." index="7"]
 
 stream = ExtResource( 6 )
 

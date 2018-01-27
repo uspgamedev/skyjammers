@@ -22,5 +22,5 @@ action_play=[ Object(InputEventKey,"resource_local_to_scene":false,"resource_nam
 
 [rendering]
 
-environment/default_clear_color=Color( 0.413269, 0.801291, 0.953125, 1 )
+environment/default_clear_color=Color( 0.843137, 0.933333, 0.968627, 1 )
 environment/default_environment="res://default_env.tres"
