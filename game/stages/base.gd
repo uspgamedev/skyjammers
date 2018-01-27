@@ -9,6 +9,7 @@ var game_over = false
 
 func _ready():
 	activeInstrument = get_node(initial_bard_path)
+	activeInstrument.get_node("Riff").play(audioManager.getRiffPos())
 	for instrument in get_tree().get_nodes_in_group("bards"):
 		instrument.stage = self
 	for sentinel in get_tree().get_nodes_in_group("sentinels"):
