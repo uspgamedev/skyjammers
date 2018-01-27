@@ -4,7 +4,6 @@ var activeInstrument
 
 func _ready():
 	activeInstrument = get_child(0)
-	set_process_input(true)
 
 func _input(event):
 	if event.is_action_pressed("ui_accept"):

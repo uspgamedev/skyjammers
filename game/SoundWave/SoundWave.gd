@@ -16,7 +16,7 @@ func pulse():
 
 func _on_SoundWave_body_entered( body ):
 	if body != instrument:
-		get_parent().changeActive(body)
+		get_parent().get_parent().changeActive(body)
 		selfDestruct()
 
 func selfDestruct():
