@@ -28,8 +28,9 @@ func changeActive(body):
 		OS.alert("very gud job", "so pretty")
 
 func _failed():
-	game_over = true
-	OS.alert("GAME OVER", "u suk")
+	get_tree().change_scene("res://stages/sample/sample.tscn")
+	#game_over = true
+	#OS.alert("GAME OVER", "u suk")
 
 func _on_Input_played():
 	if not game_over and not activeInstrument.hasSoundwave and activeInstrument.frequency == 0:

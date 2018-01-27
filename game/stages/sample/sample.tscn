@@ -47,7 +47,7 @@ position = Vector2( 160, 110 )
 editor/display_folded = true
 curve = SubResource( 1 )
 cyclic = false
-speed = 0.2
+speed = 0.8
 
 [node name="PathFollow2D" parent="Instruments/Path2D" index="0"]
 
@@ -118,6 +118,14 @@ position = Vector2( 1060, 110 )
 [node name="Instrument2" parent="Instruments" index="10" instance=ExtResource( 2 )]
 
 position = Vector2( 760, 230 )
+
+[node name="Instrument4" parent="Instruments" index="11" instance=ExtResource( 2 )]
+
+position = Vector2( 280, -220 )
+
+[node name="Instrument3" parent="Instruments" index="12" instance=ExtResource( 2 )]
+
+position = Vector2( 580, -70 )
 
 
 [editable path="Instruments/Path2D"]
