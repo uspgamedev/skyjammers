@@ -1,0 +1,94 @@
+[gd_scene load_steps=4 format=2]
+
+[sub_resource type="GDScript" id=3]
+
+script/source = "extends KinematicBody2D
+
+
+func _ready():
+	var tween = $Area2D/Tween
+	var circle = $Area2D
+	tween.interpolate_property(circle, \"scale\", Vector2(1,1), Vector2(10,10), 1,
+							   Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
+	tween.start()
+
+func _collided(other):
+	if self != other:
+		print(\"hue\")
+"
+
+[sub_resource type="CircleShape2D" id=1]
+
+custom_solver_bias = 0.0
+radius = 10.0
+
+[sub_resource type="RectangleShape2D" id=2]
+
+custom_solver_bias = 0.0
+extents = Vector2( 10, 10 )
+
+[node name="Node2D" type="Node2D" index="0"]
+
+[node name="Emissor" type="KinematicBody2D" parent="." index="0"]
+
+position = Vector2( 162.09, 85.4129 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+collision/safe_margin = 0.08
+script = SubResource( 3 )
+
+[node name="Area2D" type="Area2D" parent="Emissor" index="0"]
+
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+collision_layer = 0
+audio_bus_override = false
+audio_bus_name = "Master"
+_sections_unfolded = [ "Collision", "Transform" ]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Emissor/Area2D" index="0"]
+
+shape = SubResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Tween" type="Tween" parent="Emissor/Area2D" index="1"]
+
+repeat = false
+playback_process_mode = 1
+playback_speed = 1.0
+playback/active = false
+playback/repeat = false
+playback/speed = 1.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Emissor" index="1"]
+
+shape = SubResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="KinematicBody2D" type="KinematicBody2D" parent="." index="1"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+collision/safe_margin = 0.08
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="KinematicBody2D" index="0"]
+
+position = Vector2( 118.117, 155.706 )
+shape = SubResource( 2 )
+_sections_unfolded = [ "Transform" ]
+
+[connection signal="body_entered" from="Emissor/Area2D" to="Emissor" method="_collided"]
+
+
