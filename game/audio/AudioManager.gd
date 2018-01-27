@@ -1,4 +1,4 @@
-extends Node2D
+extends Node
 
 #Example Riff so that every riffs plays in sync
 var currentRiffSet = 0
@@ -21,6 +21,7 @@ func _ready():
 func playBGM(bgm):
 	for b in BGMs:
 		if b.get_name() == bgm:
+			print(bgm)
 			get_node(bgm).play()
 		else:
 			get_node(bgm).stop()
