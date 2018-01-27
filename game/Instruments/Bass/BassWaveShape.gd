@@ -32,3 +32,5 @@ func _draw():
 	draw_line_circle(Vector2(0,0), Vector2(radius,radius), Color(0,0,0,1), .3)
 	draw_line_circle(Vector2(0,0), Vector2(radius*.9,radius*.9), Color(0,0,0,1), .3)
 	draw_line_circle(Vector2(0,0), Vector2(radius*.8,radius*.8), Color(0,0,0,1), .3)
+	draw_line_circle(Vector2(0,0), Vector2(radius*.7,radius*.7), Color(0,0,0,1), .3)
+	draw_line_circle(Vector2(0,0), Vector2(radius*.6,radius*.6), Color(0,0,0,1), .3)
