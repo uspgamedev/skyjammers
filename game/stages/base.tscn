@@ -6,6 +6,7 @@
 [node name="Stage" type="Node2D"]
 
 script = ExtResource( 1 )
+initial_bard_path = null
 
 [node name="Input" parent="." index="0" instance=ExtResource( 2 )]
 
