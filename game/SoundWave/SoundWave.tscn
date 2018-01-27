@@ -2,7 +2,7 @@
 
 [ext_resource path="res://SoundWave/SoundWave.gd" type="Script" id=1]
 
-[node name="SoundWave" type="Area2D" index="0"]
+[node name="SoundWave" type="Area2D"]
 
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
@@ -13,8 +13,6 @@ audio_bus_override = false
 audio_bus_name = "Master"
 script = ExtResource( 1 )
 _sections_unfolded = [ "Transform" ]
-duration = 2
-growth = 5
 
 [node name="Tween" type="Tween" parent="." index="0"]
 

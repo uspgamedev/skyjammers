@@ -22,6 +22,8 @@ collision_mask = 1
 collision/safe_margin = 0.08
 script = ExtResource( 1 )
 _sections_unfolded = [ "Transform" ]
+growth = 10
+duration = 1
 
 [node name="Sprite" type="Sprite" parent="." index="0"]
 

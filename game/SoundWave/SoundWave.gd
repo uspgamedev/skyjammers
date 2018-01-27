@@ -3,8 +3,8 @@ extends Area2D
 var instrument
 var stage
 
-export(float) var duration = 2
-export(float) var growth = 5
+var duration = 2
+var growth = 5
 
 func _ready():
 	pulse()
