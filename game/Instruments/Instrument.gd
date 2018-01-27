@@ -40,27 +40,13 @@ func pulse():
 	get_node("SFX").play()
 
 
-func mini_pulse():
-	var sw = soundWave.instance()
-	var shape = get_node("SoundWaveShape").duplicate()
-	var rot = get_node("SoundWaveShape").get_rotation()
-	
+func update_preview():
 	if get_node("SoundWaveShape").has_node("Rotate"):
-		rot = get_node("SoundWaveShape/Rotate").get_rotation()
-	
-	sw.growth = self.growth
-	sw.duration = self.duration
-	sw.set_position(get_global_position())
-	sw.set_rotation(rot)
-	sw.instrument = self
-	sw.stage = self.stage
-	shape.is_active = true
-	shape.set_scale(shape.get_scale()/8)
-	shape.show()
-	sw.add_child(shape)
-	stage.get_node("Instruments").add_child(sw)
+		var rot = get_node("SoundWaveShape/Rotate").get_rotation()
+		
+		get_node("WavePreview").set_rotation(rot)
 
 
 func _on_Timer_timeout():
 	if active:
-		mini_pulse()
+		update_preview()
