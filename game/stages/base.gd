@@ -2,8 +2,8 @@ extends Node2D
 
 export(NodePath) var initial_bard_path
 
-var activeInstrument
-var camera
+onready var activeInstrument = null
+onready var camera = $Camera2D
 
 func _ready():
 	activeInstrument = get_node(initial_bard_path)
@@ -11,11 +11,11 @@ func _ready():
 		instrument.stage = self
 
 func changeActive(body):
-	activeInstrument = body
+	self.activeInstrument = body
 
 func _on_Input_played():
 	if not activeInstrument.hasSoundwave:
 			activeInstrument.pulse()
 
 func _process(delta):
-	pass
+	self.camera.position = self.activeInstrument.get_global_position()
