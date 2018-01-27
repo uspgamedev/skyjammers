@@ -9,6 +9,7 @@ var win = false
 var lose = false
 
 func _ready():
+	randomize()
 	activeInstrument = get_node(initial_bard_path)
 	activeInstrument.get_node("Riff").play(audioManager.getRiffPos())
 	for instrument in get_tree().get_nodes_in_group("bards"):
@@ -40,9 +41,22 @@ func _failed():
 
 func _on_Input_played():
 	if not win and not activeInstrument.hasSoundwave and activeInstrument.frequency == 0:
+		camera_shake()
 		activeInstrument.pulse()
 	elif win:
 		get_tree().change_scene("res://menus/stage-selector/main.tscn")
 
 func _process(delta):
 	self.camera.position = self.activeInstrument.get_global_position()
+
+func camera_shake():
+	var camera = get_node("Camera2D")
+	var timer = get_node("Camera2D/Timer")
+	var intensity = 4
+	
+	timer.start()
+	for i in range(3):
+		var offset = Vector2(randi() % intensity - randi() % intensity, randi() % intensity - randi() % intensity)
+		camera.set_offset(offset)
+		yield(timer, "timeout")
+	timer.stop()

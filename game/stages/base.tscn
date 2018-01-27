@@ -4,7 +4,7 @@
 [ext_resource path="res://input/input.tscn" type="PackedScene" id=2]
 [ext_resource path="res://audio/AudioManager.tscn" type="PackedScene" id=3]
 
-[node name="Stage" type="Node2D"]
+[node name="Stage" type="Node2D" index="0"]
 
 script = ExtResource( 1 )
 initial_bard_path = null
@@ -51,6 +51,13 @@ _sections_unfolded = [ "Limit", "Smoothing" ]
 __meta__ = {
 "_edit_lock_": true
 }
+
+[node name="Timer" type="Timer" parent="Camera2D" index="0"]
+
+process_mode = 1
+wait_time = 0.05
+one_shot = false
+autostart = false
 
 [node name="AudioManager" parent="." index="4" instance=ExtResource( 3 )]
 
