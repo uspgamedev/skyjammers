@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://islands/Island.tscn" type="PackedScene" id=1]
+
+[node name="Island" instance=ExtResource( 1 )]
+
+tile_data = PoolIntArray( -1, 13, 0, -65536, 14, 0, 65535, 21, 0, 0, 22, 0 )
+
+

@@ -1,0 +1,114 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://stages/base.gd" type="Script" id=1]
+[ext_resource path="res://input/input.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Movement/PathManager.tscn" type="PackedScene" id=3]
+[ext_resource path="res://islands/Island.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Instruments/Xylophone/Xylophone.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Instruments/Bass/Bass.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Instruments/GameBoy/Gameboy.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Instruments/Theremin/Theremin.tscn" type="PackedScene" id=8]
+[ext_resource path="res://goal/Goal.tscn" type="PackedScene" id=9]
+[ext_resource path="res://audio/AudioManager.tscn" type="PackedScene" id=10]
+
+[sub_resource type="Curve2D" id=1]
+
+bake_interval = 5.0
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 280, 60, 0, 0, 0, 0, 360, 60 )
+}
+
+[node name="Stage" type="Node2D" index="0"]
+
+script = ExtResource( 1 )
+initial_bard_path = NodePath("Instruments/Island/Bass")
+
+[node name="Input" parent="." index="0" instance=ExtResource( 2 )]
+
+[node name="Instruments" type="Node2D" parent="." index="1"]
+
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
+
+[node name="Path2D" parent="Instruments" index="0" instance=ExtResource( 3 )]
+
+curve = SubResource( 1 )
+
+[node name="PathFollow2D" parent="Instruments/Path2D" index="0"]
+
+position = Vector2( 280, 60 )
+
+[node name="Island" parent="Instruments/Path2D/PathFollow2D" index="0" instance=ExtResource( 4 )]
+
+tile_data = PoolIntArray( -1, 13, 0, -65536, 14, 0, 65535, 21, 0, 0, 22, 0 )
+
+[node name="Xylophone" parent="Instruments/Path2D/PathFollow2D/Island" index="0" instance=ExtResource( 5 )]
+
+[node name="Island" parent="Instruments" index="1" instance=ExtResource( 4 )]
+
+position = Vector2( 20, 60 )
+tile_data = PoolIntArray( -65538, 0, 0, -65537, 1, 0, -131072, 2, 0, -131071, 3, 0, -2, 15, 0, -1, 18, 0, -65536, 18, 0, -65535, 20, 0, 65534, 23, 0, 65535, 18, 0, 0, 18, 0, 1, 12, 0, 131070, 21, 0, 131071, 5, 0, 65536, 6, 0, 65537, 22, 0, 65541, 17, 0, 65542, 4, 0, 131077, 6, 0, 131078, 22, 0 )
+
+[node name="Bass" parent="Instruments/Island" index="0" instance=ExtResource( 6 )]
+
+[node name="Island2" parent="Instruments" index="2" instance=ExtResource( 4 )]
+
+position = Vector2( 140, 60 )
+tile_data = PoolIntArray( -2, 0, 0, -1, 1, 0, -65536, 1, 0, -65535, 2, 0, -65534, 2, 0, -65533, 3, 0, 65534, 16, 0, 65535, 10, 0, 0, 10, 0, 1, 10, 0, 2, 10, 0, 3, 12, 0, 131070, 24, 0, 131071, 6, 0, 65536, 7, 0, 65537, 4, 0, 65538, 6, 0, 65539, 27, 0, 131072, 24, 0, 131073, 27, 0 )
+
+[node name="Gameboy" parent="Instruments/Island2" index="0" instance=ExtResource( 7 )]
+
+[node name="Theremin" parent="Instruments/Island2" index="1" instance=ExtResource( 8 )]
+
+position = Vector2( 80, 0 )
+
+[node name="Island3" parent="Instruments" index="3" instance=ExtResource( 4 )]
+
+position = Vector2( 420, 60 )
+tile_data = PoolIntArray( -196608, 0, 0, -196607, 3, 0, -65538, 0, 0, -65537, 2, 0, -131072, 31, 0, -131071, 28, 0, -131070, 3, 0, -2, 24, 0, -1, 7, 0, -65536, 10, 0, -65535, 10, 0, -65534, 12, 0, 65535, 23, 0, 0, 10, 0, 1, 10, 0, 2, 20, 0, 131071, 24, 0, 65536, 26, 0, 65537, 26, 0, 65538, 27, 0 )
+
+[node name="Goal" parent="Instruments/Island3" index="0" instance=ExtResource( 9 )]
+
+[node name="Paths" type="Node2D" parent="." index="2"]
+
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Camera2D" type="Camera2D" parent="." index="3"]
+
+anchor_mode = 1
+rotating = false
+current = true
+zoom = Vector2( 1, 1 )
+limit_left = -10000000
+limit_top = -10000000
+limit_right = 10000000
+limit_bottom = 10000000
+limit_smoothed = false
+drag_margin_h_enabled = false
+drag_margin_v_enabled = false
+smoothing_enabled = true
+smoothing_speed = 5.0
+offset_v = 0.0
+offset_h = 0.0
+drag_margin_left = 0.2
+drag_margin_top = 0.2
+drag_margin_right = 0.2
+drag_margin_bottom = 0.2
+editor_draw_screen = true
+editor_draw_limits = false
+editor_draw_drag_margin = false
+_sections_unfolded = [ "Limit", "Smoothing" ]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="AudioManager" parent="." index="4" instance=ExtResource( 10 )]
+
+[connection signal="played" from="Input" to="." method="_on_Input_played"]
+
+
+[editable path="Instruments/Path2D"]
