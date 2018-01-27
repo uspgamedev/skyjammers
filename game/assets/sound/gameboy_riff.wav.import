@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/gameboy_riff.wav-314b53f47ffd6c5dc379e3813936fa05.sample"
+
+[deps]
+
+source_file="res://assets/sound/gameboy_riff.wav"
+source_md5="5936782efff4fd9bfb84453e6f3025de"
+
+dest_files=[ "res://.import/gameboy_riff.wav-314b53f47ffd6c5dc379e3813936fa05.sample" ]
+dest_md5="6547b5a1f661893face243cda8ef1a8c"
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=true
+edit/loop=true
+compress/mode=0

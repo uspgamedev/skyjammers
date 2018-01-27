@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/theremin_sfx.wav-82b8bc08e309eb9552588d8d64d10b77.sample"
+
+[deps]
+
+source_file="res://assets/sound/theremin_sfx.wav"
+source_md5="cc7db1b4d27481d5928dcd44ae80de4c"
+
+dest_files=[ "res://.import/theremin_sfx.wav-82b8bc08e309eb9552588d8d64d10b77.sample" ]
+dest_md5="74bc0857bcc2ce22f0551a3afa2e91e7"
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

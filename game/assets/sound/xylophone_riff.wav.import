@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/xylophone_riff.wav-4894af9968eed5458901f1fe76eddc1f.sample"
+
+[deps]
+
+source_file="res://assets/sound/xylophone_riff.wav"
+source_md5="130b1805a2e8bb7ef8f490b3ff41a852"
+
+dest_files=[ "res://.import/xylophone_riff.wav-4894af9968eed5458901f1fe76eddc1f.sample" ]
+dest_md5="30ca2eb258eea53626deb9aac0bc3ccb"
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=true
+edit/loop=true
+compress/mode=0

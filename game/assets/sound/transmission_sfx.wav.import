@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/transmission_sfx.wav-6dffecaff1b6c4f7087685ed951f6316.sample"
+
+[deps]
+
+source_file="res://assets/sound/transmission_sfx.wav"
+source_md5="12afba07352d380db1c5d2bf5c3b078b"
+
+dest_files=[ "res://.import/transmission_sfx.wav-6dffecaff1b6c4f7087685ed951f6316.sample" ]
+dest_md5="fb807f916803127629e4b759e72df672"
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

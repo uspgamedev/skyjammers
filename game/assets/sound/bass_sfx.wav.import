@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/bass_sfx.wav-4cf484c4defc1a80379ac586c1b2a361.sample"
+
+[deps]
+
+source_file="res://assets/sound/bass_sfx.wav"
+source_md5="8a98eab59229140592a13c49f7dbc2b6"
+
+dest_files=[ "res://.import/bass_sfx.wav-4cf484c4defc1a80379ac586c1b2a361.sample" ]
+dest_md5="63dc81be1b2166cf8bd74333a7e2678f"
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0
