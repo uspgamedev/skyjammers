@@ -21,9 +21,11 @@ func _ready():
 func changeActive(body):
 	if activeInstrument.is_in_group("bards"):
 		activeInstrument.active = false
+		activeInstrument.get_node("Sprite2").hide()
 	self.activeInstrument = body
 	if activeInstrument.is_in_group("bards"):
 		activeInstrument.active = true
+		activeInstrument.get_node("Sprite2").show()
 		body.get_node("Riff"+str(audioManager.getRiffSet())).play(audioManager.getRiffPos())
 		audioManager.playSFX("Transmission")
 	

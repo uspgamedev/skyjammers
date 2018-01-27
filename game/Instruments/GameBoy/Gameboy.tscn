@@ -8,7 +8,7 @@
 
 [node name="Gameboy" instance=ExtResource( 1 )]
 
-[node name="Sprite" parent="." index="0"]
+[node name="Sprite" parent="." index="1"]
 
 texture = ExtResource( 2 )
 
@@ -34,15 +34,15 @@ lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "Visibility" ]
 
-[node name="Riff0" parent="." index="5"]
+[node name="Riff0" parent="." index="6"]
 
 stream = ExtResource( 3 )
 
-[node name="Riff1" parent="." index="6"]
+[node name="Riff1" parent="." index="7"]
 
 stream = ExtResource( 4 )
 
-[node name="SFX" parent="." index="7"]
+[node name="SFX" parent="." index="8"]
 
 stream = ExtResource( 5 )
 

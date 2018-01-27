@@ -29,15 +29,15 @@ lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "custom_colors" ]
 
-[node name="Riff0" parent="." index="5"]
+[node name="Riff0" parent="." index="6"]
 
 stream = ExtResource( 2 )
 
-[node name="Riff1" parent="." index="6"]
+[node name="Riff1" parent="." index="7"]
 
 stream = ExtResource( 3 )
 
-[node name="SFX" parent="." index="7"]
+[node name="SFX" parent="." index="8"]
 
 stream = ExtResource( 4 )
 
