@@ -37,7 +37,7 @@ bus = "Master"
 [node name="Ambience" type="AudioStreamPlayer" parent="." index="3"]
 
 stream = ExtResource( 4 )
-volume_db = 10.0
+volume_db = -25.0
 autoplay = false
 mix_target = 0
 bus = "Master"

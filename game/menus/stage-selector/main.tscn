@@ -99,7 +99,4 @@ stage_scene = ExtResource( 7 )
 
 [node name="AudioManager" parent="." index="1" instance=ExtResource( 8 )]
 
-position = Vector2( 512.57, 299.219 )
-scale = Vector2( 14.7672, 8.1255 )
-
 

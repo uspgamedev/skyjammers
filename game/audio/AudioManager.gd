@@ -21,10 +21,9 @@ func _ready():
 func playBGM(bgm):
 	for b in BGMs:
 		if b.get_name() == bgm:
-			print(bgm)
-			get_node(bgm).play()
+			b.play()
 		else:
-			get_node(bgm).stop()
+			b.stop()
 
 func stopBGM(bgm):
 	for b in BGMs:
