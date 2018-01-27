@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Instruments/Instrument.gd" type="Script" id=1]
-[ext_resource path="res://assets/sound/bass_riff.wav" type="AudioStream" id=2]
-[ext_resource path="res://assets/sound/bass_sfx.wav" type="AudioStream" id=3]
+[ext_resource path="res://assets/img/cat-chara-bass.png" type="Texture" id=2]
+[ext_resource path="res://assets/sound/bass_riff.wav" type="AudioStream" id=3]
+[ext_resource path="res://assets/sound/bass_sfx.wav" type="AudioStream" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -30,6 +31,10 @@ frequency = 0
 
 [node name="Sprite" type="Sprite" parent="." index="0"]
 
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 2 )
+_sections_unfolded = [ "Animation", "Offset", "Transform", "Visibility" ]
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
 
 shape = SubResource( 1 )
@@ -49,7 +54,7 @@ autostart = false
 
 [node name="Riff" type="AudioStreamPlayer2D" parent="." index="4"]
 
-stream = ExtResource( 2 )
+stream = ExtResource( 3 )
 volume_db = 0.0
 autoplay = false
 max_distance = 2000.0
@@ -59,7 +64,7 @@ area_mask = 1
 
 [node name="SFX" type="AudioStreamPlayer2D" parent="." index="5"]
 
-stream = ExtResource( 3 )
+stream = ExtResource( 4 )
 volume_db = 0.0
 autoplay = false
 max_distance = 2000.0
