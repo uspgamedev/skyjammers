@@ -2,6 +2,8 @@ extends Node2D
 
 export(NodePath) var initial_bard_path
 
+export(int) var riff_set = 0
+
 onready var activeInstrument = null
 onready var camera = $Camera2D
 onready var audioManager = get_node("AudioManager")
@@ -10,6 +12,7 @@ var lose = false
 
 func _ready():
 	randomize()
+	audioManager.setRiffSet(self.riff_set)
 	activeInstrument = get_node(initial_bard_path)
 	activeInstrument.get_node("Riff"+str(audioManager.getRiffSet())).play(audioManager.getRiffPos())
 	for instrument in get_tree().get_nodes_in_group("bards"):
@@ -18,7 +21,9 @@ func _ready():
 		sentinel.connect("caught", self, "_failed")
 		sentinel.stage = self
 	audioManager.resetRiff()
-
+	
+	audioManager.playBGM("Ambience")
+	
 func changeActive(body):
 	if activeInstrument.is_in_group("bards"):
 		activeInstrument.active = false
@@ -41,8 +46,8 @@ func _failed():
 
 func _on_Input_played():
 	if not win and not activeInstrument.hasSoundwave and activeInstrument.frequency == 0:
-		camera_shake()
 		activeInstrument.pulse()
+		camera_shake()
 	elif win:
 		get_tree().change_scene("res://menus/stage-selector/main.tscn")
 

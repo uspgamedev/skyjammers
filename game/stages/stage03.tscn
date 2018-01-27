@@ -1,0 +1,160 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://stages/base.tscn" type="PackedScene" id=1]
+[ext_resource path="res://islands/tileset.tres" type="TileSet" id=2]
+[ext_resource path="res://Instruments/Bass/Bass.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Movement/PathManager.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Sentinels/Watcher/watcher.tscn" type="PackedScene" id=5]
+[ext_resource path="res://goal/Goal.tscn" type="PackedScene" id=6]
+
+[sub_resource type="Curve2D" id=1]
+
+resource_local_to_scene = true
+bake_interval = 5.0
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 110, 20, 0, 0, 0, 0, 640, 20 )
+}
+_sections_unfolded = [ "Resource" ]
+
+[sub_resource type="Curve2D" id=2]
+
+resource_local_to_scene = true
+bake_interval = 5.0
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 110, 101, 0, 0, 0, 0, 640, 101 )
+}
+_sections_unfolded = [ "Resource" ]
+
+[node name="Stage" index="0" instance=ExtResource( 1 )]
+
+initial_bard_path = NodePath("Instruments/Island/Bass")
+
+[node name="Island" type="TileMap" parent="Instruments" index="0"]
+
+mode = 0
+tile_set = ExtResource( 2 )
+cell_size = Vector2( 32, 32 )
+cell_quadrant_size = 16
+cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+cell_half_offset = 2
+cell_tile_origin = 0
+cell_y_sort = false
+cell_clip_uv = false
+collision_use_kinematic = false
+collision_friction = 1.0
+collision_bounce = 0.0
+collision_layer = 1
+collision_mask = 1
+occluder_light_mask = 1
+format = 1
+tile_data = PoolIntArray( -1, 0, 0, -65536, 1, 0, -65535, 3, 0, 65535, 4, 0, 0, 5, 0, 1, 7, 0, 131071, 12, 0, 65536, 13, 0, 65537, 15, 0 )
+_sections_unfolded = [ "Cell" ]
+
+[node name="Bass" parent="Instruments/Island" index="0" instance=ExtResource( 3 )]
+
+position = Vector2( 15, 10 )
+growth = 18.0
+
+[node name="Path2D" parent="Instruments" index="1" instance=ExtResource( 4 )]
+
+editor/display_folded = true
+curve = SubResource( 1 )
+_sections_unfolded = [ "Transform" ]
+speed = 0.4
+
+[node name="PathFollow2D" parent="Instruments/Path2D" index="0"]
+
+editor/display_folded = true
+
+[node name="Island" type="TileMap" parent="Instruments/Path2D/PathFollow2D" index="0"]
+
+mode = 0
+tile_set = ExtResource( 2 )
+cell_size = Vector2( 32, 32 )
+cell_quadrant_size = 16
+cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+cell_half_offset = 2
+cell_tile_origin = 0
+cell_y_sort = false
+cell_clip_uv = false
+collision_use_kinematic = false
+collision_friction = 1.0
+collision_bounce = 0.0
+collision_layer = 1
+collision_mask = 1
+occluder_light_mask = 1
+format = 1
+tile_data = PoolIntArray( -1, 0, 0, -65536, 1, 0, -65535, 3, 0, 65535, 4, 0, 0, 5, 0, 1, 7, 0, 131071, 12, 0, 65536, 13, 0, 65537, 15, 0 )
+_sections_unfolded = [ "Cell" ]
+
+[node name="Bass" parent="Instruments/Path2D/PathFollow2D/Island" index="0" instance=ExtResource( 3 )]
+
+position = Vector2( 15, 10 )
+
+[node name="Path2D2" parent="Instruments" index="2" instance=ExtResource( 4 )]
+
+editor/display_folded = true
+position = Vector2( 0, -1 )
+curve = SubResource( 2 )
+speed = 0.4
+
+[node name="Island" type="TileMap" parent="Instruments/Path2D2/PathFollow2D" index="0"]
+
+editor/display_folded = true
+position = Vector2( 0, 1 )
+mode = 0
+tile_set = ExtResource( 2 )
+cell_size = Vector2( 32, 32 )
+cell_quadrant_size = 16
+cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+cell_half_offset = 2
+cell_tile_origin = 0
+cell_y_sort = false
+cell_clip_uv = false
+collision_use_kinematic = false
+collision_friction = 1.0
+collision_bounce = 0.0
+collision_layer = 1
+collision_mask = 1
+occluder_light_mask = 1
+format = 1
+tile_data = PoolIntArray( -1, 0, 0, -65536, 1, 0, -65535, 3, 0, 65535, 4, 0, 0, 5, 0, 1, 7, 0, 131071, 12, 0, 65536, 13, 0, 65537, 15, 0 )
+_sections_unfolded = [ "Cell" ]
+
+[node name="Bass" parent="Instruments/Path2D2/PathFollow2D/Island" index="0" instance=ExtResource( 3 )]
+
+position = Vector2( 15, 10 )
+
+[node name="Sentinel" parent="Instruments" index="3" instance=ExtResource( 5 )]
+
+position = Vector2( 360, 0 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="IslandGoal" type="TileMap" parent="Instruments" index="4"]
+
+editor/display_folded = true
+position = Vector2( 720, 20 )
+mode = 0
+tile_set = ExtResource( 2 )
+cell_size = Vector2( 32, 32 )
+cell_quadrant_size = 16
+cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+cell_half_offset = 2
+cell_tile_origin = 0
+cell_y_sort = false
+cell_clip_uv = false
+collision_use_kinematic = false
+collision_friction = 1.0
+collision_bounce = 0.0
+collision_layer = 1
+collision_mask = 1
+occluder_light_mask = 1
+format = 1
+tile_data = PoolIntArray( -2, 0, 0, -1, 1, 0, -65536, 1, 0, -65535, 3, 0, 65534, 12, 0, 65535, 14, 0, 0, 14, 0, 1, 15, 0 )
+_sections_unfolded = [ "Cell", "Transform" ]
+
+[node name="Goal" parent="Instruments/IslandGoal" index="0" instance=ExtResource( 6 )]
+
+
+[editable path="Instruments/Path2D"]
+[editable path="Instruments/Path2D2"]

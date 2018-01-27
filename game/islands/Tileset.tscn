@@ -227,7 +227,7 @@ hframes = 8
 frame = 20
 _sections_unfolded = [ "Animation" ]
 
-[node name="26-unused2" type="Sprite" parent="." index="25"]
+[node name="26-unused" type="Sprite" parent="." index="25"]
 
 position = Vector2( 150, 30 )
 texture = ExtResource( 1 )

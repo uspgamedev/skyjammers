@@ -26,4 +26,16 @@ lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "Visibility" ]
 
+[node name="Riff0" parent="." index="6"]
+
+volume_db = -8.0
+
+[node name="Riff1" parent="." index="7"]
+
+volume_db = -8.0
+
+[node name="SFX" parent="." index="8"]
+
+position = Vector2( -0.323532, -0.32354 )
+
 
