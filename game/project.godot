@@ -26,5 +26,5 @@ zoom_out=[ Object(InputEventMouseButton,"resource_local_to_scene":false,"resourc
 
 [rendering]
 
-environment/default_clear_color=Color( 0.843137, 0.933333, 0.968627, 1 )
+environment/default_clear_color=Color( 0.745098, 0.94902, 1, 1 )
 environment/default_environment="res://default_env.tres"
