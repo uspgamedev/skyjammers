@@ -7,7 +7,6 @@
 [ext_resource path="res://stages/sample/sample.tscn" type="PackedScene" id=5]
 [ext_resource path="res://test/TheFinalStage.tscn" type="PackedScene" id=6]
 
-
 [node name="StageSelector" type="Control" index="0"]
 
 anchor_left = 0.0
