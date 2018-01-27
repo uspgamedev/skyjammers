@@ -1,0 +1,235 @@
+[gd_scene load_steps=18 format=2]
+
+[ext_resource path="res://stages/base.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Movement/PathManager.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Instruments/GameBoy/Gameboy.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Instruments/Xylophone/Xylophone.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Instruments/Bass/Bass.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Sentinels/Watcher/watcher.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Instruments/Instrument.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Sentinels/Sentinel.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Instruments/Theremin/Theremin.tscn" type="PackedScene" id=9]
+[ext_resource path="res://goal/Goal.tscn" type="PackedScene" id=10]
+
+[sub_resource type="Curve2D" id=1]
+
+bake_interval = 5.0
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, -11.7899, 37.4491, 0, 0, 0, 0, 2328.21, 37.4491 )
+}
+
+[sub_resource type="Curve2D" id=2]
+
+bake_interval = 5.0
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 0, 60, 0, 0, 0, 0, 2340, 60 )
+}
+
+[sub_resource type="Curve2D" id=3]
+
+bake_interval = 5.0
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 380, 190, 0, 0, 0, 0, 380, -980 )
+}
+
+[sub_resource type="Curve2D" id=4]
+
+bake_interval = 5.0
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 2350, -540, 0, 0, 0, 0, 10, -540, 0, 0, 0, 0, 10, -540 )
+}
+
+[sub_resource type="Curve2D" id=5]
+
+bake_interval = 5.0
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 2350, -700, 0, 0, 0, 0, 10, -700 )
+}
+
+[sub_resource type="Curve2D" id=6]
+
+bake_interval = 5.0
+_data = {
+"points": PoolVector2Array( 0, 0, -78.1926, 99.3698, 1960, -1040, -78.1926, -100.184, 0, 0, 1960, -840 )
+}
+
+[sub_resource type="Curve2D" id=7]
+
+bake_interval = 5.0
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 40, -1000, 0, 0, 0, 0, 40, -2170 )
+}
+
+[node name="Stage" index="0" instance=ExtResource( 1 )]
+
+initial_bard_path = NodePath("Instruments/Path2D/PathFollow2D/Gameboy")
+
+[node name="Path2D" parent="Instruments" index="0" instance=ExtResource( 2 )]
+
+position = Vector2( 11.7899, 2.55091 )
+curve = SubResource( 1 )
+speed = 0.15
+
+[node name="PathFollow2D" parent="Instruments/Path2D" index="0"]
+
+position = Vector2( -11.7899, 37.4491 )
+
+[node name="Gameboy" parent="Instruments/Path2D/PathFollow2D" index="0" instance=ExtResource( 3 )]
+
+growth = 24.0
+duration = 0.35
+
+[node name="Path2D2" parent="Instruments" index="1" instance=ExtResource( 2 )]
+
+position = Vector2( 0, 80 )
+curve = SubResource( 2 )
+speed = 0.15
+
+[node name="PathFollow2D" parent="Instruments/Path2D2" index="0"]
+
+position = Vector2( 0, 60 )
+
+[node name="Xylophone" parent="Instruments/Path2D2/PathFollow2D" index="0" instance=ExtResource( 4 )]
+
+growth = 24.0
+duration = 0.35
+
+[node name="Path2D3" parent="Instruments" index="2" instance=ExtResource( 2 )]
+
+position = Vector2( 1880, -50 )
+curve = SubResource( 3 )
+speed = 0.3
+
+[node name="PathFollow2D" parent="Instruments/Path2D3" index="0"]
+
+position = Vector2( 380, 190 )
+
+[node name="Bass" parent="Instruments/Path2D3/PathFollow2D" index="0" instance=ExtResource( 5 )]
+
+[node name="Sentinel" parent="Instruments" index="3" instance=ExtResource( 6 )]
+
+position = Vector2( 570, 40 )
+
+[node name="Sentinel2" parent="Instruments" index="4" instance=ExtResource( 6 )]
+
+position = Vector2( 930, 140 )
+
+[node name="Sentinel4" parent="Instruments" index="5" instance=ExtResource( 6 )]
+
+position = Vector2( 1360, 40 )
+
+[node name="Sentinel6" parent="Instruments" index="6" instance=ExtResource( 6 )]
+
+position = Vector2( 1770, 140 )
+
+[node name="Sentinel7" parent="Instruments" index="7" instance=ExtResource( 6 )]
+
+position = Vector2( 2080, 40 )
+
+[node name="Path2D4" parent="Instruments" index="8" instance=ExtResource( 2 )]
+
+position = Vector2( -10, -480 )
+curve = SubResource( 4 )
+speed = -0.25
+
+[node name="PathFollow2D" parent="Instruments/Path2D4" index="0"]
+
+position = Vector2( 1178.81, -540 )
+offset = 1161.61
+
+[node name="Instrument" parent="Instruments/Path2D4/PathFollow2D" index="0" instance=ExtResource( 7 )]
+
+growth = 24.0
+duration = 0.25
+
+[node name="Path2D5" parent="Instruments" index="9" instance=ExtResource( 2 )]
+
+position = Vector2( -10, -430 )
+curve = SubResource( 5 )
+speed = -0.25
+
+[node name="PathFollow2D" parent="Instruments/Path2D5" index="0"]
+
+position = Vector2( 1178.81, -700 )
+offset = 1161.61
+
+[node name="Instrument" parent="Instruments/Path2D5/PathFollow2D" index="0" instance=ExtResource( 7 )]
+
+growth = 24.0
+duration = 0.25
+
+[node name="Path2D6" parent="Instruments" index="10" instance=ExtResource( 2 )]
+
+position = Vector2( 0, -130 )
+curve = SubResource( 6 )
+
+[node name="PathFollow2D" parent="Instruments/Path2D6" index="0"]
+
+position = Vector2( 1960, -1040 )
+
+[node name="Sentinel" parent="Instruments/Path2D6/PathFollow2D" index="0" instance=ExtResource( 8 )]
+
+[node name="Path2D7" parent="Instruments" index="11" instance=ExtResource( 2 )]
+
+position = Vector2( -670, -130 )
+curve = SubResource( 6 )
+
+[node name="PathFollow2D" parent="Instruments/Path2D7" index="0"]
+
+position = Vector2( 1960, -1040 )
+
+[node name="Sentinel" parent="Instruments/Path2D7/PathFollow2D" index="0" instance=ExtResource( 8 )]
+
+[node name="Sentinel3" parent="Instruments" index="12" instance=ExtResource( 6 )]
+
+position = Vector2( 1790, -1020 )
+
+[node name="Sentinel5" parent="Instruments" index="13" instance=ExtResource( 6 )]
+
+position = Vector2( 1450, -1130 )
+
+[node name="Sentinel8" parent="Instruments" index="14" instance=ExtResource( 6 )]
+
+position = Vector2( 1020, -1020 )
+
+[node name="Sentinel9" parent="Instruments" index="15" instance=ExtResource( 6 )]
+
+position = Vector2( 730, -1130 )
+
+[node name="Path2D8" parent="Instruments" index="16" instance=ExtResource( 2 )]
+
+position = Vector2( 440, -90 )
+curve = SubResource( 7 )
+
+[node name="PathFollow2D" parent="Instruments/Path2D8" index="0"]
+
+position = Vector2( 40, -2158.3 )
+offset = 1158.54
+
+[node name="Theremin" parent="Instruments/Path2D8/PathFollow2D" index="0" instance=ExtResource( 9 )]
+
+[node name="Sentinel10" parent="Instruments" index="17" instance=ExtResource( 6 )]
+
+position = Vector2( 300, -1130 )
+
+[node name="Sentinel11" parent="Instruments" index="18" instance=ExtResource( 6 )]
+
+position = Vector2( -10, -1020 )
+
+[node name="Sentinel12" parent="Instruments" index="19" instance=ExtResource( 6 )]
+
+position = Vector2( -122, -1130 )
+
+[node name="Goal" parent="Instruments" index="20" instance=ExtResource( 10 )]
+
+position = Vector2( 430, -2210 )
+
+
+[editable path="Instruments/Path2D"]
+[editable path="Instruments/Path2D2"]
+[editable path="Instruments/Path2D3"]
+[editable path="Instruments/Path2D4"]
+[editable path="Instruments/Path2D5"]
+[editable path="Instruments/Path2D6"]
+[editable path="Instruments/Path2D7"]
+[editable path="Instruments/Path2D8"]
