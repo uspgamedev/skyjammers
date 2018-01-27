@@ -7,12 +7,13 @@
 resource_local_to_scene = true
 bake_interval = 5.0
 _data = {
-"points": PoolVector2Array( 0, 0, -2.45548, 276.241, -193.847, -171.008, -282.38, 173.111, 257.825, -159.606, 86.0776, -119.443, 106.813, 308.162, 0, 0, 238.317, -190.652 )
+"points": PoolVector2Array(  )
 }
 _sections_unfolded = [ "Resource" ]
 
-[node name="Path2D" type="Path2D"]
+[node name="Path2D" type="Path2D" index="0"]
 
+position = Vector2( 0, 7.5367 )
 curve = SubResource( 1 )
 script = ExtResource( 1 )
 cyclic = null
