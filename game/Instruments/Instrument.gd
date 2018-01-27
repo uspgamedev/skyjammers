@@ -18,12 +18,16 @@ func _ready():
 
 func pulse():
 	var sw = soundWave.instance()
+	var shape = get_node("SoundWaveShape").duplicate()
+	var rot = get_node("SoundWaveShape").get_rotation()
+	
+	if get_node("SoundWaveShape/Rotate"):
+		rot = get_node("SoundWaveShape/Rotate").get_rotation()
+	
 	sw.growth = self.growth
 	sw.duration = self.duration
-	var shape = get_node("SoundWaveShape").duplicate()
-	
 	sw.set_position(get_global_position())
-	sw.set_rotation(get_parent().get_rotation())
+	sw.set_rotation(rot)
 	sw.instrument = self
 	sw.stage = self.stage
 	shape.is_active = true
@@ -38,12 +42,16 @@ func pulse():
 
 func mini_pulse():
 	var sw = soundWave.instance()
+	var shape = get_node("SoundWaveShape").duplicate()
+	var rot = get_node("SoundWaveShape").get_rotation()
+	
+	if get_node("SoundWaveShape/Rotate"):
+		rot = get_node("SoundWaveShape/Rotate").get_rotation()
+	
 	sw.growth = self.growth
 	sw.duration = self.duration
-	var shape = get_node("SoundWaveShape").duplicate()
-	
 	sw.set_position(get_global_position())
-	sw.set_rotation(get_parent().get_rotation())
+	sw.set_rotation(rot)
 	sw.instrument = self
 	sw.stage = self.stage
 	shape.is_active = true
