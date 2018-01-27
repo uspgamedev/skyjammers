@@ -21,7 +21,7 @@ func pulse():
 	var shape = get_node("SoundWaveShape").duplicate()
 	var rot = get_node("SoundWaveShape").get_rotation()
 	
-	if get_node("SoundWaveShape/Rotate"):
+	if get_node("SoundWaveShape").has_node("Rotate"):
 		rot = get_node("SoundWaveShape/Rotate").get_rotation()
 	
 	sw.growth = self.growth
@@ -45,7 +45,7 @@ func mini_pulse():
 	var shape = get_node("SoundWaveShape").duplicate()
 	var rot = get_node("SoundWaveShape").get_rotation()
 	
-	if get_node("SoundWaveShape/Rotate"):
+	if get_node("SoundWaveShape").has_node("Rotate"):
 		rot = get_node("SoundWaveShape/Rotate").get_rotation()
 	
 	sw.growth = self.growth
@@ -59,9 +59,6 @@ func mini_pulse():
 	shape.show()
 	sw.add_child(shape)
 	stage.get_node("Instruments").add_child(sw)
-	
-	#play correspondent sfx
-	get_node("SFX").play()
 
 
 func _on_Timer_timeout():
