@@ -13,14 +13,14 @@ _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, 220, 110, 0, 0, 0, 0, 1040, 110 )
 }
 
-[sub_resource type="Curve2D" id=3]
+[sub_resource type="Curve2D" id=2]
 
 bake_interval = 5.0
 _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 490, 0 )
 }
 
-[sub_resource type="Curve2D" id=2]
+[sub_resource type="Curve2D" id=3]
 
 bake_interval = 5.0
 _data = {
@@ -48,6 +48,7 @@ editor/display_folded = true
 curve = SubResource( 1 )
 cyclic = false
 speed = 0.8
+cycle_starting_point = 0
 
 [node name="PathFollow2D" parent="Instruments/Path2D" index="0"]
 
@@ -59,13 +60,14 @@ position = Vector2( 220, 110 )
 
 editor/display_folded = true
 position = Vector2( 340, -20 )
-curve = SubResource( 3 )
+curve = SubResource( 2 )
 speed = 0.2
+cycle_starting_point = 0.8
 
 [node name="PathFollow2D" parent="Instruments/Path2D2" index="0"]
 
-position = Vector2( 391.899, 0 )
-offset = 392.226
+position = Vector2( 147.226, 0 )
+offset = 147.085
 
 [node name="Instrument" parent="Instruments/Path2D2/PathFollow2D" index="0" instance=ExtResource( 2 )]
 
@@ -73,13 +75,14 @@ offset = 392.226
 
 editor/display_folded = true
 position = Vector2( 340, -10 )
-curve = SubResource( 2 )
+curve = SubResource( 3 )
 _sections_unfolded = [ "Transform" ]
 speed = 0.3
+cycle_starting_point = 0
 
 [node name="PathFollow2D" parent="Instruments/Path2D4" index="0"]
 
-position = Vector2( -20, 171.899 )
+position = Vector2( -20, 171.898 )
 offset = 392.226
 
 [node name="Instrument" parent="Instruments/Path2D4/PathFollow2D" index="0" instance=ExtResource( 2 )]
@@ -103,7 +106,8 @@ position = Vector2( 700, -240 )
 [node name="Path2D3" parent="Instruments" index="8" instance=ExtResource( 3 )]
 
 curve = SubResource( 4 )
-speed = 0.8
+speed = 0.6
+cycle_starting_point = 0.2
 
 [node name="PathFollow2D" parent="Instruments/Path2D3" index="0"]
 
