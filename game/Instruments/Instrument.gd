@@ -1,10 +1,14 @@
 extends KinematicBody2D
 
+export(float) var growth = 10
+export(float) var duration = 1
 export var frequency = 0 # if different than 0, outoplays in that frequency
+
 onready var soundWave = load("res://SoundWave/SoundWave.tscn")
 var hasSoundwave = false
 var active = false
 var stage
+
 
 func _ready():
 	if frequency != 0:
@@ -14,6 +18,8 @@ func _ready():
 
 func pulse():
 	var sw = soundWave.instance()
+	sw.growth = self.growth
+	sw.duration = self.duration
 	var shape = get_node("SoundWaveShape").duplicate()
 	
 	sw.set_position(get_global_position())
