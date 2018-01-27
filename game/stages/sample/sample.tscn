@@ -37,7 +37,7 @@ _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, 700, 270, 0, 0, 0, 0, 700, -210 )
 }
 
-[node name="Stage" index="0" instance=ExtResource( 1 )]
+[node name="Stage" instance=ExtResource( 1 )]
 
 initial_bard_path = NodePath("Instruments/Gameboy")
 

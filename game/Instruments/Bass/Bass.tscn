@@ -1,10 +1,13 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://Instruments/Instrument.tscn" type="PackedScene" id=1]
-[ext_resource path="res://assets/sound/bass_riff.wav" type="AudioStream" id=2]
-[ext_resource path="res://assets/sound/bass_sfx.wav" type="AudioStream" id=3]
+[ext_resource path="res://Instruments/Bass/BassWaveShape.gd" type="Script" id=2]
 
 [node name="Bass" instance=ExtResource( 1 )]
+
+[node name="SoundWaveShape" parent="." index="2"]
+
+script = ExtResource( 2 )
 
 [node name="Label" type="Label" parent="." index="4"]
 
@@ -25,13 +28,5 @@ text = "bass"
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
-
-[node name="Riff" parent="." index="5"]
-
-stream = ExtResource( 2 )
-
-[node name="SFX" parent="." index="6"]
-
-stream = ExtResource( 3 )
 
 
