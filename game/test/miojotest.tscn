@@ -1,0 +1,57 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://stages/base.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Instruments/Instrument.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Movement/PathOnly.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Movement/FollowOnly.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Sentinels/Watcher/watcher.tscn" type="PackedScene" id=5]
+
+[node name="Stage" index="0" instance=ExtResource( 1 )]
+
+initial_bard_path = NodePath("Instruments/Instrument")
+
+[node name="Instrument" parent="Instruments" index="0" instance=ExtResource( 2 )]
+
+position = Vector2( 104, 70 )
+
+[node name="Path2D" parent="Instruments" index="1" instance=ExtResource( 3 )]
+
+[node name="PathFollow2D" parent="Instruments/Path2D" index="0" instance=ExtResource( 4 )]
+
+position = Vector2( 108, 193 )
+rotation = -0.00289291
+override_parent_speed = true
+
+[node name="Instrument" parent="Instruments/Path2D/PathFollow2D" index="0" instance=ExtResource( 2 )]
+
+[node name="Instrument2" parent="Instruments/Path2D/PathFollow2D" index="1" instance=ExtResource( 2 )]
+
+position = Vector2( 0.202507, -69.9997 )
+
+[node name="PathFollow2D2" parent="Instruments/Path2D" index="1" instance=ExtResource( 4 )]
+
+position = Vector2( 452.515, 187.637 )
+offset = 472.135
+_sections_unfolded = [ "Transform" ]
+speed = 1.5
+override_parent_speed = true
+
+[node name="Sentinel" parent="Instruments/Path2D/PathFollow2D2" index="0" instance=ExtResource( 5 )]
+
+_sections_unfolded = [ "Transform" ]
+
+[node name="Instrument" parent="Instruments/Path2D/PathFollow2D2" index="1" instance=ExtResource( 2 )]
+
+position = Vector2( 5.65033, 95.1061 )
+
+[node name="PathFollow2D3" parent="Instruments/Path2D" index="2" instance=ExtResource( 4 )]
+
+position = Vector2( 138, 253 )
+h_offset = 30.0
+v_offset = 60.0
+speed = 0.5
+override_parent_speed = true
+
+[node name="Sentinel" parent="Instruments/Path2D/PathFollow2D3" index="0" instance=ExtResource( 5 )]
+
+

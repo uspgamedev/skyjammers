@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Movement/path.gd" type="Script" id=1]
+
+[sub_resource type="Curve2D" id=1]
+
+bake_interval = 5.0
+_data = {
+"points": PoolVector2Array( 0, 0, 41, 204, 108, 193, -98, -294, 0, 0, 454, 192 )
+}
+
+[node name="Path2D" type="Path2D"]
+
+curve = SubResource( 1 )
+script = ExtResource( 1 )
+cyclic = null
+speed = 1
+
+

@@ -1,0 +1,18 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Movement/path_manager.gd" type="Script" id=1]
+
+[node name="PathFollow2D" type="PathFollow2D"]
+
+offset = 0.0
+h_offset = 0.0
+v_offset = 0.0
+rotate = false
+cubic_interp = true
+loop = true
+lookahead = 4.0
+script = ExtResource( 1 )
+speed = 1
+override_parent_speed = false
+
+

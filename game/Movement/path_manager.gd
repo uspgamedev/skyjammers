@@ -2,10 +2,13 @@ extends Node2D
 
 var mult = 1
 onready var cyclic = get_parent().cyclic
-onready var speed = get_parent().speed
+export (float) var speed = 1
+export (bool) var override_parent_speed = false
 
 func _ready():
 	set_process(true)
+	if not override_parent_speed:
+		speed = get_parent().speed
 
 func _process(delta):
 	var curdelta = delta*mult*speed
