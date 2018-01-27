@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://menus/theme.tres" type="Theme" id=1]
 [ext_resource path="res://menus/stage-selector/button.tscn" type="PackedScene" id=2]
 [ext_resource path="res://stages/stage01.tscn" type="PackedScene" id=3]
-[ext_resource path="res://stages/stage03.tscn" type="PackedScene" id=4]
-[ext_resource path="res://test/TheFinalStage.tscn" type="PackedScene" id=5]
+[ext_resource path="res://stages/stage02.tscn" type="PackedScene" id=4]
+[ext_resource path="res://stages/stage03.tscn" type="PackedScene" id=5]
+[ext_resource path="res://test/TheFinalStage.tscn" type="PackedScene" id=6]
 
 [node name="StageSelector" type="Control" index="0"]
 
@@ -77,20 +78,20 @@ stage_scene = ExtResource( 3 )
 margin_left = 160.0
 margin_right = 316.0
 text = " Stage 02 "
-stage_scene = ExtResource( 3 )
+stage_scene = ExtResource( 4 )
 
 [node name="Button3" parent="Panel/VBoxContainer/GridContainer" index="2" instance=ExtResource( 2 )]
 
 margin_left = 320.0
 margin_right = 460.0
 text = "Stage 03"
-stage_scene = ExtResource( 4 )
+stage_scene = ExtResource( 5 )
 
 [node name="Button4" parent="Panel/VBoxContainer/GridContainer" index="3" instance=ExtResource( 2 )]
 
 margin_left = 464.0
 margin_right = 711.0
 text = "THE FINAL STAGE"
-stage_scene = ExtResource( 5 )
+stage_scene = ExtResource( 6 )
 
 
