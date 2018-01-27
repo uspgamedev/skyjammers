@@ -59,9 +59,6 @@ func mini_pulse():
 	shape.show()
 	sw.add_child(shape)
 	stage.get_node("Instruments").add_child(sw)
-	
-	#play correspondent sfx
-	get_node("SFX").play()
 
 
 func _on_Timer_timeout():
