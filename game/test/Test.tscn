@@ -16,7 +16,7 @@ initial_bard_path = NodePath("Instruments/Instrument")
 
 [node name="Instrument" parent="Instruments" index="0" instance=ExtResource( 2 )]
 
-position = Vector2( 298.67, 281.176 )
+position = Vector2( 355.061, 379.362 )
 
 [node name="Rotate" parent="Instruments" index="1" instance=ExtResource( 3 )]
 
@@ -29,20 +29,20 @@ frequency = 2
 
 [node name="Bass" parent="Instruments" index="2" instance=ExtResource( 4 )]
 
-position = Vector2( 74.1199, 286.706 )
+position = Vector2( -14.7786, 378.922 )
 growth = 7.0
 
 [node name="Gameboy" parent="Instruments" index="3" instance=ExtResource( 5 )]
 
-position = Vector2( 151.498, 230.505 )
+position = Vector2( 165.43, 247.754 )
 
 [node name="Theremin" parent="Instruments" index="4" instance=ExtResource( 6 )]
 
-position = Vector2( 217.473, 265.529 )
+position = Vector2( 260.595, 307.988 )
 
 [node name="Xylophone" parent="Instruments" index="5" instance=ExtResource( 7 )]
 
-position = Vector2( 114.845, 267.972 )
+position = Vector2( 71.7227, 312.421 )
 
 [node name="Sentinel" parent="." index="4" instance=ExtResource( 8 )]
 

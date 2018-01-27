@@ -31,7 +31,7 @@ func pulse():
 	stage.get_node("Instruments").add_child(sw)
 	
 	#play correspondent sfx
-	stage.get_node("AudioManager").playSFX(self.get_name())
+	get_node("SFX").play()
 
 
 func _on_Timer_timeout():
