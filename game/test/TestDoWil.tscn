@@ -30,9 +30,12 @@ curve = SubResource( 1 )
 _sections_unfolded = [ "Transform" ]
 cyclic = true
 
-[node name="Instrument" parent="Instruments/Path2D/PathFollow2D" index="0" instance=ExtResource( 2 )]
+[node name="PathFollow2D" parent="Instruments/Path2D" index="0"]
 
-_sections_unfolded = [ "Transform" ]
+position = Vector2( 98.8508, -31.3744 )
+rotation = 1.96968
+
+[node name="Instrument" parent="Instruments/Path2D/PathFollow2D" index="0" instance=ExtResource( 2 )]
 
 
 [editable path="Instruments/Path2D"]
