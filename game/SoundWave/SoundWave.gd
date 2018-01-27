@@ -1,6 +1,7 @@
 extends Area2D
 
 var instrument
+var stage
 
 func _ready():
 	pulse()
@@ -16,7 +17,7 @@ func pulse():
 
 func _on_SoundWave_body_entered( body ):
 	if body != instrument:
-		get_parent().get_parent().changeActive(body)
+		stage.changeActive(body)
 		selfDestruct()
 
 func selfDestruct():
