@@ -28,7 +28,7 @@ func changeActive(body):
 		OS.alert("very gud job", "so pretty")
 
 func _failed():
-	get_tree().change_scene("res://stages/sample/sample.tscn")
+	get_tree().reload_current_scene()
 	#game_over = true
 	#OS.alert("GAME OVER", "u suk")
 
