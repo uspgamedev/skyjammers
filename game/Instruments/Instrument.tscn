@@ -18,7 +18,7 @@ extents = Vector2( 10, 10 )
 custom_solver_bias = 0.0
 radius = 10.0
 
-[node name="Instrument" type="KinematicBody2D" groups=[
+[node name="Instrument" type="KinematicBody2D" index="0" groups=[
 "bards",
 ]]
 
@@ -30,7 +30,7 @@ script = ExtResource( 1 )
 _sections_unfolded = [ "Transform" ]
 growth = 12.0
 duration = 0.3
-frequency = 0
+frequency = 3.0
 
 [node name="Sprite2" type="Sprite" parent="." index="0"]
 
