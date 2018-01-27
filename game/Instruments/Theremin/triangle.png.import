@@ -7,10 +7,10 @@ path="res://.import/triangle.png-006bc70d833646e958a907cad0a44155.stex"
 [deps]
 
 source_file="res://Instruments/Theremin/triangle.png"
-source_md5="95cf95f85de54374d59e63dd375fc4be"
+source_md5="d55ad7f1ed68aca9083ced4bc329414d"
 
 dest_files=[ "res://.import/triangle.png-006bc70d833646e958a907cad0a44155.stex" ]
-dest_md5="25c116fb6527bbd4cef1c891936ca03d"
+dest_md5="1930f56725138e67c96200fefc90c060"
 
 [params]
 
