@@ -6,7 +6,6 @@
 [ext_resource path="res://sentinels/Sentinel.tscn" type="PackedScene" id=4]
 [ext_resource path="res://goal/Goal.tscn" type="PackedScene" id=5]
 
-
 [node name="Stage" index="0" instance=ExtResource( 1 )]
 
 initial_bard_path = NodePath("Instruments/Instrument")
@@ -17,11 +16,12 @@ position = Vector2( 282.38, 286.063 )
 
 [node name="Rotate" parent="Instruments" index="1" instance=ExtResource( 3 )]
 
-editor/display_folded = true
 position = Vector2( 399.38, 242.167 )
 angular_velocity = 4
 
 [node name="Instrument2" parent="Instruments/Rotate" index="0" instance=ExtResource( 2 )]
+
+frequency = 2
 
 [node name="Sentinel" parent="." index="4" instance=ExtResource( 4 )]
 

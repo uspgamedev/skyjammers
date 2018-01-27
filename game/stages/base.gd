@@ -12,7 +12,11 @@ func _ready():
 		instrument.stage = self
 
 func changeActive(body):
+	if activeInstrument.is_in_group("bards"):
+		activeInstrument.active = false
 	self.activeInstrument = body
+	if activeInstrument.is_in_group("bards"):
+		activeInstrument.active = true
 	
 	if activeInstrument.is_in_group("sentinels"):
 		game_over = true
@@ -22,7 +26,7 @@ func changeActive(body):
 		OS.alert("very gud job", "so pretty")
 
 func _on_Input_played():
-	if not game_over and not activeInstrument.hasSoundwave:
+	if not game_over and not activeInstrument.hasSoundwave and activeInstrument.frequency == 0:
 			activeInstrument.pulse()
 
 func _process(delta):
