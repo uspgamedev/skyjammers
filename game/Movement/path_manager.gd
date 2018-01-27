@@ -6,7 +6,6 @@ onready var speed = get_parent().speed
 
 func _ready():
 	set_process(true)
-	self.unit_offset = get_parent().cycle_starting_point
 
 func _process(delta):
 	var curdelta = delta*mult*speed
