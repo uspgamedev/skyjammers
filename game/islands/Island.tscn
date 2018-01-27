@@ -3,7 +3,7 @@
 [ext_resource path="res://islands/tileset.tres" type="TileSet" id=1]
 [ext_resource path="res://islands/island.gd" type="Script" id=2]
 
-[node name="Island" type="TileMap" index="0"]
+[node name="Island" type="TileMap"]
 
 mode = 0
 tile_set = ExtResource( 1 )
@@ -28,11 +28,10 @@ _sections_unfolded = [ "Cell" ]
 [node name="Under" type="TileMap" parent="." index="0"]
 
 show_behind_parent = true
-position = Vector2( 0, -16 )
 mode = 0
 tile_set = ExtResource( 1 )
 cell_size = Vector2( 32, 32 )
-cell_quadrant_size = 32
+cell_quadrant_size = 16
 cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
 cell_half_offset = 2
 cell_tile_origin = 0
@@ -51,11 +50,10 @@ _sections_unfolded = [ "Cell", "Transform", "Visibility" ]
 [node name="Under2" type="TileMap" parent="." index="1"]
 
 show_behind_parent = true
-position = Vector2( 0, -16 )
 mode = 0
 tile_set = ExtResource( 1 )
 cell_size = Vector2( 32, 32 )
-cell_quadrant_size = 32
+cell_quadrant_size = 16
 cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
 cell_half_offset = 2
 cell_tile_origin = 0

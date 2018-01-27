@@ -3,7 +3,7 @@
 [ext_resource path="res://islands/grass-tiles-water.png" type="Texture" id=1]
 [ext_resource path="res://islands/cliff-tiles-v2.png" type="Texture" id=2]
 
-[node name="Node2D" type="Node2D" index="0"]
+[node name="Node2D" type="Node2D"]
 
 [node name="001-upleft" type="Sprite" parent="." index="0"]
 
@@ -522,7 +522,7 @@ _sections_unfolded = [ "Animation", "Region" ]
 position = Vector2( 390, 20 )
 texture = ExtResource( 2 )
 region_enabled = true
-region_rect = Rect2( 1, 1, 32, 32 )
+region_rect = Rect2( 1, 17, 32, 32 )
 _sections_unfolded = [ "Region" ]
 
 [node name="066" type="Sprite" parent="." index="65"]
@@ -530,7 +530,7 @@ _sections_unfolded = [ "Region" ]
 position = Vector2( 430, 20 )
 texture = ExtResource( 2 )
 region_enabled = true
-region_rect = Rect2( 35, 1, 32, 32 )
+region_rect = Rect2( 35, 17, 32, 32 )
 _sections_unfolded = [ "Region" ]
 
 [node name="067" type="Sprite" parent="." index="66"]
@@ -538,7 +538,7 @@ _sections_unfolded = [ "Region" ]
 position = Vector2( 470, 20 )
 texture = ExtResource( 2 )
 region_enabled = true
-region_rect = Rect2( 69, 1, 32, 32 )
+region_rect = Rect2( 69, 17, 32, 32 )
 _sections_unfolded = [ "Region" ]
 
 [node name="068" type="Sprite" parent="." index="67"]
@@ -546,7 +546,7 @@ _sections_unfolded = [ "Region" ]
 position = Vector2( 510, 20 )
 texture = ExtResource( 2 )
 region_enabled = true
-region_rect = Rect2( 103, 1, 32, 32 )
+region_rect = Rect2( 103, 17, 32, 32 )
 _sections_unfolded = [ "Region" ]
 
 [node name="069" type="Sprite" parent="." index="68"]
@@ -554,7 +554,7 @@ _sections_unfolded = [ "Region" ]
 position = Vector2( 390, 60 )
 texture = ExtResource( 2 )
 region_enabled = true
-region_rect = Rect2( 1, 35, 32, 32 )
+region_rect = Rect2( 1, 51, 32, 32 )
 _sections_unfolded = [ "Region" ]
 
 [node name="070" type="Sprite" parent="." index="69"]
@@ -562,7 +562,7 @@ _sections_unfolded = [ "Region" ]
 position = Vector2( 430, 60 )
 texture = ExtResource( 2 )
 region_enabled = true
-region_rect = Rect2( 35, 35, 32, 32 )
+region_rect = Rect2( 35, 51, 32, 32 )
 _sections_unfolded = [ "Region" ]
 
 [node name="071" type="Sprite" parent="." index="70"]
@@ -570,7 +570,7 @@ _sections_unfolded = [ "Region" ]
 position = Vector2( 470, 60 )
 texture = ExtResource( 2 )
 region_enabled = true
-region_rect = Rect2( 69, 35, 32, 32 )
+region_rect = Rect2( 69, 51, 32, 32 )
 _sections_unfolded = [ "Region" ]
 
 [node name="072" type="Sprite" parent="." index="71"]
@@ -578,7 +578,7 @@ _sections_unfolded = [ "Region" ]
 position = Vector2( 510, 60 )
 texture = ExtResource( 2 )
 region_enabled = true
-region_rect = Rect2( 103, 35, 32, 32 )
+region_rect = Rect2( 103, 51, 32, 32 )
 _sections_unfolded = [ "Region" ]
 
 [node name="073" type="Sprite" parent="." index="72"]
@@ -594,7 +594,7 @@ _sections_unfolded = [ "Region" ]
 position = Vector2( 430, 100 )
 texture = ExtResource( 2 )
 region_enabled = true
-region_rect = Rect2( 35, 69, 32, 32 )
+region_rect = Rect2( 35, 69, 0, 0 )
 _sections_unfolded = [ "Region" ]
 
 [node name="075" type="Sprite" parent="." index="74"]
@@ -602,7 +602,7 @@ _sections_unfolded = [ "Region" ]
 position = Vector2( 470, 100 )
 texture = ExtResource( 2 )
 region_enabled = true
-region_rect = Rect2( 69, 69, 32, 32 )
+region_rect = Rect2( 69, 69, 0, 0 )
 _sections_unfolded = [ "Region" ]
 
 [node name="076" type="Sprite" parent="." index="75"]
