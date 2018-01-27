@@ -6,8 +6,10 @@
 
 [node name="Stage" type="Node2D"]
 
+position = Vector2( 21.1771, 19.5481 )
 script = ExtResource( 1 )
 initial_bard_path = null
+riff_set = 0
 
 [node name="Input" parent="." index="0" instance=ExtResource( 2 )]
 
