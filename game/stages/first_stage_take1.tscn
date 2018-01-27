@@ -1,0 +1,96 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://stages/base.gd" type="Script" id=1]
+[ext_resource path="res://input/input.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Instruments/Bass/Bass.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Instruments/GameBoy/Gameboy.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Instruments/Theremin/Theremin.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Movement/PathManager.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Instruments/Xylophone/Xylophone.tscn" type="PackedScene" id=7]
+[ext_resource path="res://goal/Goal.tscn" type="PackedScene" id=8]
+[ext_resource path="res://audio/AudioManager.tscn" type="PackedScene" id=9]
+
+[sub_resource type="Curve2D" id=1]
+
+bake_interval = 5.0
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 280, 60, 0, 0, 0, 0, 360, 60 )
+}
+
+[node name="Stage" type="Node2D" index="0"]
+
+script = ExtResource( 1 )
+initial_bard_path = NodePath("Instruments/Bass")
+
+[node name="Input" parent="." index="0" instance=ExtResource( 2 )]
+
+[node name="Instruments" type="Node2D" parent="." index="1"]
+
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
+
+[node name="Bass" parent="Instruments" index="0" instance=ExtResource( 3 )]
+
+position = Vector2( 20, 60 )
+
+[node name="Gameboy" parent="Instruments" index="1" instance=ExtResource( 4 )]
+
+position = Vector2( 140, 60 )
+
+[node name="Theremin" parent="Instruments" index="2" instance=ExtResource( 5 )]
+
+position = Vector2( 220, 60 )
+
+[node name="Path2D" parent="Instruments" index="3" instance=ExtResource( 6 )]
+
+curve = SubResource( 1 )
+
+[node name="Xylophone" parent="Instruments/Path2D/PathFollow2D" index="0" instance=ExtResource( 7 )]
+
+[node name="Goal" parent="Instruments" index="4" instance=ExtResource( 8 )]
+
+position = Vector2( 420, 60 )
+
+[node name="Paths" type="Node2D" parent="." index="2"]
+
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Camera2D" type="Camera2D" parent="." index="3"]
+
+anchor_mode = 1
+rotating = false
+current = true
+zoom = Vector2( 1, 1 )
+limit_left = -10000000
+limit_top = -10000000
+limit_right = 10000000
+limit_bottom = 10000000
+limit_smoothed = false
+drag_margin_h_enabled = false
+drag_margin_v_enabled = false
+smoothing_enabled = true
+smoothing_speed = 5.0
+offset_v = 0.0
+offset_h = 0.0
+drag_margin_left = 0.2
+drag_margin_top = 0.2
+drag_margin_right = 0.2
+drag_margin_bottom = 0.2
+editor_draw_screen = true
+editor_draw_limits = false
+editor_draw_drag_margin = false
+_sections_unfolded = [ "Limit", "Smoothing" ]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="AudioManager" parent="." index="4" instance=ExtResource( 9 )]
+
+[connection signal="played" from="Input" to="." method="_on_Input_played"]
+
+
+[editable path="Instruments/Path2D"]
