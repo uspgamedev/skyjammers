@@ -14,6 +14,7 @@ _data = {
 script/source = "extends Path2D
 
 export (bool) var cyclic
+export (float) var speed = 1
 "
 
 [node name="Path2D" type="Path2D"]
@@ -21,6 +22,7 @@ export (bool) var cyclic
 curve = SubResource( 1 )
 script = SubResource( 2 )
 cyclic = null
+speed = 1
 
 [node name="PathFollow2D" type="PathFollow2D" parent="." index="0"]
 
