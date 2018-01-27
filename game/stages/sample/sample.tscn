@@ -1,105 +1,126 @@
 [gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://stages/base.tscn" type="PackedScene" id=1]
-[ext_resource path="res://Movement/PathManager.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Instruments/Instrument.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Sentinels/Sentinel.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Sentinels/Watcher/watcher.tscn" type="PackedScene" id=5]
-
-
-
-[sub_resource type="Curve2D" id=2]
-
-bake_interval = 5.0
-_data = {
-"points": PoolVector2Array( 0, 0, 0, 0, 124.73, -158.753, 0, 0, 0, 0, 129.242, 216.687 )
-}
+[ext_resource path="res://Instruments/Instrument.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Movement/PathManager.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Sentinels/Watcher/watcher.tscn" type="PackedScene" id=4]
+[ext_resource path="res://goal/Goal.tscn" type="PackedScene" id=5]
 
 [sub_resource type="Curve2D" id=1]
 
 bake_interval = 5.0
 _data = {
-"points": PoolVector2Array( 0, 0, -8.1225, -152.522, 240.25, 33.48, 0, 0, 0, 0, 366.6, -130.775, -27.1684, -140.79, -12.635, 60.4675, 502.877, 9.11247, 130.862, -2.7075, -96.5675, -7.22, 372.015, 155.317, 1.805, 109.202, 0, 0, 240.25, 33.48 )
+"points": PoolVector2Array( 0, 0, 0, 0, 220, 110, 0, 0, 0, 0, 1040, 110 )
 }
 
 [sub_resource type="Curve2D" id=3]
 
 bake_interval = 5.0
 _data = {
-"points": PoolVector2Array( 0, 0, 18.9525, -141.692, 307.937, 21.7475, 0, 0, 43.32, 8.1225, 458.655, -107.31, -8.1225, -118.227, -4.5125, 27.9775, 548.905, 41.6025, 91.1525, -9.9275, -33.3925, 7.22, 439.702, 161.635, -16.245, 145.302, 0, 0, 307.937, 21.7475 )
+"points": PoolVector2Array( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 490, 0 )
+}
+
+[sub_resource type="Curve2D" id=2]
+
+bake_interval = 5.0
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, -20, -220, 0, 0, 0, 0, -20, 270 )
 }
 
 [sub_resource type="Curve2D" id=4]
 
 bake_interval = 5.0
 _data = {
-"points": PoolVector2Array( 0, 0, 0, 0, 419.847, -43.2325, 0, 0, 0, 0, 422.555, 272.642, 0, 0, 0, 0, 723.087, 278.057 )
+"points": PoolVector2Array( 0, 0, 0, 0, 700, 270, 0, 0, 0, 0, 700, -210 )
 }
 
 [node name="Stage" index="0" instance=ExtResource( 1 )]
 
-initial_bard_path = NodePath("Instruments/Path2D/PathFollow2D/Instrument")
+initial_bard_path = NodePath("Instruments/Instrument")
 
-[node name="Path2D" parent="Instruments" index="0" instance=ExtResource( 2 )]
+[node name="Instrument" parent="Instruments" index="0" instance=ExtResource( 2 )]
+
+position = Vector2( 160, 110 )
+
+[node name="Path2D" parent="Instruments" index="1" instance=ExtResource( 3 )]
 
 editor/display_folded = true
-curve = SubResource( 2 )
+curve = SubResource( 1 )
 cyclic = false
-speed = 0.1
+speed = 0.2
 
 [node name="PathFollow2D" parent="Instruments/Path2D" index="0"]
 
-position = Vector2( 124.73, -158.753 )
+position = Vector2( 220, 110 )
 
-[node name="Instrument" parent="Instruments/Path2D/PathFollow2D" index="0" instance=ExtResource( 3 )]
+[node name="Instrument" parent="Instruments/Path2D/PathFollow2D" index="0" instance=ExtResource( 2 )]
 
-[node name="Path2D2" parent="Instruments" index="1" instance=ExtResource( 2 )]
+[node name="Path2D2" parent="Instruments" index="2" instance=ExtResource( 3 )]
 
 editor/display_folded = true
-position = Vector2( -100, 0 )
-scale = Vector2( 0.996563, 1 )
-curve = SubResource( 1 )
-_sections_unfolded = [ "Transform" ]
-cyclic = true
+position = Vector2( 340, -20 )
+curve = SubResource( 3 )
 speed = 0.2
 
 [node name="PathFollow2D" parent="Instruments/Path2D2" index="0"]
 
-position = Vector2( 240.25, 33.48 )
+position = Vector2( 391.899, 0 )
+offset = 392.226
 
-[node name="Instrument" parent="Instruments/Path2D2/PathFollow2D" index="0" instance=ExtResource( 3 )]
+[node name="Instrument" parent="Instruments/Path2D2/PathFollow2D" index="0" instance=ExtResource( 2 )]
 
-[node name="Path2D3" parent="Instruments" index="2" instance=ExtResource( 2 )]
-
-editor/display_folded = true
-curve = SubResource( 3 )
-cyclic = true
-speed = 0.6
-
-[node name="PathFollow2D" parent="Instruments/Path2D3" index="0"]
-
-position = Vector2( 307.937, 21.7475 )
-
-[node name="Sentinel" parent="Instruments/Path2D3/PathFollow2D" index="0" instance=ExtResource( 4 )]
-
-[node name="Path2D4" parent="Instruments" index="3" instance=ExtResource( 2 )]
+[node name="Path2D4" parent="Instruments" index="3" instance=ExtResource( 3 )]
 
 editor/display_folded = true
-curve = SubResource( 4 )
-speed = 0.4
+position = Vector2( 340, -10 )
+curve = SubResource( 2 )
+_sections_unfolded = [ "Transform" ]
+speed = 0.3
 
 [node name="PathFollow2D" parent="Instruments/Path2D4" index="0"]
 
-position = Vector2( 419.847, -43.2325 )
+position = Vector2( -20, 171.899 )
+offset = 392.226
 
-[node name="Instrument" parent="Instruments/Path2D4/PathFollow2D" index="0" instance=ExtResource( 3 )]
+[node name="Instrument" parent="Instruments/Path2D4/PathFollow2D" index="0" instance=ExtResource( 2 )]
 
-[node name="Sentinel" parent="Instruments" index="4" instance=ExtResource( 5 )]
+[node name="Sentinel" parent="Instruments" index="4" instance=ExtResource( 4 )]
 
-position = Vector2( 736, 270 )
+position = Vector2( 600, 120 )
+
+[node name="Sentinel2" parent="Instruments" index="5" instance=ExtResource( 4 )]
+
+position = Vector2( 320, 290 )
+
+[node name="Sentinel3" parent="Instruments" index="6" instance=ExtResource( 4 )]
+
+position = Vector2( 880, -20 )
+
+[node name="Sentinel4" parent="Instruments" index="7" instance=ExtResource( 4 )]
+
+position = Vector2( 700, -240 )
+
+[node name="Path2D3" parent="Instruments" index="8" instance=ExtResource( 3 )]
+
+curve = SubResource( 4 )
+speed = 0.8
+
+[node name="PathFollow2D" parent="Instruments/Path2D3" index="0"]
+
+position = Vector2( 700, 270 )
+
+[node name="Instrument" parent="Instruments/Path2D3/PathFollow2D" index="0" instance=ExtResource( 2 )]
+
+[node name="Goal" parent="Instruments" index="9" instance=ExtResource( 5 )]
+
+position = Vector2( 1060, 110 )
+
+[node name="Instrument2" parent="Instruments" index="10" instance=ExtResource( 2 )]
+
+position = Vector2( 760, 230 )
 
 
 [editable path="Instruments/Path2D"]
 [editable path="Instruments/Path2D2"]
-[editable path="Instruments/Path2D3"]
 [editable path="Instruments/Path2D4"]
+[editable path="Instruments/Path2D3"]
