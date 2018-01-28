@@ -51,7 +51,7 @@ func changeActive(body):
 func _failed():
 	audioManager.playSFX('GameOver')
 	get_node("CanvasLayer2/grayscaleShader").material.set_shader_param("grayscale", true)
-	self.get_node("CanvasLayer2").get_node("tween_factor").interpolate_property(get_node("CanvasLayer2/grayscaleShader").material, "shader_param/factor", .1, 10, 5, Tween.TRANS_QUAD, Tween.EASE_OUT, 0)#Does some tween in the shader inside the canvaslayer onto the texture applying some grayscale shader. Read shader info here:https://docs.google.com/spreadsheets/d/1hBpkNor5-WUTKuiEP3Myo4wzleCWvqPqn1OLgOwFsmU/edit#gid=1880657918. Inspired by gta famous "WASTED" gameover screen.
+	self.get_node("CanvasLayer2").get_node("tween_factor").interpolate_property(get_node("CanvasLayer2/grayscaleShader").material, "shader_param/factor", .1, 30, 3, Tween.TRANS_QUAD, Tween.EASE_OUT, 0)#Does some tween in the shader inside the canvaslayer onto the texture applying some grayscale shader. Read shader info here:https://docs.google.com/spreadsheets/d/1hBpkNor5-WUTKuiEP3Myo4wzleCWvqPqn1OLgOwFsmU/edit#gid=1880657918. Inspired by gta famous "WASTED" gameover screen.
 	var t = self.get_node("CanvasLayer2").get_node("tween_factor")
 	t.start()
 	get_tree().set_pause(true)
