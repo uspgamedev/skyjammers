@@ -4,8 +4,11 @@ onready var audioManager = get_node("AudioManager")
 
 func _ready():
 	audioManager.playBGM("LevelSelect")
-
-#func _process(delta):
-#	# Called every frame. Delta is time since last frame.
-#	# Update game logic here.
-#	pass
+	var total = get_tree().get_root().get_node("Progress").get_total() + 1
+	var count = 0
+	for button in $Panel/GridContainer.get_children():
+		if count < total:
+			button.show()
+		else:
+			button.hide()
+		count += 1
