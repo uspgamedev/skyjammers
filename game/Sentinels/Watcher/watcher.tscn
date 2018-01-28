@@ -24,6 +24,11 @@ _sections_unfolded = [ "Visibility" ]
 
 texture = ExtResource( 4 )
 
+[node name="CollisionShape2D" parent="." index="2"]
+
+disabled = true
+_sections_unfolded = [ "Material" ]
+
 [node name="Area2D" type="Area2D" parent="." index="3"]
 
 input_pickable = true
