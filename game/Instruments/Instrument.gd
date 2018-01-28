@@ -11,9 +11,10 @@ var stage
 
 
 func pulse():
-	var parent = get_parent()
+	var parent = self
 	while (true):
 		if parent.get_parent().get_name() != 'Instruments':
+			parent.get_parent().move_child(parent, 0)
 			parent = parent.get_parent()
 		else: break
 	parent.get_parent().move_child(parent, 0)
