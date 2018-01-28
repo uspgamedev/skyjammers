@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://Instruments/Instrument.gd" type="Script" id=1]
 [ext_resource path="res://assets/img/circle.png" type="Texture" id=2]
@@ -9,6 +9,8 @@
 [ext_resource path="res://assets/sound/bass_sfx.wav" type="AudioStream" id=7]
 [ext_resource path="res://assets/img/note-particle0.png" type="Texture" id=8]
 [ext_resource path="res://assets/img/note-particle1.png" type="Texture" id=9]
+[ext_resource path="res://assets/img/displacement6.png" type="Texture" id=10]
+[ext_resource path="res://assets/img/pixel.png" type="Texture" id=11]
 
 [sub_resource type="Animation" id=1]
 
@@ -120,6 +122,30 @@ anim_offset_random = 0.0
 anim_loop = false
 _sections_unfolded = [ "Angle", "Angular Velocity", "Animation", "Color", "Damping", "Emission Shape", "Flags", "Gravity", "Hue Variation", "Initial Velocity", "Linear Accel", "Orbit Velocity", "Radial Accel", "Resource", "Scale", "Spread", "Tangential Accel", "Trail" ]
 
+[sub_resource type="Shader" id=8]
+
+code = "shader_type canvas_item;
+
+uniform sampler2D displacement;
+
+void fragment(){
+	vec4 displacementPixel = texture(displacement, UV);
+	vec2 pos = SCREEN_UV;
+	pos.x += (displacementPixel.r * 2.0 - 1.0) * 0.025 * displacementPixel.a;
+	pos.y += (displacementPixel.g * 2.0 - 1.0) * 0.025 * displacementPixel.a;
+	vec4 pixel = texture(SCREEN_TEXTURE, pos);
+	
+	COLOR = pixel;
+}
+"
+
+[sub_resource type="ShaderMaterial" id=9]
+
+render_priority = 0
+shader = SubResource( 8 )
+shader_param/displacement = ExtResource( 10 )
+_sections_unfolded = [ "shader_param" ]
+
 [node name="Instrument" type="KinematicBody2D" groups=[
 "bards",
 ]]
@@ -130,8 +156,8 @@ collision_mask = 1
 collision/safe_margin = 0.08
 script = ExtResource( 1 )
 _sections_unfolded = [ "Transform" ]
-growth = 12.0
-duration = 0.3
+growth = 40.0
+duration = 2.0
 frequency = 3.0
 
 [node name="Sprite2" type="Sprite" parent="." index="0"]
@@ -254,5 +280,38 @@ normal_map = null
 h_frames = 1
 v_frames = 1
 _sections_unfolded = [ "Drawing", "Material", "Pause", "Process Material", "Textures", "Time", "Transform", "Visibility", "Z Index" ]
+
+[node name="ShockwaveShader" type="TextureRect" parent="." index="10"]
+
+material = SubResource( 9 )
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -50.0
+margin_top = -50.0
+margin_right = 50.0
+margin_bottom = 50.0
+rect_scale = Vector2( 0, 0 )
+rect_pivot_offset = Vector2( 50, 50 )
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+texture = ExtResource( 11 )
+expand = true
+stretch_mode = 0
+_sections_unfolded = [ "Anchor", "Margin", "Material", "Rect" ]
+
+[node name="Tween" type="Tween" parent="ShockwaveShader" index="0"]
+
+repeat = false
+playback_process_mode = 1
+playback_speed = 1.0
+playback/active = false
+playback/repeat = false
+playback/speed = 1.0
+
+[connection signal="tween_completed" from="ShockwaveShader/Tween" to="." method="_on_Tween_tween_completed"]
 
 

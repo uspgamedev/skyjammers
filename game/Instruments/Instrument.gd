@@ -11,6 +11,17 @@ var stage
 
 
 func pulse():
+	var parent = get_parent()
+	while (true):
+		if parent.get_parent().get_name() != 'Instruments':
+			parent = parent.get_parent()
+		else: break
+	parent.get_parent().move_child(parent, 0)
+	var obj = get_node("ShockwaveShader")
+	var tween = get_node("ShockwaveShader/Tween")
+	tween.interpolate_property(obj, "rect_scale", obj.get_scale(), Vector2(growth,growth)/4, self.duration, Tween.TRANS_LINEAR, Tween.EASE_IN)
+	tween.start()
+	
 	var sw = soundWave.instance()
 	var shape = get_node("SoundWaveShape").duplicate()
 	var rot = get_node("SoundWaveShape").get_rotation()
@@ -58,4 +69,10 @@ func deactivate():
 	get_node("WavePreview/AnimationPlayer").play("off")
 	get_node("Sprite/AnimationPlayer").stop()
 	get_node("Sprite2").hide()
+	get_node("ShockwaveShader/Tween").stop_all()
+	get_node("ShockwaveShader").set_scale(Vector2(0, 0))
 	set_physics_process(false)
+
+
+func _on_Tween_tween_completed( object, key ):
+	get_node("ShockwaveShader").set_scale(Vector2(0,0))
