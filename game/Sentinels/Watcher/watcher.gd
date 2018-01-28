@@ -1,5 +1,8 @@
 extends "res://Sentinels/Sentinel.gd"
 
-func _on_body_entered( body ):
-	if body.is_in_group("bards") and self.stage.activeInstrument == body:
-		emit_signal("caught")
+onready var area = get_node('Area2D')
+
+func _process(delta):
+	for i in area.get_overlapping_bodies():
+		if i.is_in_group("bards") and self.stage.activeInstrument == i:
+			emit_signal("caught")
