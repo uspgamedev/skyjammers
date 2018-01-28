@@ -2,9 +2,30 @@
 
 [ext_resource path="res://stages/base.gd" type="Script" id=1]
 [ext_resource path="res://input/input.tscn" type="PackedScene" id=2]
-[ext_resource path="res://audio/AudioManager.tscn" type="PackedScene" id=3]
-[ext_resource path="res://clouds/Cloud.tscn" type="PackedScene" id=4]
-[ext_resource path="res://assets/img/pixel.png" type="Texture" id=5]
+[ext_resource path="res://clouds/Cloud.tscn" type="PackedScene" id=3]
+[ext_resource path="res://assets/img/pixel.png" type="Texture" id=4]
+[ext_resource path="res://audio/AudioManager.tscn" type="PackedScene" id=5]
+
+[sub_resource type="GDScript" id=1]
+
+script/source = "extends Camera2D
+
+var z = 1
+
+func _ready():
+	set_process_unhandled_input(true)
+
+func _unhandled_input(event):
+	if event.is_action_pressed(\"zoom_in\"):
+		z -= 0.1
+		z = max(0.1, z)
+	elif event.is_action_pressed(\"zoom_out\"):
+		z += 0.1
+		z = min(2, z)
+
+func _process(delta):
+	self.zoom = Vector2(z,z)
+"
 
 [sub_resource type="Animation" id=2]
 
@@ -53,27 +74,6 @@ shader_param/grayscale = false
 shader_param/factor = 0.0
 _sections_unfolded = [ "shader_param" ]
 
-[sub_resource type="GDScript" id=1]
-
-script/source = "extends Camera2D
-
-var z = 1
-
-func _ready():
-	set_process_unhandled_input(true)
-
-func _unhandled_input(event):
-	if event.is_action_pressed(\"zoom_in\"):
-		z -= 0.1
-		z = max(0.1, z)
-	elif event.is_action_pressed(\"zoom_out\"):
-		z += 0.1
-		z = min(2, z)
-
-func _process(delta):
-	self.zoom = Vector2(z,z)
-"
-
 [node name="Stage" type="Node2D" index="0"]
 
 script = ExtResource( 1 )
@@ -95,7 +95,42 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="AudioManager" parent="." index="2" instance=ExtResource( 3 )]
+[node name="Camera2D" type="Camera2D" parent="." index="2"]
+
+anchor_mode = 1
+rotating = false
+current = true
+zoom = Vector2( 1, 1 )
+limit_left = -10000000
+limit_top = -10000000
+limit_right = 10000000
+limit_bottom = 10000000
+limit_smoothed = false
+drag_margin_h_enabled = false
+drag_margin_v_enabled = false
+smoothing_enabled = true
+smoothing_speed = 1.0
+offset_v = 0.0
+offset_h = 0.0
+drag_margin_left = 0.1
+drag_margin_top = 0.1
+drag_margin_right = 0.1
+drag_margin_bottom = 0.1
+editor_draw_screen = true
+editor_draw_limits = false
+editor_draw_drag_margin = false
+script = SubResource( 1 )
+_sections_unfolded = [ "Drag Margin", "Limit", "Smoothing" ]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Timer" type="Timer" parent="Camera2D" index="0"]
+
+process_mode = 1
+wait_time = 0.05
+one_shot = false
+autostart = false
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="." index="3"]
 
@@ -120,7 +155,7 @@ motion_offset = Vector2( 0, 0 )
 motion_mirroring = Vector2( 0, 0 )
 _sections_unfolded = [ "Motion" ]
 
-[node name="Cloud" parent="ParallaxBackground/ParallaxLayer" index="0" instance=ExtResource( 4 )]
+[node name="Cloud" parent="ParallaxBackground/ParallaxLayer" index="0" instance=ExtResource( 3 )]
 
 visible = false
 tile_data = PoolIntArray( -262158, 0, 0, -262157, 1, 0, -262156, 1, 0, -262155, 2, 0, -196622, 6, 0, -196621, 7, 0, -196620, 11, 0, -196619, 15, 0, -196618, 1, 0, -196617, 1, 0, -196616, 2, 0, -196609, 0, 0, -262144, 1, 0, -262143, 1, 0, -262142, 2, 0, -131084, 6, 0, -131083, 7, 0, -131082, 7, 0, -131081, 7, 0, -131080, 8, 0, -131076, 0, 0, -131075, 1, 0, -131074, 1, 0, -131073, 17, 0, -196608, 4, 0, -196607, 4, 0, -196606, 12, 0, -65540, 6, 0, -65539, 11, 0, -65538, 4, 0, -65537, 4, 0, -131072, 4, 0, -131071, 4, 0, -131070, 15, 0, -131069, 1, 0, -131068, 1, 0, -131067, 1, 0, -131066, 1, 0, -131065, 2, 0, -3, 6, 0, -2, 7, 0, -1, 7, 0, -65536, 11, 0, -65535, 4, 0, -65534, 4, 0, -65533, 4, 0, -65532, 4, 0, -65531, 4, 0, -65530, 4, 0, -65529, 5, 0, 65533, 0, 0, 65534, 1, 0, 65535, 1, 0, 0, 17, 0, 1, 4, 0, 2, 9, 0, 3, 7, 0, 4, 7, 0, 5, 7, 0, 6, 7, 0, 7, 8, 0, 131069, 6, 0, 131070, 7, 0, 131071, 7, 0, 65536, 7, 0, 65537, 7, 0, 65538, 8, 0, 327668, 0, 0, 327669, 1, 0, 327670, 1, 0, 327671, 1, 0, 327672, 2, 0, 393203, 0, 0, 393204, 17, 0, 393205, 4, 0, 393206, 4, 0, 393207, 4, 0, 393208, 15, 0, 393209, 1, 0, 393210, 1, 0, 393211, 1, 0, 393212, 1, 0, 393213, 1, 0, 393214, 2, 0, 458739, 6, 0, 458740, 10, 0, 458741, 7, 0, 458742, 7, 0, 458743, 7, 0, 458744, 7, 0, 458745, 11, 0, 458746, 4, 0, 458747, 4, 0, 458748, 4, 0, 458749, 9, 0, 458750, 8, 0, 524281, 6, 0, 524282, 7, 0, 524283, 7, 0, 524284, 7, 0, 524285, 8, 0 )
@@ -135,7 +170,7 @@ rotation = 0.0
 scale = Vector2( 1, 1 )
 transform = Transform2D( 1, 0, 0, 1, 0, 0 )
 
-[node name="Cloud" parent="CanvasLayer" index="0" instance=ExtResource( 4 )]
+[node name="Cloud" parent="CanvasLayer" index="0" instance=ExtResource( 3 )]
 
 modulate = Color( 1, 1, 1, 0.156863 )
 position = Vector2( 894.036, 672.578 )
@@ -171,6 +206,7 @@ autoplay = ""
 [node name="CanvasLayer2" type="CanvasLayer" parent="." index="5"]
 
 pause_mode = 2
+editor/display_folded = true
 layer = 1
 offset = Vector2( 0, 0 )
 rotation = 0.0
@@ -192,7 +228,7 @@ mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-texture = ExtResource( 5 )
+texture = ExtResource( 4 )
 expand = true
 stretch_mode = 0
 _sections_unfolded = [ "Anchor", "Focus", "Grow Direction", "Hint", "Margin", "Material", "Mouse", "Rect", "Theme" ]
@@ -222,41 +258,13 @@ texture_rotation_degrees = 0.0
 invert_enable = false
 invert_border = 100.0
 
-[node name="Camera2D" type="Camera2D" parent="." index="6"]
+[node name="AudioManager" parent="." index="6" instance=ExtResource( 5 )]
 
-anchor_mode = 1
-rotating = false
-current = true
-zoom = Vector2( 1, 1 )
-limit_left = -10000000
-limit_top = -10000000
-limit_right = 10000000
-limit_bottom = 10000000
-limit_smoothed = false
-drag_margin_h_enabled = true
-drag_margin_v_enabled = true
-smoothing_enabled = true
-smoothing_speed = 5.0
-offset_v = 0.0
-offset_h = 0.0
-drag_margin_left = 0.1
-drag_margin_top = 0.1
-drag_margin_right = 0.1
-drag_margin_bottom = 0.1
-editor_draw_screen = true
-editor_draw_limits = false
-editor_draw_drag_margin = false
-script = SubResource( 1 )
-_sections_unfolded = [ "Drag Margin", "Limit", "Smoothing" ]
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="Timer" type="Timer" parent="Camera2D" index="0"]
+[node name="Leave" type="Timer" parent="." index="7"]
 
 process_mode = 1
-wait_time = 0.05
-one_shot = false
+wait_time = 1.5
+one_shot = true
 autostart = false
 
 [connection signal="pause" from="Input" to="." method="_on_Input_pause"]

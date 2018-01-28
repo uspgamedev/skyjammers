@@ -59,6 +59,10 @@ func _previous_page():
 
 
 func _on_selected(stage_id):
-	get_node("/root/StageSelector").queue_free()
+	$FadeInTween.interpolate_method(self, "_set_offset", 0, -1000, 1,
+									Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
+	$FadeInTween.start()
+	yield($FadeInTween, "tween_completed")
+	queue_free()
 	var stage_scene = $Stages.get_child(stage_id).scene
 	get_node("/root/Progress").start_stage(stage_id, stage_scene)

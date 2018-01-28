@@ -84,6 +84,9 @@ func _on_Input_played():
 			activeInstrument.pulse()
 			camera_shake()
 		elif win:
+			camera.position.y = -2000
+			$Leave.start()
+			yield($Leave, 'timeout')
 			get_node("/root/Progress").stage_finished()
 			get_node("/root/Progress").go_to_stage_selector()
 			queue_free()
@@ -92,13 +95,15 @@ func _process(delta):
 	var bg = get_node("ParallaxBackground/ParallaxLayer/Cloud")
 	var fg = get_node("CanvasLayer/Cloud")
 	
-	self.camera.position = self.activeInstrument.get_global_position()
+	if $Leave.is_stopped():
+		self.camera.position = self.activeInstrument.get_global_position()
 	bg.set_position(Vector2(bg.get_position().x + 0.4, 0))
 	if bg.get_position().x > 1000:
 		bg.set_position(Vector2(-1000, 0))
-	fg.set_position(Vector2(fg.get_position().x - 0.6, 0))
+	var yoff = self.camera.get_camera_screen_center().y
+	fg.set_position(Vector2(fg.get_position().x - 0.6, -yoff))
 	if fg.get_position().x < -1000:
-		fg.set_position(Vector2(1000, 0))
+		fg.position.x = 1000
 	
 
 func camera_shake():

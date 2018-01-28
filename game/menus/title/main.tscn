@@ -21,7 +21,6 @@ func _ready():
 
 func _unhandled_input(event):
 	if not lock and event.is_action_pressed(\"action_play\"):
-		print(\"asd\")
 		self.lock = true
 		$LeaveTween.interpolate_method(self, \"_set_scroll\", 0, 800, 1, Tween.TRANS_LINEAR,
 									   Tween.EASE_IN_OUT)
@@ -32,6 +31,7 @@ func _unhandled_input(event):
 
 func _set_scroll(y):
 	$ParallaxBackground.scroll_offset.y = y
+	$ParallaxBackground/Island.position.y = y
 	$GUI.position.y = y
 "
 
@@ -118,7 +118,7 @@ tracks/0/keys = {
 "values": [ 0, 1 ]
 }
 
-[node name="Title" type="Node2D" index="0"]
+[node name="Title" type="Node2D"]
 
 script = SubResource( 1 )
 
@@ -138,6 +138,7 @@ tile_data = PoolIntArray( -458764, 0, 0, -458763, 1, 0, -458762, 1, 0, -458761, 
 
 [node name="Island" parent="ParallaxBackground" index="1" instance=ExtResource( 2 )]
 
+editor/display_folded = true
 tile_data = PoolIntArray( 524301, 0, 0, 524302, 1, 0, 524303, 3, 0, 589837, 4, 0, 589838, 5, 0, 589839, 7, 0, 655373, 12, 0, 655374, 14, 0, 655375, 15, 0 )
 
 [node name="Sprite" type="Sprite" parent="ParallaxBackground/Island" index="2"]

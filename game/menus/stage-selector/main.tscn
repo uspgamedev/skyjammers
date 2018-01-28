@@ -48,7 +48,7 @@ use_filter = true
 font_data = ExtResource( 13 )
 _sections_unfolded = [ "Font", "Settings" ]
 
-[node name="StageSelector" type="Control" index="0"]
+[node name="StageSelector" type="Control"]
 
 anchor_left = 0.0
 anchor_top = 0.0

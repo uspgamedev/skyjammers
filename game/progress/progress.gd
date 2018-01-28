@@ -31,6 +31,7 @@ func stage_finished():
 func restart_stage():
 	var stage = current_stage_scene.instance()
 	stage.get_node("Camera2D").position = Vector2(0, -1000)
+	yield(get_tree(), 'physics_frame')
 	get_tree().get_root().add_child(stage)
 
 func start_stage(id, stage_scene):
