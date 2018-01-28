@@ -1,15 +1,17 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://clouds/cloudBG.tscn" type="PackedScene" id=1]
 [ext_resource path="res://clouds/Cloud.tscn" type="PackedScene" id=2]
 [ext_resource path="res://islands/Island.tscn" type="PackedScene" id=3]
 [ext_resource path="res://menus/title/begin-island.png" type="Texture" id=4]
 [ext_resource path="res://Instruments/Bass/cat-bass.png" type="Texture" id=5]
-[ext_resource path="res://Instruments/GameBoy/fox-gameboi.png" type="Texture" id=6]
-[ext_resource path="res://Instruments/Theremin/bunny-theremin.png" type="Texture" id=7]
-[ext_resource path="res://Instruments/Xylophone/croc-xylo.png" type="Texture" id=8]
-[ext_resource path="res://menus/theme.tres" type="Theme" id=9]
-[ext_resource path="res://menus/click-sfx.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Instruments/notes/NoteParticles2.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Instruments/notes/NoteParticles.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Instruments/GameBoy/fox-gameboi.png" type="Texture" id=8]
+[ext_resource path="res://Instruments/Theremin/bunny-theremin.png" type="Texture" id=9]
+[ext_resource path="res://Instruments/Xylophone/croc-xylo.png" type="Texture" id=10]
+[ext_resource path="res://menus/theme.tres" type="Theme" id=11]
+[ext_resource path="res://menus/click-sfx.tscn" type="PackedScene" id=12]
 
 [sub_resource type="GDScript" id=1]
 
@@ -123,7 +125,7 @@ tracks/0/keys = {
 "values": [ 0, 1 ]
 }
 
-[node name="Title" type="Node2D"]
+[node name="Title" type="Node2D" index="0"]
 
 script = SubResource( 1 )
 
@@ -159,8 +161,6 @@ tile_data = PoolIntArray( 196612, 0, 0, 196613, 1, 0, 196614, 1, 0, 196615, 1, 0
 
 [node name="Island" parent="." index="1" instance=ExtResource( 3 )]
 
-editor/display_folded = true
-
 [node name="island" type="Sprite" parent="Island" index="0"]
 
 position = Vector2( 591.914, 233.579 )
@@ -186,10 +186,20 @@ blend_times = [  ]
 autoplay = "play"
 _sections_unfolded = [ "Playback Options" ]
 
+[node name="NoteParticles2" parent="Island/Sprite" index="1" instance=ExtResource( 6 )]
+
+visible = true
+scale = Vector2( 2.5, 2.5 )
+
+[node name="NoteParticles" parent="Island/Sprite" index="2" instance=ExtResource( 7 )]
+
+visible = true
+scale = Vector2( 2.5, 2.5 )
+
 [node name="Sprite2" type="Sprite" parent="Island" index="4"]
 
 position = Vector2( 832.082, 235.463 )
-texture = ExtResource( 6 )
+texture = ExtResource( 8 )
 hframes = 2
 frame = 1
 _sections_unfolded = [ "Animation" ]
@@ -206,10 +216,20 @@ blend_times = [  ]
 autoplay = "play"
 _sections_unfolded = [ "Playback Options" ]
 
+[node name="NoteParticles2" parent="Island/Sprite2" index="1" instance=ExtResource( 6 )]
+
+visible = true
+scale = Vector2( 2.5, 2.5 )
+
+[node name="NoteParticles" parent="Island/Sprite2" index="2" instance=ExtResource( 7 )]
+
+visible = true
+scale = Vector2( 2.5, 2.5 )
+
 [node name="Sprite3" type="Sprite" parent="Island" index="5"]
 
 position = Vector2( 538.095, 144.28 )
-texture = ExtResource( 7 )
+texture = ExtResource( 9 )
 hframes = 2
 frame = 1
 _sections_unfolded = [ "Animation" ]
@@ -226,10 +246,20 @@ blend_times = [  ]
 autoplay = "play"
 _sections_unfolded = [ "Playback Options" ]
 
+[node name="NoteParticles2" parent="Island/Sprite3" index="1" instance=ExtResource( 6 )]
+
+visible = true
+scale = Vector2( 2.5, 2.5 )
+
+[node name="NoteParticles" parent="Island/Sprite3" index="2" instance=ExtResource( 7 )]
+
+visible = true
+scale = Vector2( 2.5, 2.5 )
+
 [node name="Sprite4" type="Sprite" parent="Island" index="6"]
 
 position = Vector2( 531.981, 274.712 )
-texture = ExtResource( 8 )
+texture = ExtResource( 10 )
 hframes = 2
 frame = 1
 _sections_unfolded = [ "Animation" ]
@@ -245,6 +275,16 @@ anims/play = SubResource( 6 )
 blend_times = [  ]
 autoplay = "play"
 _sections_unfolded = [ "Playback Options" ]
+
+[node name="NoteParticles" parent="Island/Sprite4" index="1" instance=ExtResource( 7 )]
+
+visible = true
+scale = Vector2( 2.5, 2.5 )
+
+[node name="NoteParticles2" parent="Island/Sprite4" index="2" instance=ExtResource( 6 )]
+
+visible = true
+scale = Vector2( 2.5, 2.5 )
 
 [node name="GUI" type="Node2D" parent="." index="2"]
 
@@ -265,7 +305,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-theme = ExtResource( 9 )
+theme = ExtResource( 11 )
 text = "touch to start!"
 percent_visible = 1.0
 lines_skipped = 0
@@ -281,7 +321,7 @@ playback/active = false
 playback/repeat = false
 playback/speed = 1.0
 
-[node name="AudioStreamPlayer" parent="." index="4" instance=ExtResource( 10 )]
+[node name="AudioStreamPlayer" parent="." index="4" instance=ExtResource( 12 )]
 
 
 [editable path="ParallaxBackground"]
