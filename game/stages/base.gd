@@ -8,8 +8,8 @@ onready var activeInstrument = null
 onready var camera = $Camera2D
 onready var audioManager = get_node("AudioManager")
 onready var overlayAnimation = get_node("CanvasLayer/overlay/AnimationPlayer")
-var win = false
-var lose = false
+onready var win = false
+onready var lose = false
 
 func _ready():
 	randomize()
@@ -58,7 +58,12 @@ func _failed():
 	lose = true
 
 func _on_Input_played():
-	if not win and not activeInstrument.hasSoundwave:
+	if lose:
+		get_tree().set_pause(false)
+		get_node("CanvasLayer2/grayscaleShader").material.set_shader_param("grayscale", false)
+		queue_free()
+		get_node("/root/Progress").restart_stage()
+	elif not win and not activeInstrument.hasSoundwave:
 		activeInstrument.pulse()
 		camera_shake()
 	elif win:

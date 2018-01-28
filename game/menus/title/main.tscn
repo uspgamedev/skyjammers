@@ -4,9 +4,10 @@
 [ext_resource path="res://clouds/Cloud.tscn" type="PackedScene" id=2]
 [ext_resource path="res://menus/theme.tres" type="Theme" id=3]
 
-[sub_resource type="GDScript" id=4]
+[sub_resource type="GDScript" id=1]
 
 script/source = "extends Node2D
+
 
 func _ready():
 	set_process_unhandled_input(true)
@@ -26,7 +27,7 @@ func _set_scroll(y):
 	$GUI.position.y = y
 "
 
-[sub_resource type="GDScript" id=3]
+[sub_resource type="GDScript" id=2]
 
 script/source = "extends ParallaxBackground
 
@@ -35,11 +36,11 @@ func _process(delta):
 
 [node name="Title" type="Node2D" index="0"]
 
-script = SubResource( 4 )
+script = SubResource( 1 )
 
 [node name="ParallaxBackground" parent="." index="0" instance=ExtResource( 1 )]
 
-script = SubResource( 3 )
+script = SubResource( 2 )
 
 [node name="ParallaxLayer" parent="ParallaxBackground" index="0"]
 
