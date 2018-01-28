@@ -63,7 +63,12 @@ position = Vector2( -150, 0 )
 
 [node name="Island" parent="Instruments/Chasers/PathFollow2D" index="0" instance=ExtResource( 3 )]
 
+editor/display_folded = true
 tile_data = PoolIntArray( -327683, 0, 0, -327682, 2, 0, -327681, 2, 0, -393216, 2, 0, -393215, 2, 0, -393214, 3, 0, -262147, 8, 0, -262146, 48, 0, -262145, 50, 0, -327680, 50, 0, -327679, 51, 0, -327678, 11, 0, -196611, 8, 0, -196610, 52, 0, -196609, 32, 0, -262144, 35, 0, -262143, 59, 0, -262142, 11, 0, -131075, 8, 0, -131074, 52, 0, -131073, 44, 0, -196608, 47, 0, -196607, 59, 0, -196606, 11, 0, -65539, 8, 0, -65538, 52, 0, -65537, 54, 0, -131072, 54, 0, -131071, 59, 0, -131070, 11, 0, -3, 8, 0, -2, 52, 0, -1, 32, 0, -65536, 35, 0, -65535, 59, 0, -65534, 11, 0, 65533, 8, 0, 65534, 52, 0, 65535, 44, 0, 0, 47, 0, 1, 59, 0, 2, 11, 0, 131069, 8, 0, 131070, 52, 0, 131071, 54, 0, 65536, 54, 0, 65537, 59, 0, 65538, 11, 0, 196605, 8, 0, 196606, 52, 0, 196607, 32, 0, 131072, 35, 0, 131073, 59, 0, 131074, 11, 0, 262141, 8, 0, 262142, 52, 0, 262143, 44, 0, 196608, 47, 0, 196609, 59, 0, 196610, 11, 0, 327677, 8, 0, 327678, 60, 0, 327679, 61, 0, 262144, 61, 0, 262145, 63, 0, 262146, 11, 0, 393213, 12, 0, 393214, 14, 0, 393215, 13, 0, 327680, 14, 0, 327681, 13, 0, 327682, 15, 0 )
+
+[node name="Under" parent="Instruments/Chasers/PathFollow2D/Island" index="0"]
+
+tile_data = PoolIntArray( 393213, 76, 0, 393214, 78, 0, 393215, 77, 0, 327680, 78, 0, 327681, 78, 0, 327682, 79, 0, 458749, 84, 0, 458750, 86, 0, 458751, 85, 0, 393216, 82, 0, 393217, 86, 0, 393218, 83, 0, 524285, 88, 0, 524286, 90, 0, 524287, 89, 0, 458752, 86, 0, 458753, 82, 0, 458754, 87, 0, 589823, 93, 0, 524288, 82, 0, 524289, 90, 0, 524290, 91, 0, 589824, 90, 0 )
 
 [node name="Sentinel2" parent="Instruments/Chasers/PathFollow2D/Island" index="2" instance=ExtResource( 4 )]
 
@@ -80,7 +85,6 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="Initial" parent="Instruments" index="1" instance=ExtResource( 2 )]
 
-editor/display_folded = true
 position = Vector2( 0, 70 )
 curve = SubResource( 2 )
 _sections_unfolded = [ "Transform" ]
@@ -88,17 +92,22 @@ speed = 0.4
 
 [node name="PathFollow2D" parent="Instruments/Initial" index="0"]
 
+editor/display_folded = true
 position = Vector2( 250, 0 )
 
 [node name="Island" parent="Instruments/Initial/PathFollow2D" index="0" instance=ExtResource( 3 )]
 
 position = Vector2( 145.182, 3.0618 )
-tile_data = PoolIntArray( -2, 0, 0, -1, 1, 0, -65536, 2, 0, -65535, 3, 0, 65534, 8, 0, 65535, 5, 0, 0, 5, 0, 1, 7, 0, 131070, 12, 0, 131071, 13, 0, 65536, 14, 0, 65537, 15, 0 )
+tile_data = PoolIntArray( -2, 0, 0, -1, 1, 0, -65536, 2, 0, -65535, 3, 0, 65534, 8, 0, 65535, 5, 0, 0, 5, 0, 1, 28, 0, 2, 3, 0, 131070, 12, 0, 131071, 19, 0, 65536, 10, 0, 65537, 16, 0, 65538, 15, 0, 196607, 12, 0, 131072, 17, 0, 131073, 15, 0 )
 
 [node name="Bass2" parent="Instruments/Initial/PathFollow2D/Island" index="0" instance=ExtResource( 6 )]
 
 growth = 15.0
 duration = 0.1
+
+[node name="Under" parent="Instruments/Initial/PathFollow2D/Island" index="1"]
+
+tile_data = PoolIntArray( 131070, 76, 0, 131071, 98, 0, 65537, 98, 0, 65538, 67, 0, 196606, 84, 0, 196607, 102, 0, 131072, 65, 0, 131073, 102, 0, 131074, 91, 0, 262142, 100, 0, 262143, 106, 0, 196608, 89, 0, 196609, 106, 0, 262144, 69, 0 )
 
 [node name="2" parent="Instruments" index="2" instance=ExtResource( 2 )]
 
@@ -116,6 +125,10 @@ position = Vector2( 510, 570 )
 
 tile_data = PoolIntArray( -2, 0, 0, -1, 1, 0, -65536, 2, 0, -65535, 3, 0, 65534, 8, 0, 65535, 5, 0, 0, 5, 0, 1, 7, 0, 131070, 12, 0, 131071, 13, 0, 65536, 14, 0, 65537, 15, 0 )
 _sections_unfolded = [ "Cell", "Transform" ]
+
+[node name="Under2" parent="Instruments/2/PathFollow2D/Island" index="1"]
+
+tile_data = PoolIntArray( 131070, 96, 0, 131071, 98, 0, 65536, 77, 0, 65537, 79, 0, 196606, 100, 0, 196607, 106, 0, 131072, 85, 0, 131073, 91, 0, 196608, 93, 0 )
 
 [node name="Xylophone" parent="Instruments/2/PathFollow2D/Island" index="2" instance=ExtResource( 7 )]
 
@@ -137,18 +150,21 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="3" parent="Instruments" index="5" instance=ExtResource( 2 )]
 
-editor/display_folded = true
 curve = SubResource( 4 )
 _sections_unfolded = [ "Transform" ]
 speed = 0.22
 
 [node name="PathFollow2D" parent="Instruments/3" index="0"]
 
-position = Vector2( 2200, -230 )
+position = Vector2( 2200, -570 )
 
 [node name="Island" parent="Instruments/3/PathFollow2D" index="0" instance=ExtResource( 3 )]
 
 tile_data = PoolIntArray( -2, 0, 0, -1, 1, 0, -65536, 1, 0, -65535, 3, 0, 65534, 12, 0, 65535, 13, 0, 0, 14, 0, 1, 15, 0 )
+
+[node name="Under" parent="Instruments/3/PathFollow2D/Island" index="0"]
+
+tile_data = PoolIntArray( 65534, 64, 0, 65535, 65, 0, 0, 66, 0, 1, 67, 0, 131070, 68, 0, 131071, 69, 0, 65536, 70, 0, 65537, 71, 0 )
 
 [node name="Theremin" parent="Instruments/3/PathFollow2D/Island" index="2" instance=ExtResource( 8 )]
 
@@ -160,6 +176,10 @@ editor/display_folded = true
 position = Vector2( 2200, 900 )
 tile_data = PoolIntArray( -131070, 0, 0, -131069, 1, 0, -131068, 2, 0, -131067, 3, 0, -1, 0, 0, -65536, 1, 0, -65535, 2, 0, -65534, 31, 0, -65533, 5, 0, -65532, 5, 0, -65531, 28, 0, -65530, 3, 0, 65535, 4, 0, 0, 5, 0, 1, 5, 0, 2, 5, 0, 3, 5, 0, 4, 5, 0, 5, 5, 0, 6, 11, 0, 131071, 12, 0, 65536, 13, 0, 65537, 14, 0, 65538, 19, 0, 65539, 5, 0, 65540, 5, 0, 65541, 5, 0, 65542, 7, 0, 131074, 12, 0, 131075, 14, 0, 131076, 13, 0, 131077, 14, 0, 131078, 15, 0 )
 _sections_unfolded = [ "Cell", "Transform" ]
+
+[node name="Under" parent="Instruments/Island" index="0"]
+
+tile_data = PoolIntArray( 131071, 76, 0, 65536, 77, 0, 65537, 78, 0, 65538, 98, 0, 196607, 88, 0, 131072, 89, 0, 131073, 90, 0, 131074, 101, 0, 131075, 78, 0, 131076, 98, 0, 131077, 77, 0, 131078, 99, 0, 196608, 93, 0, 196610, 105, 0, 196611, 82, 0, 196612, 102, 0, 196613, 85, 0, 196614, 103, 0, 262147, 86, 0, 262148, 106, 0, 262149, 89, 0, 327683, 93, 0, 327685, 93, 0 )
 
 [node name="Gameboy" parent="Instruments/Island" index="2" instance=ExtResource( 9 )]
 
@@ -174,21 +194,18 @@ _sections_unfolded = [ "Transform" ]
 
 editor/display_folded = true
 
-[node name="ParallaxBackground" parent="." index="4"]
-
-editor/display_folded = true
-
-[node name="CanvasLayer" parent="." index="5"]
-
-editor/display_folded = true
-
 [node name="Cloud" parent="CanvasLayer" index="0"]
 
 position = Vector2( -1320, 10 )
 
 
 [editable path="Instruments/Chasers"]
+[editable path="Instruments/Chasers/PathFollow2D/Island"]
 [editable path="Instruments/Initial"]
+[editable path="Instruments/Initial/PathFollow2D/Island"]
 [editable path="Instruments/2"]
+[editable path="Instruments/2/PathFollow2D/Island"]
 [editable path="Instruments/2/PathFollow2D/Island/Xylophone"]
 [editable path="Instruments/3"]
+[editable path="Instruments/3/PathFollow2D/Island"]
+[editable path="Instruments/Island"]
