@@ -38,8 +38,18 @@ func load_buttons(page):
 										   Vector2(2000, p0.y), p0, 1, Tween.TRANS_QUAD,
 										   Tween.EASE_OUT)
 	$LoadButtonsTween.start()
-	$Panel/NextButton.disabled = (total < (page+1)*8)
-	$Panel/PreviousButton.disabled = (page == 0)
+	if total < (page+1)*8:
+		$Panel/NextButton.disabled = true
+		$Panel/NextButton/Arrow.modulate = Color(1,1,1,0.2)
+	else:
+		$Panel/NextButton.disabled = false
+		$Panel/NextButton/Arrow.modulate = Color(1,1,1,1)
+	if page == 0:
+		$Panel/PreviousButton.disabled = true
+		$Panel/PreviousButton/Arrow.modulate = Color(1,1,1,0.2)
+	else:
+		$Panel/PreviousButton.disabled = false
+		$Panel/PreviousButton/Arrow.modulate = Color(1,1,1,1)
 
 func _next_page():
 	load_buttons(self.current_page+1)
