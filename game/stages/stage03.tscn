@@ -84,14 +84,13 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="Path2D" parent="Instruments" index="2" instance=ExtResource( 6 )]
 
-editor/display_folded = true
 curve = SubResource( 1 )
 _sections_unfolded = [ "Transform" ]
 speed = 0.4
 
 [node name="PathFollow2D" parent="Instruments/Path2D" index="0"]
 
-position = Vector2( 585.711, 0.4519 )
+position = Vector2( 585.71, 0.4519 )
 offset = 477.446
 
 [node name="Island" parent="Instruments/Path2D/PathFollow2D" index="0" instance=ExtResource( 2 )]
@@ -101,7 +100,11 @@ _sections_unfolded = [ "Cell", "Transform" ]
 
 [node name="Under" parent="Instruments/Path2D/PathFollow2D/Island" index="0"]
 
-tile_data = PoolIntArray( 131071, 68, 0, 65536, 69, 0, 65537, 91, 0 )
+tile_data = PoolIntArray( 131071, 64, 0, 65536, 66, 0, 65537, 67, 0, 196607, 68, 0, 131072, 69, 0, 131073, 71, 0 )
+
+[node name="Under2" parent="Instruments/Path2D/PathFollow2D/Island" index="1"]
+
+tile_data = PoolIntArray( 65536, 65, 0 )
 
 [node name="Bass" parent="Instruments/Path2D/PathFollow2D/Island" index="2" instance=ExtResource( 7 )]
 
@@ -112,7 +115,6 @@ frequency = 0
 
 [node name="Path2D2" parent="Instruments" index="3" instance=ExtResource( 6 )]
 
-editor/display_folded = true
 position = Vector2( 0, -1 )
 curve = SubResource( 2 )
 speed = 0.4
@@ -132,6 +134,10 @@ _sections_unfolded = [ "Cell", "Transform" ]
 
 tile_data = PoolIntArray( 131071, 88, 0, 65536, 90, 0, 65537, 91, 0, 131072, 94, 0 )
 
+[node name="Under2" parent="Instruments/Path2D2/PathFollow2D/Island" index="1"]
+
+tile_data = PoolIntArray( 131071, 64, 0, 65536, 66, 0, 65537, 67, 0, 196607, 68, 0, 131072, 70, 0, 131073, 71, 0 )
+
 [node name="Bass" parent="Instruments/Path2D2/PathFollow2D/Island" index="2" instance=ExtResource( 7 )]
 
 position = Vector2( 15, 10 )
@@ -144,11 +150,11 @@ frequency = 0
 position = Vector2( 360, 0 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="CanvasLayer2" parent="." index="5"]
+[node name="Camera2D" parent="." index="2"]
 
 editor/display_folded = true
 
-[node name="Camera2D" parent="." index="6"]
+[node name="CanvasLayer2" parent="." index="6"]
 
 editor/display_folded = true
 
