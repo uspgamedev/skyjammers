@@ -6,6 +6,7 @@ const STAGE_SELECTOR_SCENE = preload("res://menus/stage-selector/main.tscn")
 onready var total = 0
 
 var last
+var current_stage_scene
 
 func _ready():
 	var progress = File.new()
@@ -19,11 +20,18 @@ func _ready():
 func get_total():
 	return self.total
 
-func stage_started(id):
-	self.last = id
-
 func stage_finished():
 	self.total = max(self.total, self.last+1)
+
+func restart_stage():
+	var stage = current_stage_scene.instance()
+	stage.get_node("Camera2D").position = Vector2(0, -1000)
+	get_tree().get_root().add_child(stage)
+
+func start_stage(id, stage_scene):
+	self.last = id
+	self.current_stage_scene = stage_scene
+	restart_stage()
 
 func go_to_stage_selector():
 	var stage_selector = STAGE_SELECTOR_SCENE.instance()
