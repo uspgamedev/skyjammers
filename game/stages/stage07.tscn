@@ -27,7 +27,7 @@ _data = {
 }
 _sections_unfolded = [ "Resource" ]
 
-[node name="Stage" instance=ExtResource( 1 )]
+[node name="Stage" index="0" instance=ExtResource( 1 )]
 
 initial_bard_path = NodePath("Instruments/Island/Bass")
 
@@ -58,7 +58,7 @@ duration = 1.0
 
 [node name="Under" parent="Instruments/Island3" index="1"]
 
-tile_data = PoolIntArray( -393207, 22, 0, -393206, 22, 0, -327671, 64, 0, -327670, 102, 0, -262135, 68, 0, -262134, 69, 0, -262133, 91, 0, -196598, 92, 0, -196597, 92, 0 )
+tile_data = PoolIntArray( -393207, 22, 0, -393206, 22, 0, -327671, 64, 0, -327670, 78, 0, -262135, 68, 0, -262134, 90, 0, -262133, 67, 0, -196598, 94, 0, -196597, 71, 0 )
 
 [node name="Path2D" parent="Instruments" index="2" instance=ExtResource( 5 )]
 
@@ -93,8 +93,7 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="Island4" parent="Instruments" index="4" instance=ExtResource( 2 )]
 
-editor/display_folded = true
-tile_data = PoolIntArray( -393206, 72, 0, -65519, 0, 0, -65518, 1, 0, -65517, 2, 0, -65516, 3, 0, 17, 12, 0, 18, 19, 0, 19, 6, 0, 20, 11, 0, 65554, 8, 0, 65555, 6, 0, 65556, 7, 0, 131090, 12, 0, 131091, 14, 0, 131092, 15, 0 )
+tile_data = PoolIntArray( -393206, 72, 0, 18, 0, 0, 19, 1, 0, 20, 3, 0, 65554, 8, 0, 65555, 6, 0, 65556, 7, 0, 131090, 12, 0, 131091, 14, 0, 131092, 15, 0 )
 
 [node name="Theremin" parent="Instruments/Island4" index="0" instance=ExtResource( 8 )]
 
@@ -108,7 +107,7 @@ position = Vector2( 590, -10 )
 
 [node name="Under" parent="Instruments/Island4" index="2"]
 
-tile_data = PoolIntArray( -393206, 72, 0, 17, 96, 0, 18, 98, 0, 65553, 100, 0, 65554, 102, 0, 131090, 102, 0, 131091, 97, 0, 131092, 99, 0, 196626, 106, 0, 196627, 101, 0, 196628, 103, 0, 262163, 105, 0 )
+tile_data = PoolIntArray( -393206, 72, 0, 131090, 64, 0, 131091, 97, 0, 131092, 99, 0, 196626, 68, 0, 196627, 101, 0, 196628, 103, 0, 262163, 105, 0 )
 
 [node name="Island5" parent="Instruments" index="5" instance=ExtResource( 2 )]
 
@@ -151,7 +150,7 @@ tile_data = PoolIntArray( 131070, 64, 0, 131071, 65, 0, 65536, 67, 0, 196606, 68
 
 position = Vector2( 720, 670 )
 
-[node name="CanvasLayer2" parent="." index="5"]
+[node name="CanvasLayer2" parent="." index="6"]
 
 editor/display_folded = true
 
