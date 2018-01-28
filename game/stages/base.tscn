@@ -74,7 +74,7 @@ shader_param/grayscale = false
 shader_param/factor = 0.0
 _sections_unfolded = [ "shader_param" ]
 
-[node name="Stage" type="Node2D" index="0"]
+[node name="Stage" type="Node2D"]
 
 script = ExtResource( 1 )
 _sections_unfolded = [ "Pause", "Transform" ]
