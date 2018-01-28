@@ -9,7 +9,7 @@
 [ext_resource path="res://assets/sound/bass_sfx.wav" type="AudioStream" id=7]
 [ext_resource path="res://assets/img/note-particle0.png" type="Texture" id=8]
 [ext_resource path="res://assets/img/note-particle1.png" type="Texture" id=9]
-[ext_resource path="res://assets/img/displacement.png" type="Texture" id=10]
+[ext_resource path="res://assets/img/displacement6.png" type="Texture" id=10]
 [ext_resource path="res://assets/img/pixel.png" type="Texture" id=11]
 
 [sub_resource type="Animation" id=1]
@@ -131,8 +131,8 @@ uniform sampler2D displacement;
 void fragment(){
 	vec4 displacementPixel = texture(displacement, UV);
 	vec2 pos = SCREEN_UV;
-	pos.x += (displacementPixel.r * 2.0) * 0.0025 * displacementPixel.a;
-	pos.y += (displacementPixel.g * 2.0) * 0.0025 * displacementPixel.a;
+	pos.x += (displacementPixel.r * 2.0 - 1.0) * 0.025 * displacementPixel.a;
+	pos.y += (displacementPixel.g * 2.0 - 1.0) * 0.025 * displacementPixel.a;
 	vec4 pixel = texture(SCREEN_TEXTURE, pos);
 	
 	COLOR = pixel;
@@ -156,8 +156,8 @@ collision_mask = 1
 collision/safe_margin = 0.08
 script = ExtResource( 1 )
 _sections_unfolded = [ "Transform" ]
-growth = 20.0
-duration = 5.0
+growth = 40.0
+duration = 2.0
 frequency = 3.0
 
 [node name="Sprite2" type="Sprite" parent="." index="0"]
@@ -301,7 +301,7 @@ size_flags_vertical = 1
 texture = ExtResource( 11 )
 expand = true
 stretch_mode = 0
-_sections_unfolded = [ "Anchor", "Margin", "Material", "Rect", "Visibility" ]
+_sections_unfolded = [ "Anchor", "Margin", "Material", "Rect" ]
 
 [node name="Tween" type="Tween" parent="TextureRect" index="0"]
 

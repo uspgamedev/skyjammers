@@ -15,6 +15,7 @@ tile_data = PoolIntArray( 131071, 5, 0, 65536, 5, 0, 196606, 5, 0, 196607, 5, 0,
 
 [node name="Bass" parent="Instruments" index="1" instance=ExtResource( 3 )]
 
+growth = 20.0
 duration = 2.0
 
 
