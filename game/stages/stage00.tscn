@@ -31,7 +31,7 @@ tile_data = PoolIntArray( 131070, 0, 0, 131071, 1, 0, 65536, 2, 0, 65537, 3, 0, 
 
 position = Vector2( 2.9409, 85.0606 )
 growth = 45.0
-duration = 2.0
+duration = 1.0
 
 [node name="Under" parent="Instruments/Island" index="1"]
 
@@ -48,7 +48,8 @@ tile_data = PoolIntArray( -393220, 0, 0, -393219, 1, 0, -393218, 1, 0, -393217, 
 [node name="Xylophone" parent="Instruments/Island2" index="0" instance=ExtResource( 5 )]
 
 position = Vector2( 0.814499, -136.837 )
-duration = 1.5
+growth = 8.0
+duration = 0.7
 
 [node name="Rotate" parent="Instruments/Island2/Xylophone/SoundWaveShape" index="0" instance=ExtResource( 6 )]
 
@@ -61,6 +62,10 @@ tile_data = PoolIntArray( -65540, 76, 0, -65539, 77, 0, -65538, 78, 0, -65537, 6
 [node name="Under2" parent="Instruments/Island2" index="2"]
 
 tile_data = PoolIntArray( -131069, 99, 0, -65535, 106, 0, -65534, 103, 0, -65533, 103, 0 )
+
+[node name="Cloud" parent="CanvasLayer" index="0"]
+
+position = Vector2( -160.834, 0 )
 
 
 [editable path="Instruments/Island3"]
