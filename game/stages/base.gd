@@ -7,6 +7,7 @@ export(int) var riff_set = 0
 onready var activeInstrument = null
 onready var camera = $Camera2D
 onready var audioManager = get_node("AudioManager")
+onready var overlayAnimation = get_node("CanvasLayer/overlay/AnimationPlayer")
 var win = false
 var lose = false
 
@@ -41,6 +42,8 @@ func changeActive(body):
 	if activeInstrument.is_in_group("sentinels"):
 		_failed()
 	elif activeInstrument.is_in_group("goal"):
+		# flash here
+		overlayAnimation.play("flash")
 		activeInstrument.get_node("AnimationPlayer").play("bloom")
 		audioManager.playSFX("LevelClear")
 		win = true
