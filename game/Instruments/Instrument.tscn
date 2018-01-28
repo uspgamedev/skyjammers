@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://Instruments/Instrument.gd" type="Script" id=1]
 [ext_resource path="res://assets/img/circle.png" type="Texture" id=2]
@@ -7,8 +7,8 @@
 [ext_resource path="res://assets/sound/bass_riff.wav" type="AudioStream" id=5]
 [ext_resource path="res://assets/sound/bass_riff2.wav" type="AudioStream" id=6]
 [ext_resource path="res://assets/sound/bass_sfx.wav" type="AudioStream" id=7]
-[ext_resource path="res://assets/img/note-particle0.png" type="Texture" id=8]
-[ext_resource path="res://assets/img/note-particle1.png" type="Texture" id=9]
+[ext_resource path="res://Instruments/notes/NoteParticles.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Instruments/notes/NoteParticles2.tscn" type="PackedScene" id=9]
 [ext_resource path="res://assets/img/displacement6.png" type="Texture" id=10]
 [ext_resource path="res://assets/img/pixel.png" type="Texture" id=11]
 
@@ -71,58 +71,7 @@ extents = Vector2( 10, 10 )
 custom_solver_bias = 0.0
 radius = 10.0
 
-[sub_resource type="Gradient" id=5]
-
-offsets = PoolRealArray( 0.0650888, 0.508876, 0.899408 )
-colors = PoolColorArray( 0, 0, 0, 0.806627, 0, 0, 0, 0.674039, 0.319527, 0.319527, 0.319527, 0.232078 )
-
-[sub_resource type="GradientTexture" id=6]
-
-flags = 4
-gradient = SubResource( 5 )
-width = 2048
-
-[sub_resource type="ParticlesMaterial" id=7]
-
-render_priority = 0
-trail_divisor = 1
-emission_shape = 1
-emission_sphere_radius = 30.0
-flag_align_y = false
-flag_rotate_y = false
-flag_disable_z = true
-spread = 180.0
-flatness = 1.0
-gravity = Vector3( 0, 0, 0 )
-initial_velocity = 10.0
-initial_velocity_random = 1.0
-angular_velocity = 5.0
-angular_velocity_random = 1.0
-orbit_velocity = 0.0
-orbit_velocity_random = 1.0
-linear_accel = 0.0
-linear_accel_random = 1.0
-radial_accel = 0.0
-radial_accel_random = 1.0
-tangential_accel = 0.0
-tangential_accel_random = 1.0
-damping = 0.0
-damping_random = 0.0
-angle = 0.0
-angle_random = 1.0
-scale = 0.4
-scale_random = 0.0
-color_ramp = SubResource( 6 )
-hue_variation = 0.0
-hue_variation_random = 0.0
-anim_speed = 0.0
-anim_speed_random = 0.0
-anim_offset = 0.0
-anim_offset_random = 0.0
-anim_loop = false
-_sections_unfolded = [ "Angle", "Angular Velocity", "Animation", "Color", "Damping", "Emission Shape", "Flags", "Gravity", "Hue Variation", "Initial Velocity", "Linear Accel", "Orbit Velocity", "Radial Accel", "Resource", "Scale", "Spread", "Tangential Accel", "Trail" ]
-
-[sub_resource type="Shader" id=8]
+[sub_resource type="Shader" id=5]
 
 code = "shader_type canvas_item;
 
@@ -139,10 +88,10 @@ void fragment(){
 }
 "
 
-[sub_resource type="ShaderMaterial" id=9]
+[sub_resource type="ShaderMaterial" id=6]
 
 render_priority = 0
-shader = SubResource( 8 )
+shader = SubResource( 5 )
 shader_param/displacement = ExtResource( 10 )
 _sections_unfolded = [ "shader_param" ]
 
@@ -235,55 +184,13 @@ attenuation = 3.03143
 bus = "Master"
 area_mask = 1
 
-[node name="NoteParticles" type="Particles2D" parent="." index="8"]
+[node name="NoteParticles" parent="." index="8" instance=ExtResource( 8 )]
 
-visible = false
-emitting = true
-amount = 2
-lifetime = 1.0
-one_shot = false
-preprocess = 0.0
-speed_scale = 1.5
-explosiveness = 1.0
-randomness = 1.0
-fixed_fps = 0
-fract_delta = true
-visibility_rect = Rect2( -100, -100, 200, 200 )
-local_coords = true
-draw_order = 0
-process_material = SubResource( 7 )
-texture = ExtResource( 8 )
-normal_map = null
-h_frames = 1
-v_frames = 1
-_sections_unfolded = [ "Drawing", "Material", "Pause", "Process Material", "Textures", "Time", "Transform", "Visibility", "Z Index" ]
-
-[node name="NoteParticles2" type="Particles2D" parent="." index="9"]
-
-visible = false
-emitting = true
-amount = 2
-lifetime = 1.0
-one_shot = false
-preprocess = 0.0
-speed_scale = 1.5
-explosiveness = 1.0
-randomness = 1.0
-fixed_fps = 0
-fract_delta = true
-visibility_rect = Rect2( -100, -100, 200, 200 )
-local_coords = true
-draw_order = 0
-process_material = SubResource( 7 )
-texture = ExtResource( 9 )
-normal_map = null
-h_frames = 1
-v_frames = 1
-_sections_unfolded = [ "Drawing", "Material", "Pause", "Process Material", "Textures", "Time", "Transform", "Visibility", "Z Index" ]
+[node name="NoteParticles2" parent="." index="9" instance=ExtResource( 9 )]
 
 [node name="ShockwaveShader" type="TextureRect" parent="." index="10"]
 
-material = SubResource( 9 )
+material = SubResource( 6 )
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
