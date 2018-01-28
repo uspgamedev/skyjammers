@@ -35,7 +35,6 @@ initial_bard_path = NodePath("Instruments/Island/Bass")
 
 [node name="Island" parent="Instruments" index="0" instance=ExtResource( 2 )]
 
-editor/display_folded = true
 tile_data = PoolIntArray( -196608, 22, 0, -196607, 22, 0, -196606, 22, 0, -196605, 22, 0, -65542, 22, 0, -65541, 22, 0, -65540, 22, 0, -65539, 22, 0, -65538, 22, 0, -65537, 22, 0, -131072, 22, 0, -131071, 22, 0, -131070, 22, 0, -131069, 22, 0, -131068, 22, 0, -131067, 22, 0, -6, 22, 0, -5, 22, 0, -4, 22, 0, -3, 22, 0, -2, 22, 0, -1, 22, 0, -65536, 22, 0, -65535, 22, 0, -65534, 22, 0, -65533, 22, 0, -65532, 22, 0, -65531, 22, 0, 65530, 22, 0, 65531, 22, 0, 65532, 22, 0, 65533, 22, 0, 65534, 22, 0, 65535, 22, 0, 0, 22, 0, 1, 22, 0, 2, 22, 0, 3, 22, 0, 4, 22, 0, 5, 22, 0, 6, 22, 0, 131067, 22, 0, 131068, 22, 0, 131069, 22, 0, 131070, 22, 0, 131071, 22, 0, 65536, 22, 0, 65537, 22, 0, 65538, 22, 0, 65539, 22, 0, 65540, 22, 0, 65541, 22, 0, 65542, 22, 0, 131072, 22, 0, 131073, 22, 0, 131074, 22, 0, 131075, 22, 0, 131076, 22, 0 )
 
 [node name="Goal" parent="Instruments/Island" index="0" instance=ExtResource( 3 )]
@@ -72,6 +71,7 @@ position = Vector2( 0, 240 )
 
 [node name="Island" parent="Instruments/Path2D/PathFollow2D" index="0" instance=ExtResource( 2 )]
 
+editor/display_folded = true
 tile_data = PoolIntArray( -1, 0, 0, -65536, 2, 0, -65535, 3, 0, 65534, 0, 0, 65535, 31, 0, 0, 9, 0, 1, 7, 0, 131070, 12, 0, 131071, 13, 0, 65536, 14, 0, 65537, 15, 0 )
 
 [node name="Under" parent="Instruments/Path2D/PathFollow2D/Island" index="0"]
@@ -90,7 +90,6 @@ duration = 0.3
 
 [node name="PathFollow2D2" parent="Instruments/Path2D" index="1" instance=ExtResource( 8 )]
 
-editor/display_folded = true
 position = Vector2( -212.614, 118.155 )
 offset = 506.734
 v_offset = 240.0
@@ -99,14 +98,13 @@ override_parent_speed = true
 
 [node name="Island" parent="Instruments/Path2D/PathFollow2D2" index="0" instance=ExtResource( 2 )]
 
-tile_data = PoolIntArray( -524290, 0, 0, -524289, 3, 0, -589824, 0, 0, -589823, 3, 0, -458754, 4, 0, -458753, 28, 0, -524288, 31, 0, -524287, 7, 0, -393218, 12, 0, -393217, 13, 0, -458752, 14, 0, -458751, 15, 0 )
-
 [node name="Sentinel" parent="Instruments/Path2D/PathFollow2D2/Island" index="0" instance=ExtResource( 9 )]
 
 position = Vector2( -20, -240 )
 
 [node name="Path2D2" parent="Instruments" index="2" instance=ExtResource( 6 )]
 
+editor/display_folded = true
 curve = SubResource( 2 )
 cyclic = true
 speed = 0.2

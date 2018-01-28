@@ -28,6 +28,6 @@ func draw_line_circle(circle_center, circle_radius, color, resolution):
 
 func _draw():
 	draw_line_circle(Vector2(0,0), Vector2(radius,radius), cor, .3)
-	draw_line_circle(Vector2(0,0), Vector2(radius*.9,radius*.9), cor, .3)
-	draw_line_circle(Vector2(0,0), Vector2(radius*.8,radius*.8), cor, .3)
-	draw_line_circle(Vector2(0,0), Vector2(radius*.7,radius*.7), cor, .3)
+#	draw_line_circle(Vector2(0,0), Vector2(radius*.9,radius*.9), cor, .3)
+#	draw_line_circle(Vector2(0,0), Vector2(radius*.8,radius*.8), cor, .3)
+#	draw_line_circle(Vector2(0,0), Vector2(radius*.7,radius*.7), cor, .3)

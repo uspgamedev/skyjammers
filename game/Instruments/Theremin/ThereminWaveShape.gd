@@ -21,7 +21,7 @@ func draw_triangle(size, x, y, alpha):
 func _draw():
 	var size = 30/sqrt(3)
 	draw_triangle(size, 0, fix_size, .9)
-	draw_triangle(size*.9, 0, fix_size, .8)
-	draw_triangle(size*.8, 0, fix_size, .7)
-	draw_triangle(size*.7, 0, fix_size, .6)
-	draw_triangle(size*.6, 0, fix_size, .5)
+#	draw_triangle(size*.9, 0, fix_size, .8)
+#	draw_triangle(size*.8, 0, fix_size, .7)
+#	draw_triangle(size*.7, 0, fix_size, .6)
+#	draw_triangle(size*.6, 0, fix_size, .5)

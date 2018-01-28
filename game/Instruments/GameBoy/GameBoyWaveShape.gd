@@ -25,7 +25,7 @@ func draw_star(radius, alpha):
 	
 func _draw():
 	draw_star(10, .9)
-	draw_star(8, .8)
-	draw_star(6, .7)
-	draw_star(4, .6)
-	draw_star(2, .5)
+#	draw_star(8, .8)
+#	draw_star(6, .7)
+#	draw_star(4, .6)
+#	draw_star(2, .5)
