@@ -7,10 +7,10 @@ path="res://.import/cliff-tiles-v2.png-41c1ed86406b8fa1dae954f392ba6f2c.stex"
 [deps]
 
 source_file="res://islands/cliff-tiles-v2.png"
-source_md5="2094297d2f640ee08e9baaa162040a2d"
+source_md5="801b93847e21ba671ec5894533470cf4"
 
 dest_files=[ "res://.import/cliff-tiles-v2.png-41c1ed86406b8fa1dae954f392ba6f2c.stex" ]
-dest_md5="efbd5503affc47c91ea08d38e587a8b9"
+dest_md5="7ec67e9a083135dd942d2763940b2c50"
 
 [params]
 
