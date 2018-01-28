@@ -64,7 +64,8 @@ angular_velocity = 5
 [node name="IslandGoal" parent="Instruments" index="1" instance=ExtResource( 2 )]
 
 editor/display_folded = true
-position = Vector2( 50, 0 )
+position = Vector2( 25, 0 )
+z_index = -1
 tile_data = PoolIntArray( -131054, 0, 0, -131053, 2, 0, -131052, 2, 0, -131051, 2, 0, -131050, 2, 0, -131049, 2, 0, -131048, 2, 0, -131047, 3, 0, -65519, 0, 0, -65518, 31, 0, -65517, 48, 0, -65516, 46, 0, -65515, 46, 0, -65514, 46, 0, -65513, 46, 0, -65512, 51, 0, -65511, 28, 0, -65510, 3, 0, 17, 23, 0, 18, 48, 0, 19, 47, 0, 20, 54, 0, 21, 54, 0, 22, 54, 0, 23, 54, 0, 24, 44, 0, 25, 51, 0, 26, 11, 0, 65553, 23, 0, 65554, 52, 0, 65555, 54, 0, 65556, 54, 0, 65557, 54, 0, 65558, 54, 0, 65559, 54, 0, 65560, 54, 0, 65561, 55, 0, 65562, 11, 0, 131089, 23, 0, 131090, 52, 0, 131091, 54, 0, 131092, 54, 0, 131093, 54, 0, 131094, 54, 0, 131095, 54, 0, 131096, 54, 0, 131097, 55, 0, 131098, 11, 0, 196625, 23, 0, 196626, 60, 0, 196627, 35, 0, 196628, 54, 0, 196629, 54, 0, 196630, 54, 0, 196631, 54, 0, 196632, 32, 0, 196633, 63, 0, 196634, 11, 0, 262161, 12, 0, 262162, 19, 0, 262163, 60, 0, 262164, 61, 0, 262165, 61, 0, 262166, 61, 0, 262167, 61, 0, 262168, 63, 0, 262169, 16, 0, 262170, 15, 0, 327698, 12, 0, 327699, 14, 0, 327700, 14, 0, 327701, 14, 0, 327702, 14, 0, 327703, 14, 0, 327704, 14, 0, 327705, 15, 0 )
 _sections_unfolded = [ "Cell", "Transform", "Z Index" ]
 
@@ -83,6 +84,7 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="Path2D" parent="Instruments" index="2" instance=ExtResource( 6 )]
 
+editor/display_folded = true
 curve = SubResource( 1 )
 _sections_unfolded = [ "Transform" ]
 speed = 0.4
@@ -110,6 +112,7 @@ frequency = 0
 
 [node name="Path2D2" parent="Instruments" index="3" instance=ExtResource( 6 )]
 
+editor/display_folded = true
 position = Vector2( 0, -1 )
 curve = SubResource( 2 )
 speed = 0.4
@@ -141,11 +144,11 @@ frequency = 0
 position = Vector2( 360, 0 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="Camera2D" parent="." index="2"]
+[node name="CanvasLayer2" parent="." index="5"]
 
 editor/display_folded = true
 
-[node name="CanvasLayer2" parent="." index="6"]
+[node name="Camera2D" parent="." index="6"]
 
 editor/display_folded = true
 
