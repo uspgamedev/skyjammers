@@ -29,7 +29,7 @@ _data = {
 }
 _sections_unfolded = [ "Resource" ]
 
-[node name="Stage" instance=ExtResource( 1 )]
+[node name="Stage" index="0" instance=ExtResource( 1 )]
 
 initial_bard_path = NodePath("Instruments/Island/Bass")
 
@@ -85,8 +85,8 @@ tile_data = PoolIntArray( -1, 29, 0 )
 [node name="Xylophone" parent="Instruments/Path2D/PathFollow2D/Island" index="2" instance=ExtResource( 7 )]
 
 position = Vector2( 10, 10 )
-growth = 15.0
-duration = 0.5
+growth = 8.0
+duration = 0.3
 
 [node name="PathFollow2D2" parent="Instruments/Path2D" index="1" instance=ExtResource( 8 )]
 
