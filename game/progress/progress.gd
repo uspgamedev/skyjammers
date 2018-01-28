@@ -12,13 +12,18 @@ func _ready():
 	var progress = File.new()
 	if !progress.file_exists(SAVEFILE):
 		total = 0
+		last = 0
 		return
 	progress.open(SAVEFILE, File.READ)
 	total = progress.get_16()
+	last = total
 	progress.close()
 
 func get_total():
 	return self.total
+
+func get_last():
+	return self.last
 
 func stage_finished():
 	self.total = max(self.total, self.last+1)
