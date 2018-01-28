@@ -22,7 +22,7 @@ _data = {
 
 bake_interval = 5.0
 _data = {
-"points": PoolVector2Array( 0, 0, 0, 0, 260, 20, 0, 0, 0, 0, 260, 220, 0, 0, 0, 0, 170, 220 )
+"points": PoolVector2Array( 0, 0, 0, 0, 240, 70, 0, 0, 0, 0, 240, 220, 0, 0, 0, 0, 170, 220 )
 }
 
 [node name="Stage" index="0" instance=ExtResource( 1 )]
@@ -52,7 +52,7 @@ duration = 1.0
 
 [node name="Under" parent="Instruments/Path2D/PathFollow2D/Island" index="1"]
 
-tile_data = PoolIntArray( 65534, 76, 0, 65535, 66, 0, 131070, 80, 0, 131071, 90, 0, 65536, 103, 0, 196606, 88, 0, 196607, 94, 0, 131072, 104, 0 )
+tile_data = PoolIntArray( 65534, 76, 0, 65535, 66, 0, 131070, 100, 0, 131071, 82, 0, 65536, 67, 0, 196606, 95, 0, 196607, 90, 0, 131072, 71, 0, 262143, 94, 0 )
 
 [node name="Under2" parent="Instruments/Path2D/PathFollow2D/Island" index="2"]
 
