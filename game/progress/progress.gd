@@ -9,6 +9,7 @@ var last
 var current_stage_scene
 
 func _ready():
+	$AudioManager.playBGM("LevelSelect")
 	var progress = File.new()
 	if !progress.file_exists(SAVEFILE):
 		total = 0
@@ -18,7 +19,6 @@ func _ready():
 	total = progress.get_16()
 	last = total
 	progress.close()
-	$AudioManager.playBGM("LevelSelect")
 
 func get_total():
 	return self.total
