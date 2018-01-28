@@ -1,13 +1,14 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://clouds/cloudBG.tscn" type="PackedScene" id=1]
 [ext_resource path="res://islands/Island.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Instruments/Bass/cat-bass.png" type="Texture" id=3]
-[ext_resource path="res://Instruments/GameBoy/fox-gameboi.png" type="Texture" id=4]
-[ext_resource path="res://Instruments/Theremin/bunny-theremin.png" type="Texture" id=5]
-[ext_resource path="res://Instruments/Xylophone/croc-xylo.png" type="Texture" id=6]
-[ext_resource path="res://clouds/Cloud.tscn" type="PackedScene" id=7]
-[ext_resource path="res://menus/theme.tres" type="Theme" id=8]
+[ext_resource path="res://menus/title/begin-island.png" type="Texture" id=3]
+[ext_resource path="res://Instruments/Bass/cat-bass.png" type="Texture" id=4]
+[ext_resource path="res://Instruments/GameBoy/fox-gameboi.png" type="Texture" id=5]
+[ext_resource path="res://Instruments/Theremin/bunny-theremin.png" type="Texture" id=6]
+[ext_resource path="res://Instruments/Xylophone/croc-xylo.png" type="Texture" id=7]
+[ext_resource path="res://clouds/Cloud.tscn" type="PackedScene" id=8]
+[ext_resource path="res://menus/theme.tres" type="Theme" id=9]
 
 [sub_resource type="GDScript" id=1]
 
@@ -21,6 +22,7 @@ func _ready():
 
 func _unhandled_input(event):
 	if not lock and event.is_action_pressed(\"action_play\"):
+		print(\"asd\")
 		self.lock = true
 		$LeaveTween.interpolate_method(self, \"_set_scroll\", 0, 800, 1, Tween.TRANS_LINEAR,
 									   Tween.EASE_IN_OUT)
@@ -31,7 +33,6 @@ func _unhandled_input(event):
 
 func _set_scroll(y):
 	$ParallaxBackground.scroll_offset.y = y
-	$ParallaxBackground/Island.position.y = y
 	$GUI.position.y = y
 "
 
@@ -118,7 +119,7 @@ tracks/0/keys = {
 "values": [ 0, 1 ]
 }
 
-[node name="Title" type="Node2D"]
+[node name="Title" type="Node2D" index="0"]
 
 script = SubResource( 1 )
 
@@ -138,13 +139,17 @@ tile_data = PoolIntArray( -458764, 0, 0, -458763, 1, 0, -458762, 1, 0, -458761, 
 
 [node name="Island" parent="ParallaxBackground" index="1" instance=ExtResource( 2 )]
 
-editor/display_folded = true
-tile_data = PoolIntArray( 524301, 0, 0, 524302, 1, 0, 524303, 3, 0, 589837, 4, 0, 589838, 5, 0, 589839, 7, 0, 655373, 12, 0, 655374, 14, 0, 655375, 15, 0 )
+tile_data = PoolIntArray( 262162, 26, 0, 851986, 21, 0, 851987, 21, 0, 851988, 21, 0, 851989, 21, 0, 851990, 22, 0, 851991, 22, 0, 917522, 21, 0, 917523, 21, 0, 917527, 21, 0 )
 
-[node name="Sprite" type="Sprite" parent="ParallaxBackground/Island" index="2"]
+[node name="island" type="Sprite" parent="ParallaxBackground/Island" index="0"]
 
-position = Vector2( 460, 273 )
+position = Vector2( 591.914, 233.579 )
 texture = ExtResource( 3 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/Island" index="3"]
+
+position = Vector2( 412.091, 205.211 )
+texture = ExtResource( 4 )
 hframes = 2
 frame = 1
 _sections_unfolded = [ "Animation" ]
@@ -161,10 +166,10 @@ blend_times = [  ]
 autoplay = "play"
 _sections_unfolded = [ "Playback Options" ]
 
-[node name="Sprite2" type="Sprite" parent="ParallaxBackground/Island" index="3"]
+[node name="Sprite2" type="Sprite" parent="ParallaxBackground/Island" index="4"]
 
-position = Vector2( 340, 243 )
-texture = ExtResource( 4 )
+position = Vector2( 832.082, 235.463 )
+texture = ExtResource( 5 )
 hframes = 2
 frame = 1
 _sections_unfolded = [ "Animation" ]
@@ -181,10 +186,10 @@ blend_times = [  ]
 autoplay = "play"
 _sections_unfolded = [ "Playback Options" ]
 
-[node name="Sprite3" type="Sprite" parent="ParallaxBackground/Island" index="4"]
+[node name="Sprite3" type="Sprite" parent="ParallaxBackground/Island" index="5"]
 
-position = Vector2( 588, 237 )
-texture = ExtResource( 5 )
+position = Vector2( 538.095, 144.28 )
+texture = ExtResource( 6 )
 hframes = 2
 frame = 1
 _sections_unfolded = [ "Animation" ]
@@ -201,10 +206,10 @@ blend_times = [  ]
 autoplay = "play"
 _sections_unfolded = [ "Playback Options" ]
 
-[node name="Sprite4" type="Sprite" parent="ParallaxBackground/Island" index="5"]
+[node name="Sprite4" type="Sprite" parent="ParallaxBackground/Island" index="6"]
 
-position = Vector2( 630, 348 )
-texture = ExtResource( 6 )
+position = Vector2( 531.981, 274.712 )
+texture = ExtResource( 7 )
 hframes = 2
 frame = 1
 _sections_unfolded = [ "Animation" ]
@@ -231,8 +236,9 @@ motion_offset = Vector2( 0, 0 )
 motion_mirroring = Vector2( 1200, 0 )
 _sections_unfolded = [ "Material", "Motion", "Transform", "Visibility", "Z Index" ]
 
-[node name="Cloud" parent="ParallaxBackground/ParallaxLayer2" index="0" instance=ExtResource( 7 )]
+[node name="Cloud" parent="ParallaxBackground/ParallaxLayer2" index="0" instance=ExtResource( 8 )]
 
+visible = false
 tile_data = PoolIntArray( 196612, 0, 0, 196613, 1, 0, 196614, 1, 0, 196615, 1, 0, 196616, 1, 0, 196617, 1, 0, 196618, 1, 0, 196619, 2, 0, 262145, 0, 0, 262146, 1, 0, 262147, 1, 0, 262148, 17, 0, 262149, 4, 0, 262150, 4, 0, 262151, 4, 0, 262152, 4, 0, 262153, 4, 0, 262154, 4, 0, 262155, 15, 0, 262156, 2, 0, 327681, 14, 0, 327682, 4, 0, 327683, 4, 0, 327684, 4, 0, 327685, 4, 0, 327686, 4, 0, 327687, 4, 0, 327688, 4, 0, 327689, 4, 0, 327690, 4, 0, 327691, 4, 0, 327692, 5, 0, 393217, 14, 0, 393218, 4, 0, 393219, 4, 0, 393220, 4, 0, 393221, 4, 0, 393222, 4, 0, 393223, 4, 0, 393224, 4, 0, 393225, 4, 0, 393226, 4, 0, 393227, 9, 0, 393228, 8, 0, 458753, 6, 0, 458754, 7, 0, 458755, 11, 0, 458756, 4, 0, 458757, 4, 0, 458758, 4, 0, 458759, 4, 0, 458760, 4, 0, 458761, 4, 0, 458762, 9, 0, 458763, 8, 0, 524291, 14, 0, 524292, 4, 0, 524293, 4, 0, 524294, 4, 0, 524295, 4, 0, 524296, 4, 0, 524297, 9, 0, 524298, 8, 0, 524309, 0, 0, 524310, 16, 0, 524311, 16, 0, 524312, 16, 0, 524313, 16, 0, 524314, 16, 0, 524315, 2, 0, 589827, 6, 0, 589828, 7, 0, 589829, 7, 0, 589830, 7, 0, 589831, 7, 0, 589832, 7, 0, 589833, 8, 0, 589842, 0, 0, 589843, 16, 0, 589844, 16, 0, 589845, 17, 0, 589846, 4, 0, 589847, 4, 0, 589848, 4, 0, 589849, 4, 0, 589850, 4, 0, 589851, 15, 0, 589852, 2, 0, 655377, 0, 0, 655378, 17, 0, 655379, 4, 0, 655380, 4, 0, 655381, 4, 0, 655382, 4, 0, 655383, 4, 0, 655384, 4, 0, 655385, 4, 0, 655386, 4, 0, 655387, 4, 0, 655388, 15, 0, 655389, 2, 0, 720910, 0, 0, 720911, 1, 0, 720912, 1, 0, 720913, 17, 0, 720914, 4, 0, 720915, 4, 0, 720916, 4, 0, 720917, 4, 0, 720918, 4, 0, 720919, 4, 0, 720920, 4, 0, 720921, 4, 0, 720922, 4, 0, 720923, 4, 0, 720924, 4, 0, 720925, 15, 0, 720926, 16, 0, 720927, 2, 0, 786445, 0, 0, 786446, 17, 0, 786447, 4, 0, 786448, 4, 0, 786449, 4, 0, 786450, 4, 0, 786451, 4, 0, 786452, 4, 0, 786453, 4, 0, 786454, 4, 0, 786455, 4, 0, 786456, 4, 0, 786457, 4, 0, 786458, 4, 0, 786459, 4, 0, 786460, 4, 0, 786461, 4, 0, 786462, 4, 0, 786463, 12, 0, 851981, 6, 0, 851982, 11, 0, 851983, 4, 0, 851984, 4, 0, 851985, 4, 0, 851986, 4, 0, 851987, 4, 0, 851988, 4, 0, 851989, 4, 0, 851990, 4, 0, 851991, 4, 0, 851992, 4, 0, 851993, 4, 0, 851994, 4, 0, 851995, 4, 0, 851996, 4, 0, 851997, 4, 0, 851998, 4, 0, 851999, 12, 0, 917518, 6, 0, 917519, 10, 0, 917520, 10, 0, 917521, 10, 0, 917522, 11, 0, 917523, 4, 0, 917524, 4, 0, 917525, 4, 0, 917526, 4, 0, 917527, 4, 0, 917528, 4, 0, 917529, 4, 0, 917530, 4, 0, 917531, 4, 0, 917532, 4, 0, 917533, 9, 0, 917534, 10, 0, 917535, 8, 0, 983058, 14, 0, 983059, 4, 0, 983060, 9, 0, 983061, 10, 0, 983062, 10, 0, 983063, 10, 0, 983064, 10, 0, 983065, 10, 0, 983066, 10, 0, 983067, 10, 0, 983068, 10, 0, 983069, 8, 0, 1048594, 6, 0, 1048595, 10, 0, 1048596, 8, 0 )
 
 [node name="GUI" type="Node2D" parent="." index="1"]
@@ -243,17 +249,17 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 59.0
-margin_top = 411.0
-margin_right = 279.0
-margin_bottom = 467.0
+margin_left = 69.0
+margin_top = 474.0
+margin_right = 289.0
+margin_bottom = 530.0
 rect_pivot_offset = Vector2( 0, 0 )
 mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-theme = ExtResource( 8 )
-text = "Touch to start!"
+theme = ExtResource( 9 )
+text = "touch to start!"
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
