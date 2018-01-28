@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://clouds/cloudBG.tscn" type="PackedScene" id=1]
 [ext_resource path="res://islands/Island.tscn" type="PackedScene" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://Instruments/Xylophone/croc-xylo.png" type="Texture" id=7]
 [ext_resource path="res://clouds/Cloud.tscn" type="PackedScene" id=8]
 [ext_resource path="res://menus/theme.tres" type="Theme" id=9]
+[ext_resource path="res://menus/click-sfx.tscn" type="PackedScene" id=10]
 
 [sub_resource type="GDScript" id=1]
 
@@ -22,7 +23,7 @@ func _ready():
 
 func _unhandled_input(event):
 	if not lock and event.is_action_pressed(\"action_play\"):
-		print(\"asd\")
+		$AudioStreamPlayer.play()
 		self.lock = true
 		$LeaveTween.interpolate_method(self, \"_set_scroll\", 0, 800, 1, Tween.TRANS_LINEAR,
 									   Tween.EASE_IN_OUT)
@@ -119,7 +120,7 @@ tracks/0/keys = {
 "values": [ 0, 1 ]
 }
 
-[node name="Title" type="Node2D" index="0"]
+[node name="Title" type="Node2D"]
 
 script = SubResource( 1 )
 
@@ -273,6 +274,8 @@ playback_speed = 1.0
 playback/active = false
 playback/repeat = false
 playback/speed = 1.0
+
+[node name="AudioStreamPlayer" parent="." index="3" instance=ExtResource( 10 )]
 
 
 [editable path="ParallaxBackground"]
