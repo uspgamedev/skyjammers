@@ -59,7 +59,6 @@ position = Vector2( -140, -20 )
 
 [node name="Path2D" parent="Instruments" index="1" instance=ExtResource( 6 )]
 
-editor/display_folded = true
 curve = SubResource( 1 )
 cyclic = true
 speed = 0.1
@@ -78,7 +77,7 @@ tile_data = PoolIntArray( 131070, 76, 0, 131071, 77, 0, 65536, 78, 0, 65537, 79,
 
 [node name="Under2" parent="Instruments/Path2D/PathFollow2D/Island" index="1"]
 
-tile_data = PoolIntArray( -1, 29, 0 )
+tile_data = PoolIntArray( -1, 72, 0 )
 
 [node name="Xylophone" parent="Instruments/Path2D/PathFollow2D/Island" index="2" instance=ExtResource( 7 )]
 
@@ -87,6 +86,7 @@ growth = 7.0
 
 [node name="PathFollow2D2" parent="Instruments/Path2D" index="1" instance=ExtResource( 8 )]
 
+visible = false
 position = Vector2( 0, 480 )
 v_offset = 240.0
 speed = -0.15
@@ -94,7 +94,7 @@ override_parent_speed = true
 
 [node name="Island" parent="Instruments/Path2D/PathFollow2D2" index="0" instance=ExtResource( 2 )]
 
-tile_data = PoolIntArray( -524290, 0, 0, -524289, 3, 0, -589824, 0, 0, -589823, 3, 0, -458754, 4, 0, -458753, 28, 0, -524288, 31, 0, -524287, 7, 0, -393218, 12, 0, -393217, 13, 0, -458752, 14, 0, -458751, 15, 0 )
+tile_data = PoolIntArray( -524290, 72, 0, -524289, 72, 0, -589824, 72, 0, -589823, 72, 0, -458754, 72, 0, -458753, 72, 0, -524288, 72, 0, -524287, 72, 0, -524286, 72, 0, -524285, 72, 0, -524284, 72, 0, -393218, 72, 0, -393217, 72, 0, -458752, 72, 0, -458751, 72, 0, -458749, 72, 0, -458748, 72, 0 )
 
 [node name="Sentinel" parent="Instruments/Path2D/PathFollow2D2/Island" index="0" instance=ExtResource( 9 )]
 
