@@ -253,7 +253,7 @@ playback/speed = 1.0
 [node name="Pause" type="Polygon2D" parent="CanvasLayer2" index="2"]
 
 visible = false
-polygon = PoolVector2Array( -10, -10, 1030, -10, 1030, 610, -10, 610 )
+polygon = PoolVector2Array( 0, 0, 1024, 0, 1024, 640, 0, 640 )
 uv = PoolVector2Array(  )
 color = Color( 0, 0, 0, 0.541412 )
 vertex_colors = PoolColorArray(  )
