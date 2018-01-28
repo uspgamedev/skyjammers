@@ -11,6 +11,8 @@ onready var overlayAnimation = get_node("CanvasLayer/overlay/AnimationPlayer")
 onready var win = false
 onready var lose = false
 
+var paused = false
+
 func _ready():
 	randomize()
 	audioManager.setRiffSet(self.riff_set)
@@ -59,19 +61,32 @@ func _failed():
 	get_tree().set_pause(true)
 	lose = true
 
+func _on_Input_pause():
+	if not lose:
+		var filter = get_node('CanvasLayer2/Pause')
+		if paused:
+			paused = false
+			filter.hide()
+			get_tree().set_pause(false)
+		else:
+			paused = true
+			filter.show()
+			get_tree().set_pause(true)
+
 func _on_Input_played():
-	if lose:
-		get_tree().set_pause(false)
-		get_node("CanvasLayer2/grayscaleShader").material.set_shader_param("grayscale", false)
-		queue_free()
-		get_node("/root/Progress").restart_stage()
-	elif not win and not activeInstrument.hasSoundwave:
-		activeInstrument.pulse()
-		camera_shake()
-	elif win:
-		get_node("/root/Progress").stage_finished()
-		get_node("/root/Progress").go_to_stage_selector()
-		queue_free()
+	if not paused:
+		if lose:
+			get_tree().set_pause(false)
+			get_node("CanvasLayer2/grayscaleShader").material.set_shader_param("grayscale", false)
+			queue_free()
+			get_node("/root/Progress").restart_stage()
+		elif not win and not activeInstrument.hasSoundwave:
+			activeInstrument.pulse()
+			camera_shake()
+		elif win:
+			get_node("/root/Progress").stage_finished()
+			get_node("/root/Progress").go_to_stage_selector()
+			queue_free()
 
 func _process(delta):
 	var bg = get_node("ParallaxBackground/ParallaxLayer/Cloud")
