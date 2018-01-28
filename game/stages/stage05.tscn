@@ -82,7 +82,6 @@ _sections_unfolded = [ "Transform" ]
 
 editor/display_folded = true
 position = Vector2( 0, 70 )
-scale = Vector2( 1, 1 )
 curve = SubResource( 2 )
 _sections_unfolded = [ "Transform" ]
 speed = 0.4
