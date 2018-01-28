@@ -10,7 +10,7 @@ func _set_offset(y):
 
 func _ready():
 	$FadeInTween.interpolate_method(self, "_set_offset", -1000, 0, 1,
-									Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
+									Tween.TRANS_QUAD, Tween.EASE_OUT)
 	$FadeInTween.start()
 	#yield($FadeInTween, "tween_completed")
 	load_buttons(int(get_node("/root/Progress").get_last()/8))
