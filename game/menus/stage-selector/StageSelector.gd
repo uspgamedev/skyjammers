@@ -12,3 +12,6 @@ func _ready():
 		else:
 			button.hide()
 		count += 1
+	$FadeInTween.interpolate_property(self, "rect_position", Vector2(0, -1000), Vector2(0,0), 1,
+									  Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
+	$FadeInTween.start()
