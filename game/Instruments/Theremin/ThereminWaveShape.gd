@@ -14,9 +14,9 @@ func draw_triangle(size, x, y, alpha):
 	var p1 = Vector2(x, y-size*sqrt(3)/4)
 	var p2 = Vector2(x-size/2, y+size*sqrt(3)/4)
 	var p3 = Vector2(x+size/2, y+size*sqrt(3)/4)
-	draw_line(p1, p2, Color(0,0,0,alpha), 1)
-	draw_line(p2, p3, Color(0,0,0,alpha), 1)
-	draw_line(p3, p1,  Color(0,0,0,alpha), 1)
+	draw_line(p1, p2, Color(.5, .2, .2, alpha), 1)
+	draw_line(p2, p3, Color(.5, .2, .2, alpha), 1)
+	draw_line(p3, p1, Color(.5, .2, .2, alpha), 1)
 
 func _draw():
 	var size = 30/sqrt(3)

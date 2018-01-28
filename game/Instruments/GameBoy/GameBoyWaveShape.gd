@@ -18,9 +18,9 @@ func draw_star(radius, alpha):
 	var inner = (outer * ratio).rotated(PI/size)
 	
 	for i in range (1, size+1):
-		draw_line(outer, inner, Color(0,0,0,alpha))
+		draw_line(outer, inner, Color(.5, .2, .2, alpha))
 		outer = outer.rotated(2*PI/size)
-		draw_line(inner, outer, Color(0,0,0,alpha))
+		draw_line(inner, outer, Color(.5, .2, .2, alpha))
 		inner = inner.rotated(2*PI/size)
 	
 func _draw():

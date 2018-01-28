@@ -3,6 +3,7 @@ extends CollisionShape2D
 var is_active = false
 var speed = 10
 var radius = 10
+var cor = Color(.5, .2, .2, .6)
 
 func _process(delta):
 	if is_active:
@@ -26,8 +27,7 @@ func draw_line_circle(circle_center, circle_radius, color, resolution):
 	draw_line(line_origin, line_end, color, line_width)
 
 func _draw():
-	draw_line_circle(Vector2(0,0), Vector2(radius,radius), Color(0,0,0,.9), .3)
-	draw_line_circle(Vector2(0,0), Vector2(radius*.9,radius*.9), Color(0,0,0,.8), .3)
-	draw_line_circle(Vector2(0,0), Vector2(radius*.8,radius*.8), Color(0,0,0,.7), .3)
-	draw_line_circle(Vector2(0,0), Vector2(radius*.7,radius*.7), Color(0,0,0,.6), .3)
-	draw_line_circle(Vector2(0,0), Vector2(radius*.6,radius*.6), Color(0,0,0,.5), .3)
+	draw_line_circle(Vector2(0,0), Vector2(radius,radius), cor, .3)
+	draw_line_circle(Vector2(0,0), Vector2(radius*.9,radius*.9), cor, .3)
+	draw_line_circle(Vector2(0,0), Vector2(radius*.8,radius*.8), cor, .3)
+	draw_line_circle(Vector2(0,0), Vector2(radius*.7,radius*.7), cor, .3)
