@@ -1,12 +1,31 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Instruments/Instrument.tscn" type="PackedScene" id=1]
-[ext_resource path="res://assets/img/fox-gameboy.png" type="Texture" id=2]
+[ext_resource path="res://Instruments/GameBoy/fox-gameboi.png" type="Texture" id=2]
 [ext_resource path="res://Instruments/GameBoy/star.png" type="Texture" id=3]
 [ext_resource path="res://Instruments/GameBoy/GameBoyWaveShape.gd" type="Script" id=4]
 [ext_resource path="res://assets/sound/gameboy_riff.wav" type="AudioStream" id=5]
 [ext_resource path="res://assets/sound/gameboy_riff2.wav" type="AudioStream" id=6]
 [ext_resource path="res://assets/sound/gameboy_sfx.wav" type="AudioStream" id=7]
+
+[sub_resource type="Animation" id=2]
+
+resource_name = "playing"
+length = 0.4
+loop = true
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 0, 1 ]
+}
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 
@@ -18,6 +37,19 @@ points = PoolVector2Array( 0, -10, 2.23358, -3.07427, 9.51057, -3.09017, 3.61402
 [node name="Sprite" parent="." index="1"]
 
 texture = ExtResource( 2 )
+hframes = 2
+frame = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite" index="0"]
+
+root_node = NodePath("..")
+autoplay = ""
+playback_process_mode = 1
+playback_default_blend_time = 0.0
+playback_speed = 1.0
+anims/playing = SubResource( 2 )
+blend_times = [  ]
+autoplay = ""
 
 [node name="WavePreview" parent="." index="2"]
 
@@ -32,15 +64,15 @@ _sections_unfolded = [ "Transform", "Visibility", "Z Index" ]
 shape = SubResource( 1 )
 script = ExtResource( 4 )
 
-[node name="Riff0" parent="." index="6"]
+[node name="Riff0" parent="." index="5"]
 
 stream = ExtResource( 5 )
 
-[node name="Riff1" parent="." index="7"]
+[node name="Riff1" parent="." index="6"]
 
 stream = ExtResource( 6 )
 
-[node name="SFX" parent="." index="8"]
+[node name="SFX" parent="." index="7"]
 
 stream = ExtResource( 7 )
 

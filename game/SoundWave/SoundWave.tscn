@@ -1,9 +1,16 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://SoundWave/SoundWave.gd" type="Script" id=1]
 
-[node name="SoundWave" type="Area2D"]
+[sub_resource type="CanvasItemMaterial" id=1]
 
+render_priority = 0
+blend_mode = 1
+light_mode = 0
+
+[node name="SoundWave" type="Area2D" index="0"]
+
+material = SubResource( 1 )
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
@@ -12,7 +19,7 @@ angular_damp = 1.0
 audio_bus_override = false
 audio_bus_name = "Master"
 script = ExtResource( 1 )
-_sections_unfolded = [ "Transform" ]
+_sections_unfolded = [ "Material", "Transform", "Visibility" ]
 
 [node name="Tween" type="Tween" parent="." index="0"]
 

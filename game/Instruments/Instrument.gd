@@ -44,6 +44,7 @@ func _physics_process(delta):
 func activate():
 	active = true
 	get_node("WavePreview/AnimationPlayer").play("active")
+	get_node("Sprite/AnimationPlayer").play("playing")
 	get_node("Sprite2").show()
 	set_physics_process(true)
 
@@ -51,5 +52,6 @@ func activate():
 func deactivate():
 	active = false
 	get_node("WavePreview/AnimationPlayer").play("off")
+	get_node("Sprite/AnimationPlayer").stop()
 	get_node("Sprite2").hide()
 	set_physics_process(false)
