@@ -14,11 +14,11 @@
 resource_local_to_scene = true
 bake_interval = 5.0
 _data = {
-"points": PoolVector2Array( 0, 0, 0, 0, -144.013, 23.1852, 0, 0, 0, 0, 35.9874, -16.8148 )
+"points": PoolVector2Array( 0, 0, 0, 0, -123.556, 10.6135, 0, 0, 0, 0, 8.42661, -9.03033 )
 }
 _sections_unfolded = [ "Resource" ]
 
-[node name="Stage" instance=ExtResource( 1 )]
+[node name="Stage" index="0" instance=ExtResource( 1 )]
 
 initial_bard_path = NodePath("Instruments/Island/Bass")
 riff_set = 1
@@ -45,24 +45,24 @@ tile_data = PoolIntArray( 131079, 67, 0, 262143, 73, 0, 196613, 67, 0, 196615, 7
 
 [node name="Gameboy" parent="Instruments/Island" index="3" instance=ExtResource( 4 )]
 
-position = Vector2( 100, 60 )
+position = Vector2( 104.581, 58.8736 )
 growth = 15.0
 duration = 0.5
 
 [node name="Theremin" parent="Instruments/Island" index="4" instance=ExtResource( 5 )]
 
-position = Vector2( 200, 20 )
+position = Vector2( 207.177, 15.8989 )
 growth = 15.0
 duration = 0.3
 
 [node name="IslandGoal" parent="Instruments" index="1" instance=ExtResource( 2 )]
 
 position = Vector2( 380, -40 )
-tile_data = PoolIntArray( -196609, 0, 0, -262144, 1, 0, -262143, 2, 0, -262142, 3, 0, -131075, 0, 0, -131074, 1, 0, -131073, 31, 0, -196608, 48, 0, -196607, 51, 0, -196606, 7, 0, -65539, 8, 0, -65538, 48, 0, -65537, 49, 0, -131072, 47, 0, -131071, 55, 0, -131070, 28, 0, -131069, 3, 0, -3, 4, 0, -2, 60, 0, -1, 61, 0, -65536, 62, 0, -65535, 63, 0, -65534, 5, 0, -65533, 28, 0, -65532, 3, 0, 65533, 8, 0, 65534, 5, 0, 65535, 5, 0, 0, 5, 0, 1, 5, 0, 2, 5, 0, 3, 5, 0, 4, 24, 0, 131069, 12, 0, 131070, 14, 0, 131071, 19, 0, 65536, 5, 0, 65537, 5, 0, 65538, 5, 0, 65539, 16, 0, 65540, 15, 0, 196607, 8, 0, 131072, 16, 0, 131073, 19, 0, 131074, 5, 0, 131075, 24, 0, 262143, 12, 0, 196608, 15, 0, 196609, 12, 0, 196610, 14, 0, 196611, 15, 0 )
+tile_data = PoolIntArray( -196609, 0, 0, -262144, 1, 0, -262143, 2, 0, -262142, 3, 0, -131075, 0, 0, -131074, 1, 0, -131073, 31, 0, -196608, 48, 0, -196607, 51, 0, -196606, 7, 0, -65539, 8, 0, -65538, 48, 0, -65537, 49, 0, -131072, 47, 0, -131071, 55, 0, -131070, 28, 0, -131069, 3, 0, -3, 4, 0, -2, 60, 0, -1, 61, 0, -65536, 62, 0, -65535, 63, 0, -65534, 5, 0, -65533, 28, 0, -65532, 3, 0, 65533, 8, 0, 65534, 5, 0, 65535, 5, 0, 0, 5, 0, 1, 5, 0, 2, 5, 0, 3, 5, 0, 4, 24, 0, 131069, 12, 0, 131070, 14, 0, 131071, 19, 0, 65536, 5, 0, 65537, 5, 0, 65538, 5, 0, 65539, 16, 0, 65540, 15, 0, 196599, 21, 0, 196600, 21, 0, 196607, 12, 0, 131072, 13, 0, 131073, 19, 0, 131074, 5, 0, 131075, 24, 0, 262143, 21, 0, 196608, 21, 0, 196609, 12, 0, 196610, 14, 0, 196611, 15, 0 )
 
 [node name="Goal" parent="Instruments/IslandGoal" index="0" instance=ExtResource( 6 )]
 
-position = Vector2( 50, -10 )
+position = Vector2( 17.1912, -32.5561 )
 
 [node name="Under" parent="Instruments/IslandGoal" index="1"]
 
@@ -80,7 +80,7 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="PathFollow2D" parent="Instruments/Path2D" index="0"]
 
-position = Vector2( -144.013, 23.1852 )
+position = Vector2( -119.406, 24.2105 )
 
 [node name="Island" parent="Instruments/Path2D/PathFollow2D" index="0" instance=ExtResource( 2 )]
 
@@ -95,6 +95,10 @@ duration = 0.5
 [node name="Under" parent="Instruments/Path2D/PathFollow2D/Island" index="1"]
 
 tile_data = PoolIntArray( 65534, 64, 0, 65535, 66, 0, 0, 66, 0, 1, 67, 0, 131070, 68, 0, 131071, 69, 0, 65536, 70, 0, 65537, 71, 0 )
+
+[node name="ParallaxBackground" parent="." index="3"]
+
+editor/display_folded = false
 
 
 [editable path="Instruments/Island"]
