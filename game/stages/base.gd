@@ -25,8 +25,8 @@ func _ready():
 		sentinel.stage = self
 	audioManager.resetRiff()
 	
-	get_node("ParallaxBackground/ParallaxLayer/Cloud").set_position(Vector2(randi() % 1000 - randi() % 1000, 0))
-	get_node("CanvasLayer/Cloud").set_position(Vector2(randi() % 1000 - randi() % 1000, 0))
+	get_node("ParallaxBackground/ParallaxLayer/Cloud").set_position(Vector2(randi() % 2000 - 999, 0))
+	get_node("CanvasLayer/Cloud").set_position(Vector2(randi() % 2000 - 999, 0))
 	
 	audioManager.playBGM("Ambience")
 	
