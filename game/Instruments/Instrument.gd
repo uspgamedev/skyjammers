@@ -11,6 +11,11 @@ var stage
 
 
 func pulse():
+	var obj = get_node("TextureRect")
+	var tween = get_node("TextureRect/Tween")
+	tween.interpolate_property(obj, "rect_scale", obj.get_scale(), Vector2(25,25), .5, Tween.TRANS_LINEAR, Tween.EASE_IN)
+	tween.start()
+	
 	var sw = soundWave.instance()
 	var shape = get_node("SoundWaveShape").duplicate()
 	var rot = get_node("SoundWaveShape").get_rotation()
@@ -59,3 +64,7 @@ func deactivate():
 	get_node("Sprite/AnimationPlayer").stop()
 	get_node("Sprite2").hide()
 	set_physics_process(false)
+
+
+func _on_Tween_tween_completed( object, key ):
+	get_node("TextureRect").set_scale(Vector2(0,0))
