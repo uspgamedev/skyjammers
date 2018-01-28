@@ -58,7 +58,11 @@ func _failed():
 	lose = true
 
 func _on_Input_played():
-	if not win and not activeInstrument.hasSoundwave:
+	if lose:
+		get_tree().set_pause(false)
+		get_node("CanvasLayer2/grayscaleShader").material.set_shader_param("grayscale", false)
+		get_tree().reload_current_scene()
+	elif not win and not activeInstrument.hasSoundwave:
 		activeInstrument.pulse()
 		camera_shake()
 	elif win:
