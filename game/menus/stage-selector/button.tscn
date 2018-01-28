@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://menus/theme.tres" type="Theme" id=1]
 [ext_resource path="res://menus/stage-selector/button.gd" type="Script" id=2]
 [ext_resource path="res://menus/stage-selector/enfeite.png" type="Texture" id=3]
 [ext_resource path="res://menus/YanoneKaffeesatz-Regular.ttf" type="DynamicFontData" id=4]
+[ext_resource path="res://menus/stage-selector/click_select.wav" type="AudioStream" id=5]
 
 [sub_resource type="DynamicFont" id=1]
 
@@ -74,5 +75,15 @@ percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "Anchor", "Margin", "Mouse", "Theme", "custom_colors", "custom_fonts" ]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." index="2"]
+
+stream = ExtResource( 5 )
+volume_db = -10.0
+autoplay = false
+mix_target = 0
+bus = "Master"
+
+[connection signal="pressed" from="." to="AudioStreamPlayer" method="play"]
 
 
