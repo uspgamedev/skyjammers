@@ -28,7 +28,7 @@ func _process(delta):
 [node name="Stage" type="Node2D" index="0"]
 
 script = ExtResource( 1 )
-_sections_unfolded = [ "Transform" ]
+_sections_unfolded = [ "Pause", "Transform" ]
 __meta__ = {
 "_edit_lock_": true
 }
@@ -36,6 +36,9 @@ initial_bard_path = null
 riff_set = 0
 
 [node name="Input" parent="." index="0" instance=ExtResource( 2 )]
+
+pause_mode = 2
+_sections_unfolded = [ "Pause" ]
 
 [node name="Instruments" type="Node2D" parent="." index="1"]
 

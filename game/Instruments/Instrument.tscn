@@ -120,7 +120,7 @@ anim_offset_random = 0.0
 anim_loop = false
 _sections_unfolded = [ "Angle", "Angular Velocity", "Animation", "Color", "Damping", "Emission Shape", "Flags", "Gravity", "Hue Variation", "Initial Velocity", "Linear Accel", "Orbit Velocity", "Radial Accel", "Resource", "Scale", "Spread", "Tangential Accel", "Trail" ]
 
-[node name="Instrument" type="KinematicBody2D" index="0" groups=[
+[node name="Instrument" type="KinematicBody2D" groups=[
 "bards",
 ]]
 

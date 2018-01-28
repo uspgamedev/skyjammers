@@ -1,12 +1,13 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://audio/AudioManager.gd" type="Script" id=1]
 [ext_resource path="res://assets/sound/transmission_sfx.wav" type="AudioStream" id=2]
 [ext_resource path="res://assets/sound/bass_riff.wav" type="AudioStream" id=3]
 [ext_resource path="res://assets/sound/ambience.ogg" type="AudioStream" id=4]
 [ext_resource path="res://assets/sound/level_select.ogg" type="AudioStream" id=5]
+[ext_resource path="res://assets/sound/game_over.wav" type="AudioStream" id=6]
 
-[node name="AudioManager" type="Node" index="0"]
+[node name="AudioManager" type="Node"]
 
 script = ExtResource( 1 )
 
@@ -46,6 +47,14 @@ bus = "Master"
 
 stream = ExtResource( 5 )
 volume_db = 0.0
+autoplay = false
+mix_target = 0
+bus = "Master"
+
+[node name="GameOverSFX" type="AudioStreamPlayer" parent="." index="5"]
+
+stream = ExtResource( 6 )
+volume_db = -15.0
 autoplay = false
 mix_target = 0
 bus = "Master"

@@ -41,7 +41,9 @@ func changeActive(body):
 		win = true
 
 func _failed():
-	get_tree().reload_current_scene()
+	audioManager.playSFX('GameOver')
+	get_tree().set_pause(true)
+	lose = true
 
 func _on_Input_played():
 	if not win and not activeInstrument.hasSoundwave:
