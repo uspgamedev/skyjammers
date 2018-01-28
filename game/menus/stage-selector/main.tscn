@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://menus/stage-selector/StageSelector.gd" type="Script" id=1]
 [ext_resource path="res://menus/theme.tres" type="Theme" id=2]
@@ -13,7 +13,29 @@
 [ext_resource path="res://test/TheFinalStage.tscn" type="PackedScene" id=11]
 [ext_resource path="res://audio/AudioManager.tscn" type="PackedScene" id=12]
 
-[node name="StageSelector" type="Control"]
+[sub_resource type="Shader" id=1]
+
+code = "shader_type canvas_item;
+
+uniform float offset = 0.0;
+
+void fragment() {
+	vec4 begin = vec4(189.0/255.0, 242.0/255.0, 1.0, 1.0);
+	vec4 end = vec4(45.0/255.0, 140.0/255.0, 164.0, 1.0);
+	float y = min(1.0, 1.2*(SCREEN_UV.y + offset));
+	COLOR = (1.0-y)*begin + y*end;
+}
+"
+_sections_unfolded = [ "Resource" ]
+
+[sub_resource type="ShaderMaterial" id=2]
+
+render_priority = 0
+shader = SubResource( 1 )
+shader_param/offset = null
+_sections_unfolded = [ "shader_param" ]
+
+[node name="StageSelector" type="Control" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -29,21 +51,18 @@ _sections_unfolded = [ "Anchor", "Margin", "Material", "Rect", "Visibility" ]
 
 [node name="Panel" type="Panel" parent="." index="0"]
 
+material = SubResource( 2 )
 anchor_left = 0.0
 anchor_top = 0.0
-anchor_right = 0.0
+anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 40.0
-margin_top = 40.0
-margin_right = 600.0
-margin_bottom = -40.0
 rect_pivot_offset = Vector2( 0, 0 )
 mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
 theme = ExtResource( 2 )
-_sections_unfolded = [ "Anchor", "Margin", "Theme" ]
+_sections_unfolded = [ "Anchor", "Margin", "Material", "Theme", "Visibility" ]
 
 [node name="GridContainer" type="GridContainer" parent="Panel" index="0"]
 
