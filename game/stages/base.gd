@@ -67,10 +67,12 @@ func _on_Input_pause():
 		if paused:
 			paused = false
 			filter.hide()
+			get_node('CanvasLayer2/Label').hide()
 			get_tree().set_pause(false)
 		else:
 			paused = true
 			filter.show()
+			get_node('CanvasLayer2/Label').show()
 			audioManager.playSFX("Pause")
 			get_tree().set_pause(true)
 

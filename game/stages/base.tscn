@@ -1,10 +1,11 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://stages/base.gd" type="Script" id=1]
 [ext_resource path="res://input/input.tscn" type="PackedScene" id=2]
 [ext_resource path="res://clouds/Cloud.tscn" type="PackedScene" id=3]
 [ext_resource path="res://assets/img/pixel.png" type="Texture" id=4]
-[ext_resource path="res://audio/AudioManager.tscn" type="PackedScene" id=5]
+[ext_resource path="res://menus/YanoneKaffeesatz-Bold.ttf" type="DynamicFontData" id=5]
+[ext_resource path="res://audio/AudioManager.tscn" type="PackedScene" id=6]
 
 [sub_resource type="GDScript" id=1]
 
@@ -73,6 +74,14 @@ shader = SubResource( 3 )
 shader_param/grayscale = false
 shader_param/factor = 0.0
 _sections_unfolded = [ "shader_param" ]
+
+[sub_resource type="DynamicFont" id=5]
+
+size = 100
+use_mipmaps = false
+use_filter = false
+font_data = ExtResource( 5 )
+_sections_unfolded = [ "Extra Spacing", "Font", "Settings" ]
 
 [node name="Stage" type="Node2D" index="0"]
 
@@ -206,7 +215,6 @@ autoplay = ""
 [node name="CanvasLayer2" type="CanvasLayer" parent="." index="5"]
 
 pause_mode = 2
-editor/display_folded = true
 layer = 1
 offset = Vector2( 0, 0 )
 rotation = 0.0
@@ -245,7 +253,7 @@ playback/speed = 1.0
 [node name="Pause" type="Polygon2D" parent="CanvasLayer2" index="2"]
 
 visible = false
-polygon = PoolVector2Array( -10, -10, 1030, -10, 1030, 610, -10, 610 )
+polygon = PoolVector2Array( 0, 0, 1024, 0, 1024, 640, 0, 640 )
 uv = PoolVector2Array(  )
 color = Color( 0, 0, 0, 0.541412 )
 vertex_colors = PoolColorArray(  )
@@ -258,7 +266,30 @@ texture_rotation_degrees = 0.0
 invert_enable = false
 invert_border = 100.0
 
-[node name="AudioManager" parent="." index="6" instance=ExtResource( 5 )]
+[node name="Label" type="Label" parent="CanvasLayer2" index="3"]
+
+visible = false
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 1020.0
+margin_bottom = 600.0
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 5 )
+text = "PAUSED"
+align = 1
+valign = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_fonts" ]
+
+[node name="AudioManager" parent="." index="6" instance=ExtResource( 6 )]
 
 [node name="Leave" type="Timer" parent="." index="7"]
 
