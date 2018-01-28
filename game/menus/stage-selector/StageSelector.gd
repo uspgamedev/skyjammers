@@ -31,11 +31,6 @@ func load_buttons(page):
 			button.disabled = true
 			button.modulate = Color(1,1,1,0.2)
 		count += 1
-	var p0 = $Panel/Container.rect_position
-	$LoadButtonsTween.interpolate_property($Panel/Container, "rect_position",
-										   Vector2(2000, p0.y), p0, 1, Tween.TRANS_QUAD,
-										   Tween.EASE_OUT)
-	$LoadButtonsTween.start()
 	if total < (page+1)*8:
 		$Panel/NextButton.disabled = true
 		$Panel/NextButton/Arrow.modulate = Color(1,1,1,0.2)
@@ -50,10 +45,36 @@ func load_buttons(page):
 		$Panel/PreviousButton/Arrow.modulate = Color(1,1,1,1)
 
 func _next_page():
+	var p0 = $Panel/Container.rect_position
+	lock = true
+	$LoadButtonsTween.interpolate_property($Panel/Container, "rect_position",
+			p0, Vector2(-2000, p0.y), .5, Tween.TRANS_QUAD, Tween.EASE_OUT)
+	$LoadButtonsTween.start()
+	yield($LoadButtonsTween, "tween_completed")
 	load_buttons(self.current_page+1)
+	p0 = $Panel/Container.rect_position
+	p0.x = 0
+	$LoadButtonsTween.interpolate_property($Panel/Container, "rect_position",
+			Vector2(2000, p0.y), p0, .5, Tween.TRANS_QUAD, Tween.EASE_OUT)
+	$LoadButtonsTween.start()
+	yield($LoadButtonsTween, "tween_completed")
+	lock = false
 
 func _previous_page():
+	var p0 = $Panel/Container.rect_position
+	lock = true
+	$LoadButtonsTween.interpolate_property($Panel/Container, "rect_position",
+			p0, Vector2(2000, p0.y), .5, Tween.TRANS_QUAD, Tween.EASE_OUT)
+	$LoadButtonsTween.start()
+	yield($LoadButtonsTween, "tween_completed")
 	load_buttons(self.current_page-1)
+	p0 = $Panel/Container.rect_position
+	p0.x = 0
+	$LoadButtonsTween.interpolate_property($Panel/Container, "rect_position",
+			Vector2(-2000, p0.y), p0, .5, Tween.TRANS_QUAD, Tween.EASE_OUT)
+	$LoadButtonsTween.start()
+	yield($LoadButtonsTween, "tween_completed")
+	lock = false
 
 
 func _on_selected(stage_id):
