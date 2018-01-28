@@ -10,7 +10,7 @@
 custom_solver_bias = 0.0
 radius = 80.0
 
-[node name="Sentinel" index="0" instance=ExtResource( 1 )]
+[node name="Sentinel" instance=ExtResource( 1 )]
 
 script = ExtResource( 2 )
 

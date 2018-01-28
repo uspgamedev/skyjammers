@@ -31,22 +31,24 @@ func _ready():
 	audioManager.playBGM("Ambience")
 	
 func changeActive(body):
-	if activeInstrument.is_in_group("bards"):
-		activeInstrument.deactivate()
-	self.activeInstrument = body
-	if activeInstrument.is_in_group("bards"):
-		activeInstrument.activate()
+	if body.is_in_group("bards"):
+		body.activate()
 		body.get_node("Riff"+str(audioManager.getRiffSet())).play(audioManager.getRiffPos())
 		audioManager.playSFX("Transmission")
 	
-	if activeInstrument.is_in_group("sentinels"):
-		_failed()
-	elif activeInstrument.is_in_group("goal"):
+	if body.is_in_group("sentinels"):
+		if body.get_script() == preload("res://Sentinels/Sentinel.gd"):
+			_failed()
+		return
+	elif body.is_in_group("goal"):
 		# flash here
 		overlayAnimation.play("flash")
-		activeInstrument.get_node("AnimationPlayer").play("bloom")
+		body.get_node("AnimationPlayer").play("bloom")
 		audioManager.playSFX("LevelClear")
 		win = true
+	if activeInstrument.is_in_group("bards"):
+		activeInstrument.deactivate()
+	self.activeInstrument = body
 
 func _failed():
 	audioManager.playSFX('GameOver')

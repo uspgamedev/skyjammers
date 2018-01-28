@@ -8,7 +8,7 @@ render_priority = 0
 blend_mode = 1
 light_mode = 0
 
-[node name="SoundWave" type="Area2D" index="0"]
+[node name="SoundWave" type="Area2D"]
 
 material = SubResource( 1 )
 input_pickable = true
