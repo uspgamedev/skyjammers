@@ -22,7 +22,7 @@ _data = {
 
 bake_interval = 5.0
 _data = {
-"points": PoolVector2Array( 0, 0, 0, 0, 240, 70, 0, 0, 0, 0, 240, 220, 0, 0, 0, 0, 170, 220 )
+"points": PoolVector2Array( 0, 0, 0, 0, 260, 20, 0, 0, 0, 0, 260, 220, 0, 0, 0, 0, 170, 220 )
 }
 
 [node name="Stage" index="0" instance=ExtResource( 1 )]
@@ -107,15 +107,18 @@ editor/display_folded = true
 
 [node name="Island2" parent="Instruments" index="4" instance=ExtResource( 3 )]
 
-editor/display_folded = true
 position = Vector2( 328, -41 )
 _sections_unfolded = [ "Cell", "Transform" ]
 
 [node name="Theremin" parent="Instruments/Island2" index="0" instance=ExtResource( 9 )]
 
 position = Vector2( -1, -8 )
-growth = 30.0
+growth = 20.0
 duration = 1.0
+
+[node name="SoundWaveShape" parent="Instruments/Island2/Theremin" index="4"]
+
+rotation = 1.5708
 
 [node name="Under" parent="Instruments/Island2" index="1"]
 
@@ -127,7 +130,6 @@ tile_data = PoolIntArray( -2, 0, 0, -1, 1, 0, -65536, 2, 0, -65535, 3, 0, 65534,
 
 [node name="Path2D2" parent="Instruments" index="5" instance=ExtResource( 2 )]
 
-editor/display_folded = true
 position = Vector2( 80, 40 )
 curve = SubResource( 2 )
 speed = 0.66
@@ -164,5 +166,6 @@ tile_data = PoolIntArray( -2, 21, 0, -1, 0, 0, -65536, 1, 0, -65535, 3, 0, 65534
 [editable path="Instruments/Island4"]
 [editable path="Instruments/Island4/Goal"]
 [editable path="Instruments/Island2"]
+[editable path="Instruments/Island2/Theremin"]
 [editable path="Instruments/Path2D2"]
 [editable path="Instruments/Path2D2/PathFollow2D/Island"]
