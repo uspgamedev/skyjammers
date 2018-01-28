@@ -7,13 +7,14 @@
 [ext_resource path="res://Instruments/Xylophone/Xylophone.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Movement/Rotate.tscn" type="PackedScene" id=6]
 
-[node name="Stage" instance=ExtResource( 1 )]
+[node name="Stage" index="0" instance=ExtResource( 1 )]
 
 initial_bard_path = NodePath("Instruments/Island/Theremin")
 
 [node name="Island3" parent="Instruments" index="0" instance=ExtResource( 2 )]
 
-tile_data = PoolIntArray( -589827, 0, 0, -589826, 1, 0, -589825, 1, 0, -655360, 1, 0, -655359, 3, 0, -524291, 8, 0, -524290, 5, 0, -524289, 5, 0, -589824, 5, 0, -589823, 7, 0, -458755, 12, 0, -458754, 13, 0, -458753, 17, 0, -524288, 13, 0, -524287, 15, 0 )
+position = Vector2( 0, -32 )
+tile_data = PoolIntArray( -655363, 0, 0, -655362, 1, 0, -655361, 1, 0, -720896, 2, 0, -720895, 3, 0, -589828, 0, 0, -589827, 31, 0, -589826, 10, 0, -589825, 10, 0, -655360, 10, 0, -655359, 28, 0, -655358, 3, 0, -524292, 4, 0, -524291, 5, 0, -524290, 5, 0, -524289, 5, 0, -589824, 5, 0, -589823, 5, 0, -589822, 7, 0, -458756, 12, 0, -458755, 14, 0, -458754, 13, 0, -458753, 17, 0, -524288, 13, 0, -524287, 14, 0, -524286, 15, 0 )
 _sections_unfolded = [ "Cell", "Transform" ]
 
 [node name="Goal" parent="Instruments/Island3" index="0" instance=ExtResource( 3 )]
@@ -22,7 +23,7 @@ position = Vector2( -13.9856, -320.814 )
 
 [node name="Under" parent="Instruments/Island3" index="1"]
 
-tile_data = PoolIntArray( -458755, 76, 0, -458754, 77, 0, -458753, 77, 0, -524288, 78, 0, -524287, 99, 0, -393219, 88, 0, -393218, 93, 0, -393217, 93, 0, -458752, 90, 0, -458751, 103, 0 )
+tile_data = PoolIntArray( -458756, 64, 0, -458755, 65, 0, -458754, 77, 0, -458753, 78, 0, -524288, 66, 0, -524287, 65, 0, -524286, 79, 0, -393220, 68, 0, -393219, 70, 0, -393218, 93, 0, -393217, 90, 0, -458752, 70, 0, -458751, 69, 0, -458750, 91, 0, -327681, 94, 0 )
 
 [node name="Island" parent="Instruments" index="1" instance=ExtResource( 2 )]
 
