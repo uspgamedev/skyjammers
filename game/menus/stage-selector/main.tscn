@@ -1,22 +1,24 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://menus/stage-selector/StageSelector.gd" type="Script" id=1]
 [ext_resource path="res://menus/stage-selector/sceneref.tscn" type="PackedScene" id=2]
 [ext_resource path="res://stages/stage00.tscn" type="PackedScene" id=3]
 [ext_resource path="res://stages/stage01.tscn" type="PackedScene" id=4]
 [ext_resource path="res://stages/stage02.tscn" type="PackedScene" id=5]
-[ext_resource path="res://stages/Stage03.tscn" type="PackedScene" id=6]
+[ext_resource path="res://stages/stage03.tscn" type="PackedScene" id=6]
 [ext_resource path="res://stages/stage04.tscn" type="PackedScene" id=7]
 [ext_resource path="res://stages/stage05.tscn" type="PackedScene" id=8]
 [ext_resource path="res://stages/stage06.tscn" type="PackedScene" id=9]
 [ext_resource path="res://stages/stage07.tscn" type="PackedScene" id=10]
 [ext_resource path="res://stages/stage08.tscn" type="PackedScene" id=11]
 [ext_resource path="res://stages/stage09.tscn" type="PackedScene" id=12]
-[ext_resource path="res://menus/theme.tres" type="Theme" id=13]
-[ext_resource path="res://menus/YanoneKaffeesatz-Regular.ttf" type="DynamicFontData" id=14]
-[ext_resource path="res://menus/stage-selector/button.tscn" type="PackedScene" id=15]
-[ext_resource path="res://menus/stage-selector/left.png" type="Texture" id=16]
-[ext_resource path="res://menus/stage-selector/right.png" type="Texture" id=17]
+[ext_resource path="res://stages/stage10.tscn" type="PackedScene" id=13]
+[ext_resource path="res://menus/theme.tres" type="Theme" id=14]
+[ext_resource path="res://menus/YanoneKaffeesatz-Regular.ttf" type="DynamicFontData" id=15]
+[ext_resource path="res://menus/stage-selector/button.tscn" type="PackedScene" id=16]
+[ext_resource path="res://menus/stage-selector/left.png" type="Texture" id=17]
+[ext_resource path="res://menus/stage-selector/right.png" type="Texture" id=18]
+
 
 [sub_resource type="Shader" id=1]
 
@@ -45,7 +47,7 @@ _sections_unfolded = [ "shader_param" ]
 size = 64
 use_mipmaps = false
 use_filter = true
-font_data = ExtResource( 14 )
+font_data = ExtResource( 15 )
 _sections_unfolded = [ "Font", "Settings" ]
 
 [node name="StageSelector" type="Control" index="0"]
@@ -106,7 +108,7 @@ scene = ExtResource( 12 )
 
 [node name="SceneRef11" parent="Stages" index="10" instance=ExtResource( 2 )]
 
-scene = ExtResource( 6 )
+scene = ExtResource( 13 )
 
 [node name="Panel" type="Panel" parent="." index="1"]
 
@@ -120,7 +122,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-theme = ExtResource( 13 )
+theme = ExtResource( 14 )
 _sections_unfolded = [ "Anchor", "Margin", "Material", "Theme", "Visibility" ]
 
 [node name="Label" type="Label" parent="Panel" index="0"]
@@ -158,52 +160,52 @@ size_flags_horizontal = 1
 size_flags_vertical = 1
 _sections_unfolded = [ "Anchor", "Margin", "Rect" ]
 
-[node name="Button" parent="Panel/Container" index="0" instance=ExtResource( 15 )]
+[node name="Button" parent="Panel/Container" index="0" instance=ExtResource( 16 )]
 
 margin_left = 190.0
 margin_right = 290.0
 margin_bottom = 128.0
 
-[node name="Button3" parent="Panel/Container" index="1" instance=ExtResource( 15 )]
+[node name="Button3" parent="Panel/Container" index="1" instance=ExtResource( 16 )]
 
 margin_left = 380.0
 margin_right = 480.0
 margin_bottom = 128.0
 
-[node name="Button4" parent="Panel/Container" index="2" instance=ExtResource( 15 )]
+[node name="Button4" parent="Panel/Container" index="2" instance=ExtResource( 16 )]
 
 margin_left = 570.0
 margin_right = 670.0
 margin_bottom = 128.0
 
-[node name="Button5" parent="Panel/Container" index="3" instance=ExtResource( 15 )]
+[node name="Button5" parent="Panel/Container" index="3" instance=ExtResource( 16 )]
 
 margin_left = 740.0
 margin_right = 840.0
 margin_bottom = 128.0
 
-[node name="Button2" parent="Panel/Container" index="4" instance=ExtResource( 15 )]
+[node name="Button2" parent="Panel/Container" index="4" instance=ExtResource( 16 )]
 
 margin_left = 190.0
 margin_top = 150.0
 margin_right = 290.0
 margin_bottom = 278.0
 
-[node name="Button6" parent="Panel/Container" index="5" instance=ExtResource( 15 )]
+[node name="Button6" parent="Panel/Container" index="5" instance=ExtResource( 16 )]
 
 margin_left = 380.0
 margin_top = 150.0
 margin_right = 480.0
 margin_bottom = 278.0
 
-[node name="Button7" parent="Panel/Container" index="6" instance=ExtResource( 15 )]
+[node name="Button7" parent="Panel/Container" index="6" instance=ExtResource( 16 )]
 
 margin_left = 570.0
 margin_top = 150.0
 margin_right = 670.0
 margin_bottom = 278.0
 
-[node name="Button8" parent="Panel/Container" index="7" instance=ExtResource( 15 )]
+[node name="Button8" parent="Panel/Container" index="7" instance=ExtResource( 16 )]
 
 margin_left = 740.0
 margin_top = 150.0
@@ -226,7 +228,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-theme = ExtResource( 13 )
+theme = ExtResource( 14 )
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
@@ -248,7 +250,7 @@ mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-texture = ExtResource( 16 )
+texture = ExtResource( 17 )
 expand = true
 stretch_mode = 6
 _sections_unfolded = [ "Anchor", "Margin", "Material" ]
@@ -269,7 +271,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-theme = ExtResource( 13 )
+theme = ExtResource( 14 )
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
@@ -291,7 +293,7 @@ mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-texture = ExtResource( 17 )
+texture = ExtResource( 18 )
 expand = true
 stretch_mode = 6
 _sections_unfolded = [ "Anchor", "Margin", "Material" ]
