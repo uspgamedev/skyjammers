@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/stage_clear.wav-6e29d9cf658fa4fede992ee25f323359.sample"
+
+[deps]
+
+source_file="res://assets/sound/stage_clear.wav"
+source_md5="518571fc130b889bb98ef14522a3c0ca"
+
+dest_files=[ "res://.import/stage_clear.wav-6e29d9cf658fa4fede992ee25f323359.sample" ]
+dest_md5="405ede0955bd584301f1098564a4a2b6"
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

@@ -11,7 +11,7 @@ position = Vector2( 10, -30 )
 texture = ExtResource( 1 )
 region_enabled = true
 region_rect = Rect2( 1, 1, 32, 32 )
-_sections_unfolded = [ "Animation" ]
+_sections_unfolded = [ "Animation", "Region" ]
 
 [node name="002-up1" type="Sprite" parent="." index="1"]
 
@@ -19,7 +19,7 @@ position = Vector2( 50, -30 )
 texture = ExtResource( 1 )
 region_enabled = true
 region_rect = Rect2( 35, 1, 32, 32 )
-_sections_unfolded = [ "Animation" ]
+_sections_unfolded = [ "Animation", "Region" ]
 
 [node name="003-up2" type="Sprite" parent="." index="2"]
 
@@ -27,7 +27,7 @@ position = Vector2( 90, -30 )
 texture = ExtResource( 1 )
 region_enabled = true
 region_rect = Rect2( 69, 1, 32, 32 )
-_sections_unfolded = [ "Animation" ]
+_sections_unfolded = [ "Animation", "Region" ]
 
 [node name="004-upright" type="Sprite" parent="." index="3"]
 
@@ -35,7 +35,7 @@ position = Vector2( 130, -30 )
 texture = ExtResource( 1 )
 region_enabled = true
 region_rect = Rect2( 103, 1, 32, 32 )
-_sections_unfolded = [ "Animation" ]
+_sections_unfolded = [ "Animation", "Region" ]
 
 [node name="005-left1" type="Sprite" parent="." index="4"]
 
