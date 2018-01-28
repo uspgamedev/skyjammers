@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://stages/base.gd" type="Script" id=1]
 [ext_resource path="res://input/input.tscn" type="PackedScene" id=2]
@@ -26,10 +26,29 @@ func _process(delta):
 	self.zoom = Vector2(z,z)
 "
 
+[sub_resource type="Animation" id=2]
+
+resource_name = "flash"
+length = 2.0
+loop = false
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+
 [node name="Stage" type="Node2D" index="0"]
 
 script = ExtResource( 1 )
-_sections_unfolded = [ "Transform" ]
+_sections_unfolded = [ "Pause", "Transform" ]
 __meta__ = {
 "_edit_lock_": true
 }
@@ -37,6 +56,9 @@ initial_bard_path = null
 riff_set = 0
 
 [node name="Input" parent="." index="0" instance=ExtResource( 2 )]
+
+pause_mode = 2
+_sections_unfolded = [ "Pause" ]
 
 [node name="Instruments" type="Node2D" parent="." index="1"]
 
@@ -127,6 +149,32 @@ transform = Transform2D( 1, 0, 0, 1, 0, 0 )
 modulate = Color( 1, 1, 1, 0.156863 )
 tile_data = PoolIntArray( -327690, 0, 0, -327689, 1, 0, -327688, 1, 0, -327687, 1, 0, -327686, 1, 0, -327685, 1, 0, -327684, 1, 0, -327683, 2, 0, -262159, 0, 0, -262158, 1, 0, -262157, 1, 0, -262156, 1, 0, -262155, 1, 0, -262154, 17, 0, -262153, 4, 0, -262152, 4, 0, -262151, 4, 0, -262150, 4, 0, -262149, 4, 0, -262148, 4, 0, -262147, 5, 0, -196623, 3, 0, -196622, 4, 0, -196621, 4, 0, -196620, 4, 0, -196619, 4, 0, -196618, 4, 0, -196617, 4, 0, -196616, 4, 0, -196615, 4, 0, -196614, 4, 0, -196613, 4, 0, -196612, 4, 0, -196611, 5, 0, -131088, 0, 0, -131087, 17, 0, -131086, 4, 0, -131085, 4, 0, -131084, 4, 0, -131083, 4, 0, -131082, 4, 0, -131081, 4, 0, -131080, 4, 0, -131079, 4, 0, -131078, 9, 0, -131077, 7, 0, -131076, 7, 0, -131075, 8, 0, -65552, 3, 0, -65551, 4, 0, -65550, 4, 0, -65549, 4, 0, -65548, 4, 0, -65547, 9, 0, -65546, 10, 0, -65545, 10, 0, -65544, 10, 0, -65543, 10, 0, -65542, 8, 0, -16, 6, 0, -15, 10, 0, -14, 10, 0, -13, 10, 0, -12, 10, 0, -11, 8, 0, 5, 0, 0, 6, 1, 0, 7, 1, 0, 8, 1, 0, 9, 1, 0, 10, 1, 0, 11, 1, 0, 12, 1, 0, 13, 1, 0, 14, 2, 0, 65540, 0, 0, 65541, 17, 0, 65542, 4, 0, 65543, 4, 0, 65544, 4, 0, 65545, 4, 0, 65546, 4, 0, 65547, 4, 0, 65548, 4, 0, 65549, 4, 0, 65550, 15, 0, 65551, 1, 0, 65552, 1, 0, 65553, 2, 0, 131076, 3, 0, 131077, 4, 0, 131078, 4, 0, 131079, 4, 0, 131080, 4, 0, 131081, 4, 0, 131082, 4, 0, 131083, 4, 0, 131084, 4, 0, 131085, 4, 0, 131086, 4, 0, 131087, 4, 0, 131088, 4, 0, 131089, 15, 0, 131090, 2, 0, 196612, 3, 0, 196613, 4, 0, 196614, 4, 0, 196615, 4, 0, 196616, 4, 0, 196617, 4, 0, 196618, 4, 0, 196619, 4, 0, 196620, 4, 0, 196621, 4, 0, 196622, 4, 0, 196623, 4, 0, 196624, 4, 0, 196625, 4, 0, 196626, 15, 0, 196627, 1, 0, 196628, 1, 0, 196629, 1, 0, 196630, 2, 0, 262148, 6, 0, 262149, 7, 0, 262150, 11, 0, 262151, 4, 0, 262152, 4, 0, 262153, 4, 0, 262154, 4, 0, 262155, 4, 0, 262156, 4, 0, 262157, 4, 0, 262158, 4, 0, 262159, 4, 0, 262160, 4, 0, 262161, 4, 0, 262162, 4, 0, 262163, 4, 0, 262164, 4, 0, 262165, 4, 0, 262166, 5, 0, 327686, 6, 0, 327687, 7, 0, 327688, 7, 0, 327689, 7, 0, 327690, 7, 0, 327691, 7, 0, 327692, 11, 0, 327693, 4, 0, 327694, 4, 0, 327695, 4, 0, 327696, 4, 0, 327697, 4, 0, 327698, 4, 0, 327699, 4, 0, 327700, 4, 0, 327701, 4, 0, 327702, 5, 0, 393228, 6, 0, 393229, 11, 0, 393230, 4, 0, 393231, 4, 0, 393232, 4, 0, 393233, 4, 0, 393234, 4, 0, 393235, 9, 0, 393236, 7, 0, 393237, 7, 0, 393238, 8, 0, 458765, 6, 0, 458766, 7, 0, 458767, 7, 0, 458768, 7, 0, 458769, 7, 0, 458770, 7, 0, 458771, 8, 0 )
 _sections_unfolded = [ "Cell", "Visibility" ]
+
+[node name="overlay" type="Polygon2D" parent="CanvasLayer" index="1"]
+
+polygon = PoolVector2Array( 0, 0, 1024, 0, 1024, 608, 0, 608 )
+uv = PoolVector2Array(  )
+color = Color( 1, 1, 1, 0 )
+vertex_colors = PoolColorArray(  )
+offset = Vector2( 0, 0 )
+antialiased = false
+texture = null
+texture_offset = Vector2( 0, 0 )
+texture_scale = Vector2( 1, 1 )
+texture_rotation_degrees = 0.0
+invert_enable = false
+invert_border = 100.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer/overlay" index="0"]
+
+root_node = NodePath("..")
+autoplay = ""
+playback_process_mode = 1
+playback_default_blend_time = 0.0
+playback_speed = 1.0
+anims/flash = SubResource( 2 )
+blend_times = [  ]
+autoplay = ""
 
 [connection signal="played" from="Input" to="." method="_on_Input_played"]
 
