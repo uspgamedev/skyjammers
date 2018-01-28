@@ -43,6 +43,8 @@ func _physics_process(delta):
 
 func activate():
 	active = true
+	get_node('NoteParticles').show()
+	get_node('NoteParticles2').show()
 	get_node("WavePreview/AnimationPlayer").play("active")
 	get_node("Sprite2").show()
 	set_physics_process(true)
