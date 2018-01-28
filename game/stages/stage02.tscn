@@ -105,6 +105,7 @@ tile_data = PoolIntArray( -2, 0, 0, -1, 1, 0, -65536, 2, 0, -65535, 3, 0, 65534,
 
 [node name="Path2D2" parent="Instruments" index="5" instance=ExtResource( 2 )]
 
+editor/display_folded = true
 curve = SubResource( 2 )
 
 [node name="PathFollow2D" parent="Instruments/Path2D2" index="0"]
@@ -114,6 +115,7 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="Island" parent="Instruments/Path2D2/PathFollow2D" index="0" instance=ExtResource( 3 )]
 
+editor/display_folded = true
 _sections_unfolded = [ "Cell", "Transform" ]
 
 [node name="Xylophone" parent="Instruments/Path2D2/PathFollow2D/Island" index="0" instance=ExtResource( 11 )]
@@ -134,6 +136,7 @@ tile_data = PoolIntArray( -1, 0, 0, -65536, 1, 0, -65535, 3, 0, 65534, 0, 0, 655
 [editable path="Instruments/Island"]
 [editable path="Instruments/Island3"]
 [editable path="Instruments/Island4"]
+[editable path="Instruments/Island4/Goal"]
 [editable path="Instruments/Island2"]
 [editable path="Instruments/Path2D2"]
 [editable path="Instruments/Path2D2/PathFollow2D/Island"]
