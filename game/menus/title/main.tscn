@@ -229,12 +229,14 @@ editor/display_folded = true
 visible = true
 position = Vector2( -320, -192 )
 scale = Vector2( 2, 2 )
+amount = 1
 
 [node name="NoteParticles2" parent="Island/bass/notes" index="1" instance=ExtResource( 7 )]
 
 visible = true
 position = Vector2( -320, -192 )
 scale = Vector2( 2, 2 )
+amount = 1
 
 [node name="gameboi" type="Sprite" parent="Island" index="4"]
 
@@ -266,12 +268,14 @@ position = Vector2( 416, 32 )
 visible = true
 position = Vector2( -320, -192 )
 scale = Vector2( 2, 2 )
+amount = 1
 
 [node name="NoteParticles2" parent="Island/gameboi/notes2" index="1" instance=ExtResource( 7 )]
 
 visible = true
 position = Vector2( -320, -192 )
 scale = Vector2( 2, 2 )
+amount = 1
 
 [node name="theremin" type="Sprite" parent="Island" index="5"]
 
@@ -304,12 +308,14 @@ position = Vector2( 128, -64 )
 visible = true
 position = Vector2( -320, -192 )
 scale = Vector2( 2, 2 )
+amount = 1
 
 [node name="NoteParticles2" parent="Island/theremin/notes2" index="1" instance=ExtResource( 7 )]
 
 visible = true
 position = Vector2( -320, -192 )
 scale = Vector2( 2, 2 )
+amount = 1
 
 [node name="xylo" type="Sprite" parent="Island" index="6"]
 
@@ -342,12 +348,14 @@ position = Vector2( 128, 64 )
 visible = true
 position = Vector2( -320, -192 )
 scale = Vector2( 2, 2 )
+amount = 1
 
 [node name="NoteParticles2" parent="Island/xylo/notes3" index="1" instance=ExtResource( 7 )]
 
 visible = true
 position = Vector2( -320, -192 )
 scale = Vector2( 2, 2 )
+amount = 1
 
 [node name="GUI" type="Node2D" parent="." index="2"]
 
