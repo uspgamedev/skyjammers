@@ -14,12 +14,12 @@ script/source = "extends Camera2D
 var z = 1
 
 func _ready():
-	set_process_input(true)
+	set_process_unhandled_input(true)
 
-func _input(event):
+func _unhandled_input(event):
 	if event.is_action_pressed(\"zoom_in\"):
 		z -= 0.1
-		z = max(0.5, z)
+		z = max(0.1, z)
 	elif event.is_action_pressed(\"zoom_out\"):
 		z += 0.1
 		z = min(2, z)
@@ -118,7 +118,7 @@ limit_smoothed = false
 drag_margin_h_enabled = false
 drag_margin_v_enabled = false
 smoothing_enabled = true
-smoothing_speed = 1.0
+smoothing_speed = 3.0
 offset_v = 0.0
 offset_h = 0.0
 drag_margin_left = 0.1

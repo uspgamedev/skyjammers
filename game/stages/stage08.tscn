@@ -23,6 +23,8 @@ tile_data = PoolIntArray( -2, 96, 0, -1, 78, 0, -65519, 98, 0, -65518, 99, 0, 65
 [node name="Bass" parent="Instruments/Island" index="2" instance=ExtResource( 3 )]
 
 position = Vector2( 40, -20 )
+growth = 15.0
+duration = 0.5
 
 [node name="Goal" parent="Instruments/Island" index="3" instance=ExtResource( 4 )]
 
@@ -30,7 +32,10 @@ position = Vector2( 410, -180 )
 
 [node name="Xylophone" parent="Instruments/Island" index="4" instance=ExtResource( 5 )]
 
+editor/display_folded = true
 position = Vector2( 370, -50 )
+growth = 15.0
+duration = 0.5
 
 [node name="CollisionShape2D" parent="Instruments/Island/Xylophone" index="3"]
 
@@ -45,7 +50,8 @@ _sections_unfolded = [ "Transform" ]
 
 editor/display_folded = true
 position = Vector2( 150, -40 )
-growth = 14.0
+growth = 15.0
+duration = 0.5
 
 [node name="SoundWaveShape" parent="Instruments/Island/Theremin" index="4"]
 
@@ -56,6 +62,7 @@ rotation = 0.785398
 editor/display_folded = true
 position = Vector2( 260, -40 )
 growth = 15.0
+duration = 0.5
 
 [node name="Sprite" parent="Instruments/Island/Gameboy" index="1"]
 
