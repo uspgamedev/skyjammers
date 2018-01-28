@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://audio/AudioManager.gd" type="Script" id=1]
 [ext_resource path="res://assets/sound/transmission_sfx.wav" type="AudioStream" id=2]
-[ext_resource path="res://assets/sound/bass_riff.wav" type="AudioStream" id=3]
-[ext_resource path="res://assets/sound/ambience.ogg" type="AudioStream" id=4]
-[ext_resource path="res://assets/sound/level_select.ogg" type="AudioStream" id=5]
+[ext_resource path="res://assets/sound/stage_clear.wav" type="AudioStream" id=3]
+[ext_resource path="res://assets/sound/bass_riff.wav" type="AudioStream" id=4]
+[ext_resource path="res://assets/sound/ambience.ogg" type="AudioStream" id=5]
+[ext_resource path="res://assets/sound/level_select.ogg" type="AudioStream" id=6]
 
 [node name="AudioManager" type="Node" index="0"]
 
@@ -18,7 +19,7 @@ autoplay = false
 mix_target = 0
 bus = "Master"
 
-[node name="SyncRiff0" type="AudioStreamPlayer" parent="." index="1"]
+[node name="LevelClearSFX" type="AudioStreamPlayer" parent="." index="1"]
 
 stream = ExtResource( 3 )
 volume_db = 0.0
@@ -26,7 +27,15 @@ autoplay = false
 mix_target = 0
 bus = "Master"
 
-[node name="SyncRiff1" type="AudioStreamPlayer" parent="." index="2"]
+[node name="SyncRiff0" type="AudioStreamPlayer" parent="." index="2"]
+
+stream = ExtResource( 4 )
+volume_db = 0.0
+autoplay = false
+mix_target = 0
+bus = "Master"
+
+[node name="SyncRiff1" type="AudioStreamPlayer" parent="." index="3"]
 
 stream = null
 volume_db = 0.0
@@ -34,17 +43,17 @@ autoplay = false
 mix_target = 0
 bus = "Master"
 
-[node name="Ambience" type="AudioStreamPlayer" parent="." index="3"]
+[node name="Ambience" type="AudioStreamPlayer" parent="." index="4"]
 
-stream = ExtResource( 4 )
+stream = ExtResource( 5 )
 volume_db = -25.0
 autoplay = false
 mix_target = 0
 bus = "Master"
 
-[node name="LevelSelect" type="AudioStreamPlayer" parent="." index="4"]
+[node name="LevelSelect" type="AudioStreamPlayer" parent="." index="5"]
 
-stream = ExtResource( 5 )
+stream = ExtResource( 6 )
 volume_db = 0.0
 autoplay = false
 mix_target = 0

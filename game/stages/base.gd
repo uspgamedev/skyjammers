@@ -38,6 +38,7 @@ func changeActive(body):
 		_failed()
 	elif activeInstrument.is_in_group("goal"):
 		activeInstrument.get_node("AnimationPlayer").play("bloom")
+		audioManager.playSFX("LevelClear")
 		win = true
 
 func _failed():

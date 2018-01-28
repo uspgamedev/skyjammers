@@ -5,7 +5,7 @@
 [ext_resource path="res://goal/particle1.png" type="Texture" id=3]
 [ext_resource path="res://goal/particle_2.png" type="Texture" id=4]
 
-[sub_resource type="SpriteFrames" id=2]
+[sub_resource type="SpriteFrames" id=1]
 
 animations = [ {
 "frames": [ ExtResource( 1 ), ExtResource( 2 ) ],
@@ -14,13 +14,13 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[sub_resource type="CanvasItemMaterial" id=4]
+[sub_resource type="CanvasItemMaterial" id=2]
 
 render_priority = 0
 blend_mode = 0
 light_mode = 0
 
-[sub_resource type="ParticlesMaterial" id=5]
+[sub_resource type="ParticlesMaterial" id=3]
 
 render_priority = 0
 trail_divisor = 1
@@ -59,15 +59,14 @@ anim_offset = 0.0
 anim_offset_random = 0.0
 anim_loop = false
 
-[sub_resource type="CapsuleShape2D" id=1]
+[sub_resource type="CapsuleShape2D" id=4]
 
 custom_solver_bias = 0.0
 radius = 15.0
 height = 60.0
 
-[sub_resource type="Animation" id=3]
+[sub_resource type="Animation" id=5]
 
-resource_name = "bloom"
 length = 0.5
 loop = false
 step = 0.1
@@ -120,12 +119,12 @@ collision/safe_margin = 0.08
 [node name="Sprite" type="AnimatedSprite" parent="." index="0"]
 
 position = Vector2( 0, -57 )
-frames = SubResource( 2 )
+frames = SubResource( 1 )
 animation = "default"
 
 [node name="Flowers" type="Particles2D" parent="." index="1"]
 
-material = SubResource( 4 )
+material = SubResource( 2 )
 position = Vector2( 0, -60 )
 scale = Vector2( 0.6, 0.6 )
 emitting = false
@@ -141,7 +140,7 @@ fract_delta = true
 visibility_rect = Rect2( -100, -100, 200, 200 )
 local_coords = true
 draw_order = 0
-process_material = SubResource( 5 )
+process_material = SubResource( 3 )
 texture = ExtResource( 3 )
 normal_map = null
 h_frames = 1
@@ -150,7 +149,7 @@ _sections_unfolded = [ "Drawing", "Material", "Process Material", "Textures", "T
 
 [node name="Shine" type="Particles2D" parent="." index="2"]
 
-material = SubResource( 4 )
+material = SubResource( 2 )
 position = Vector2( 0, -60 )
 emitting = false
 amount = 40
@@ -165,7 +164,7 @@ fract_delta = true
 visibility_rect = Rect2( -100, -100, 200, 200 )
 local_coords = true
 draw_order = 0
-process_material = SubResource( 5 )
+process_material = SubResource( 3 )
 texture = ExtResource( 4 )
 normal_map = null
 h_frames = 1
@@ -175,7 +174,7 @@ _sections_unfolded = [ "Drawing", "Material", "Process Material", "Textures", "T
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="3"]
 
 position = Vector2( 0, 5 )
-shape = SubResource( 1 )
+shape = SubResource( 4 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." index="4"]
@@ -185,7 +184,7 @@ autoplay = ""
 playback_process_mode = 1
 playback_default_blend_time = 0.0
 playback_speed = 1.0
-anims/bloom = SubResource( 3 )
+anims/bloom = SubResource( 5 )
 blend_times = [  ]
 autoplay = ""
 
