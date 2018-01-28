@@ -1,7 +1,5 @@
 extends Control
 
-onready var audioManager = get_node("AudioManager")
-
 var current_page
 
 func _set_offset(y):
@@ -10,7 +8,6 @@ func _set_offset(y):
 	$Panel.material.set_shader_param("offset", y/h)
 
 func _ready():
-	audioManager.playBGM("LevelSelect")
 	$FadeInTween.interpolate_method(self, "_set_offset", -1000, 0, 1,
 									Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
 	$FadeInTween.start()

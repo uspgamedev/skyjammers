@@ -18,6 +18,7 @@ func _ready():
 	total = progress.get_16()
 	last = total
 	progress.close()
+	$AudioManager.playBGM("LevelSelect")
 
 func get_total():
 	return self.total
@@ -37,12 +38,14 @@ func restart_stage():
 func start_stage(id, stage_scene):
 	self.last = id
 	self.current_stage_scene = stage_scene
+	$AudioManager.stopBGM("LevelSelect")
 	restart_stage()
 
 func go_to_stage_selector():
 	var stage_selector = STAGE_SELECTOR_SCENE.instance()
 	stage_selector.rect_position = Vector2(0, -8000)
 	get_tree().get_root().add_child(stage_selector)
+	$AudioManager.playBGM("LevelSelect")
 
 func _notification(what):
 	if (what == MainLoop.NOTIFICATION_WM_QUIT_REQUEST):
