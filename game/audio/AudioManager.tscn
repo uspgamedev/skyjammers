@@ -11,7 +11,7 @@
 [ext_resource path="res://assets/sound/pause.wav" type="AudioStream" id=9]
 [ext_resource path="res://assets/sound/credits.ogg" type="AudioStream" id=10]
 
-[node name="AudioManager" type="Node" index="0"]
+[node name="AudioManager" type="Node"]
 
 script = ExtResource( 1 )
 
