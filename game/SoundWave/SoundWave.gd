@@ -21,9 +21,10 @@ func pulse():
 
 
 func _on_SoundWave_body_entered( body ):
-	if body != instrument:
-		stage.changeActive(body)
-		selfDestruct()
+	if instrument and instrument.hasSoundwave:
+		if body != instrument:
+			stage.changeActive(body)
+			selfDestruct()
 
 
 func selfDestruct():
