@@ -15,14 +15,14 @@
 
 bake_interval = 5.0
 _data = {
-"points": PoolVector2Array( 0, 0, -143.655, -1.26491, 120, -20, -135.834, -4.26491, 149.655, -2.73509, 113, 152, 105.569, 0.264909, 0, 0, 120, -20 )
+"points": PoolVector2Array( 0, 0, -78.6548, 0.735091, 120, -20, -69.8337, 0.735091, 78.6548, -0.735091, 120, 80, 70.5688, -0.735091, 0, 0, 120, -20 )
 }
 
 [sub_resource type="Curve2D" id=2]
 
 bake_interval = 5.0
 _data = {
-"points": PoolVector2Array( 0, 0, 0, 0, 270, 10, 0, 0, 0, 0, 270, 250, 0, 0, 0, 0, 170, 250 )
+"points": PoolVector2Array( 0, 0, 0, 0, 240, 70, 0, 0, 0, 0, 240, 220, 0, 0, 0, 0, 170, 220 )
 }
 
 [node name="Stage" index="0" instance=ExtResource( 1 )]
@@ -79,15 +79,10 @@ duration = 1.0
 [node name="Island3" parent="Instruments" index="2" instance=ExtResource( 5 )]
 
 position = Vector2( 120, 140 )
-tile_data = PoolIntArray( -2, 0, 0, -1, 1, 0, -65536, 1, 0, -65535, 3, 0, 65534, 12, 0, 65535, 18, 0, 0, 18, 0, 1, 15, 0 )
 
 [node name="Sentinel" parent="Instruments/Island3" index="0" instance=ExtResource( 7 )]
 
 position = Vector2( 0, -10 )
-
-[node name="Under2" parent="Instruments/Island3" index="2"]
-
-tile_data = PoolIntArray( 65534, 76, 0, 65535, 66, 0, 0, 66, 0, 1, 67, 0, 131070, 88, 0, 131071, 70, 0, 65536, 70, 0, 65537, 91, 0 )
 
 [node name="Island4" parent="Instruments" index="3" instance=ExtResource( 5 )]
 
@@ -134,7 +129,7 @@ speed = 0.66
 
 [node name="PathFollow2D" parent="Instruments/Path2D2" index="0"]
 
-position = Vector2( 270, 10 )
+position = Vector2( 240, 70 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="Island" parent="Instruments/Path2D2/PathFollow2D" index="0" instance=ExtResource( 3 )]
