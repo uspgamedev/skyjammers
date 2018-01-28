@@ -1,14 +1,13 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://stages/base.tscn" type="PackedScene" id=1]
-[ext_resource path="res://islands/tileset.tres" type="TileSet" id=2]
-[ext_resource path="res://islands/island.gd" type="Script" id=3]
-[ext_resource path="res://Instruments/Xylophone/Xylophone.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Movement/Rotate.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Movement/PathManager.tscn" type="PackedScene" id=6]
-[ext_resource path="res://Instruments/Bass/Bass.tscn" type="PackedScene" id=7]
-[ext_resource path="res://Sentinels/Watcher/watcher.tscn" type="PackedScene" id=8]
-[ext_resource path="res://goal/Goal.tscn" type="PackedScene" id=9]
+[ext_resource path="res://islands/Island.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Instruments/Xylophone/Xylophone.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Movement/Rotate.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Movement/PathManager.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Instruments/Bass/Bass.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Sentinels/Watcher/watcher.tscn" type="PackedScene" id=7]
+[ext_resource path="res://goal/Goal.tscn" type="PackedScene" id=8]
 
 [sub_resource type="Curve2D" id=1]
 
@@ -32,35 +31,21 @@ _sections_unfolded = [ "Resource" ]
 
 initial_bard_path = NodePath("Instruments/Island/Xylophone")
 
-[node name="Island" type="TileMap" parent="Instruments" index="0"]
+[node name="Island" parent="Instruments" index="0" instance=ExtResource( 2 )]
 
-mode = 0
-tile_set = ExtResource( 2 )
-cell_size = Vector2( 32, 32 )
-cell_quadrant_size = 16
-cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-cell_half_offset = 2
-cell_tile_origin = 0
-cell_y_sort = false
-cell_clip_uv = false
-collision_use_kinematic = false
-collision_friction = 1.0
-collision_bounce = 0.0
-collision_layer = 1
-collision_mask = 1
-occluder_light_mask = 1
-format = 1
-tile_data = PoolIntArray( -1, 0, 0, -65536, 1, 0, -65535, 3, 0, 65535, 4, 0, 0, 5, 0, 1, 7, 0, 131071, 12, 0, 65536, 13, 0, 65537, 15, 0 )
-script = ExtResource( 3 )
-_sections_unfolded = [ "Cell" ]
+_sections_unfolded = [ "Cell", "Transform" ]
 
-[node name="Xylophone" parent="Instruments/Island" index="0" instance=ExtResource( 4 )]
+[node name="Under2" parent="Instruments/Island" index="1"]
+
+tile_data = PoolIntArray( -1, 0, 0, -65536, 1, 0, -65535, 3, 0, 65535, 4, 0, 0, 6, 0, 1, 7, 0, 131071, 12, 0, 65536, 13, 0, 65537, 15, 0 )
+
+[node name="Xylophone" parent="Instruments/Island" index="2" instance=ExtResource( 3 )]
 
 position = Vector2( 15, 15 )
 
-[node name="Rotate" parent="Instruments/Island/Xylophone/SoundWaveShape" index="0" instance=ExtResource( 5 )]
+[node name="Rotate" parent="Instruments/Island/Xylophone/SoundWaveShape" index="0" instance=ExtResource( 4 )]
 
-[node name="Path2D" parent="Instruments" index="1" instance=ExtResource( 6 )]
+[node name="Path2D" parent="Instruments" index="1" instance=ExtResource( 5 )]
 
 editor/display_folded = true
 curve = SubResource( 1 )
@@ -69,36 +54,22 @@ speed = 0.4
 
 [node name="PathFollow2D" parent="Instruments/Path2D" index="0"]
 
-editor/display_folded = true
 position = Vector2( 108.823, 0.4519 )
 
-[node name="Island" type="TileMap" parent="Instruments/Path2D/PathFollow2D" index="0"]
+[node name="Island" parent="Instruments/Path2D/PathFollow2D" index="0" instance=ExtResource( 2 )]
 
-mode = 0
-tile_set = ExtResource( 2 )
-cell_size = Vector2( 32, 32 )
-cell_quadrant_size = 16
-cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-cell_half_offset = 2
-cell_tile_origin = 0
-cell_y_sort = false
-cell_clip_uv = false
-collision_use_kinematic = false
-collision_friction = 1.0
-collision_bounce = 0.0
-collision_layer = 1
-collision_mask = 1
-occluder_light_mask = 1
-format = 1
-tile_data = PoolIntArray( -1, 0, 0, -65536, 1, 0, -65535, 3, 0, 65535, 4, 0, 0, 5, 0, 1, 7, 0, 131071, 12, 0, 65536, 13, 0, 65537, 15, 0 )
-_sections_unfolded = [ "Cell" ]
+_sections_unfolded = [ "Cell", "Transform" ]
 
-[node name="Bass" parent="Instruments/Path2D/PathFollow2D/Island" index="0" instance=ExtResource( 7 )]
+[node name="Under2" parent="Instruments/Path2D/PathFollow2D/Island" index="1"]
+
+tile_data = PoolIntArray( -1, 0, 0, -65536, 1, 0, -65535, 3, 0, 65535, 4, 0, 0, 9, 0, 1, 7, 0, 131071, 12, 0, 65536, 13, 0, 65537, 15, 0 )
+
+[node name="Bass" parent="Instruments/Path2D/PathFollow2D/Island" index="2" instance=ExtResource( 6 )]
 
 position = Vector2( 15, 10 )
 frequency = 0
 
-[node name="Path2D2" parent="Instruments" index="2" instance=ExtResource( 6 )]
+[node name="Path2D2" parent="Instruments" index="2" instance=ExtResource( 5 )]
 
 editor/display_folded = true
 position = Vector2( 0, -1 )
@@ -109,66 +80,37 @@ speed = 0.4
 
 position = Vector2( 110, 101 )
 
-[node name="Island" type="TileMap" parent="Instruments/Path2D2/PathFollow2D" index="0"]
+[node name="Island" parent="Instruments/Path2D2/PathFollow2D" index="0" instance=ExtResource( 2 )]
 
-editor/display_folded = true
 position = Vector2( 0, 1 )
-mode = 0
-tile_set = ExtResource( 2 )
-cell_size = Vector2( 32, 32 )
-cell_quadrant_size = 16
-cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-cell_half_offset = 2
-cell_tile_origin = 0
-cell_y_sort = false
-cell_clip_uv = false
-collision_use_kinematic = false
-collision_friction = 1.0
-collision_bounce = 0.0
-collision_layer = 1
-collision_mask = 1
-occluder_light_mask = 1
-format = 1
-tile_data = PoolIntArray( -1, 0, 0, -65536, 1, 0, -65535, 3, 0, 65535, 4, 0, 0, 5, 0, 1, 7, 0, 131071, 12, 0, 65536, 13, 0, 65537, 15, 0 )
-script = ExtResource( 3 )
-_sections_unfolded = [ "Cell" ]
+tile_data = PoolIntArray( -1, 0, 0, -65536, 1, 0, -65535, 3, 0, 65535, 4, 0, 0, 6, 0, 1, 7, 0, 131071, 12, 0, 65536, 13, 0, 65537, 15, 0 )
+_sections_unfolded = [ "Cell", "Transform" ]
 
-[node name="Bass" parent="Instruments/Path2D2/PathFollow2D/Island" index="0" instance=ExtResource( 7 )]
+[node name="Bass" parent="Instruments/Path2D2/PathFollow2D/Island" index="2" instance=ExtResource( 6 )]
 
 position = Vector2( 15, 10 )
 frequency = 0
 
-[node name="Sentinel" parent="Instruments" index="3" instance=ExtResource( 8 )]
+[node name="Sentinel" parent="Instruments" index="3" instance=ExtResource( 7 )]
 
 position = Vector2( 360, 0 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="IslandGoal" type="TileMap" parent="Instruments" index="4"]
+[node name="IslandGoal" parent="Instruments" index="4" instance=ExtResource( 2 )]
+
+[node name="Under2" parent="Instruments/IslandGoal" index="1"]
+
+tile_data = PoolIntArray( 20, 0, 0, 21, 1, 0, 22, 2, 0, 23, 3, 0, 65555, 0, 0, 65556, 31, 0, 65557, 5, 0, 65558, 5, 0, 65559, 28, 0, 65560, 3, 0, 131091, 12, 0, 131092, 19, 0, 131093, 5, 0, 131094, 5, 0, 131095, 16, 0, 131096, 15, 0, 196628, 12, 0, 196629, 14, 0, 196630, 14, 0, 196631, 15, 0 )
+
+[node name="Goal" parent="Instruments/IslandGoal" index="2" instance=ExtResource( 8 )]
 
 position = Vector2( 700, 20 )
-mode = 0
-tile_set = ExtResource( 2 )
-cell_size = Vector2( 32, 32 )
-cell_quadrant_size = 16
-cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-cell_half_offset = 2
-cell_tile_origin = 0
-cell_y_sort = false
-cell_clip_uv = false
-collision_use_kinematic = false
-collision_friction = 1.0
-collision_bounce = 0.0
-collision_layer = 1
-collision_mask = 1
-occluder_light_mask = 1
-format = 1
-tile_data = PoolIntArray( -2, 0, 0, -1, 1, 0, -65536, 1, 0, -65535, 3, 0, 65534, 12, 0, 65535, 14, 0, 0, 14, 0, 1, 15, 0 )
-script = ExtResource( 3 )
-_sections_unfolded = [ "Cell", "Transform" ]
-
-[node name="Goal" parent="Instruments/IslandGoal" index="0" instance=ExtResource( 9 )]
 
 
+[editable path="Instruments/Island"]
 [editable path="Instruments/Island/Xylophone"]
 [editable path="Instruments/Path2D"]
+[editable path="Instruments/Path2D/PathFollow2D/Island"]
 [editable path="Instruments/Path2D2"]
+[editable path="Instruments/Path2D2/PathFollow2D/Island"]
+[editable path="Instruments/IslandGoal"]
