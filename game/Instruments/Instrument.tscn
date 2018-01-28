@@ -10,7 +10,7 @@
 [ext_resource path="res://assets/img/note-particle0.png" type="Texture" id=8]
 [ext_resource path="res://assets/img/note-particle1.png" type="Texture" id=9]
 
-[sub_resource type="Animation" id=5]
+[sub_resource type="Animation" id=1]
 
 resource_name = "active"
 length = 1.0
@@ -41,7 +41,7 @@ tracks/1/keys = {
 "values": [ Vector2( 0.2, 0.2 ), Vector2( 0.3, 0.3 ) ]
 }
 
-[sub_resource type="Animation" id=6]
+[sub_resource type="Animation" id=2]
 
 length = 0.01
 loop = false
@@ -59,7 +59,7 @@ tracks/0/keys = {
 "values": [ false ]
 }
 
-[sub_resource type="RectangleShape2D" id=7]
+[sub_resource type="RectangleShape2D" id=3]
 
 custom_solver_bias = 0.0
 extents = Vector2( 10, 10 )
@@ -69,18 +69,18 @@ extents = Vector2( 10, 10 )
 custom_solver_bias = 0.0
 radius = 10.0
 
-[sub_resource type="Gradient" id=8]
+[sub_resource type="Gradient" id=5]
 
 offsets = PoolRealArray( 0.0650888, 0.508876, 0.899408 )
 colors = PoolColorArray( 0, 0, 0, 0.806627, 0, 0, 0, 0.674039, 0.319527, 0.319527, 0.319527, 0.232078 )
 
-[sub_resource type="GradientTexture" id=9]
+[sub_resource type="GradientTexture" id=6]
 
 flags = 4
-gradient = SubResource( 8 )
+gradient = SubResource( 5 )
 width = 2048
 
-[sub_resource type="ParticlesMaterial" id=10]
+[sub_resource type="ParticlesMaterial" id=7]
 
 render_priority = 0
 trail_divisor = 1
@@ -110,7 +110,7 @@ angle = 0.0
 angle_random = 1.0
 scale = 0.4
 scale_random = 0.0
-color_ramp = SubResource( 9 )
+color_ramp = SubResource( 6 )
 hue_variation = 0.0
 hue_variation_random = 0.0
 anim_speed = 0.0
@@ -120,7 +120,7 @@ anim_offset_random = 0.0
 anim_loop = false
 _sections_unfolded = [ "Angle", "Angular Velocity", "Animation", "Color", "Damping", "Emission Shape", "Flags", "Gravity", "Hue Variation", "Initial Velocity", "Linear Accel", "Orbit Velocity", "Radial Accel", "Resource", "Scale", "Spread", "Tangential Accel", "Trail" ]
 
-[node name="Instrument" type="KinematicBody2D" index="0" groups=[
+[node name="Instrument" type="KinematicBody2D" groups=[
 "bards",
 ]]
 
@@ -151,8 +151,7 @@ _sections_unfolded = [ "Animation", "Offset", "Transform", "Visibility" ]
 [node name="WavePreview" type="Sprite" parent="." index="2"]
 
 visible = false
-modulate = Color( 0.784314, 0.784314, 0.784314, 0.705882 )
-self_modulate = Color( 1, 1, 1, 0.470588 )
+modulate = Color( 1, 1, 1, 0.235294 )
 scale = Vector2( 0.206304, 0.206304 )
 _sections_unfolded = [ "Transform", "Visibility" ]
 
@@ -163,15 +162,15 @@ autoplay = "off"
 playback_process_mode = 1
 playback_default_blend_time = 0.0
 playback_speed = 1.0
-anims/active = SubResource( 5 )
-anims/off = SubResource( 6 )
+anims/active = SubResource( 1 )
+anims/off = SubResource( 2 )
 blend_times = [  ]
 autoplay = "off"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="3"]
 
 visible = false
-shape = SubResource( 7 )
+shape = SubResource( 3 )
 _sections_unfolded = [ "Visibility" ]
 
 [node name="SoundWaveShape" type="CollisionShape2D" parent="." index="4"]
@@ -226,7 +225,7 @@ fract_delta = true
 visibility_rect = Rect2( -100, -100, 200, 200 )
 local_coords = true
 draw_order = 0
-process_material = SubResource( 10 )
+process_material = SubResource( 7 )
 texture = ExtResource( 8 )
 normal_map = null
 h_frames = 1
@@ -249,7 +248,7 @@ fract_delta = true
 visibility_rect = Rect2( -100, -100, 200, 200 )
 local_coords = true
 draw_order = 0
-process_material = SubResource( 10 )
+process_material = SubResource( 7 )
 texture = ExtResource( 9 )
 normal_map = null
 h_frames = 1
