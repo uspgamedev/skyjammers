@@ -6,7 +6,8 @@ var SyncRiffs = []
 
 onready var BGMs = [
 get_node("Ambience"),
-get_node("LevelSelect")	
+get_node("LevelSelect"),
+get_node("Credits")	
 ]
 
 #Remember: 0 Db != zero volume :-)
