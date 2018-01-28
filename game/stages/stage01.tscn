@@ -3,18 +3,18 @@
 [ext_resource path="res://stages/base.tscn" type="PackedScene" id=1]
 [ext_resource path="res://islands/Island.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Instruments/Bass/Bass.tscn" type="PackedScene" id=3]
-[ext_resource path="res://goal/Goal.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Movement/PathManager.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Instruments/Xylophone/Xylophone.tscn" type="PackedScene" id=6]
-[ext_resource path="res://Instruments/GameBoy/Gameboy.tscn" type="PackedScene" id=7]
-[ext_resource path="res://Instruments/Theremin/Theremin.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Instruments/GameBoy/Gameboy.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Instruments/Theremin/Theremin.tscn" type="PackedScene" id=5]
+[ext_resource path="res://goal/Goal.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Movement/PathManager.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Instruments/Xylophone/Xylophone.tscn" type="PackedScene" id=8]
 
 [sub_resource type="Curve2D" id=1]
 
 resource_local_to_scene = true
 bake_interval = 5.0
 _data = {
-"points": PoolVector2Array( 0, 0, 0, 0, -70, 20, 0, 0, 0, 0, 40, 20 )
+"points": PoolVector2Array( 0, 0, 0, 0, -144.013, 23.1852, 0, 0, 0, 0, 35.9874, -16.8148 )
 }
 _sections_unfolded = [ "Resource" ]
 
@@ -25,42 +25,48 @@ riff_set = 1
 
 [node name="Island" parent="Instruments" index="0" instance=ExtResource( 2 )]
 
-position = Vector2( 0.663422, 1.32684 )
-tile_data = PoolIntArray( -131072, 0, 0, -131071, 3, 0, -2, 0, 0, -1, 1, 0, -65536, 31, 0, -65535, 7, 0, 65534, 4, 0, 65535, 5, 0, 0, 16, 0, 1, 15, 0, 131070, 12, 0, 131071, 14, 0, 65536, 15, 0 )
+position = Vector2( -150, 0 )
+tile_data = PoolIntArray( -196608, 0, 0, -196607, 1, 0, -196606, 1, 0, -196605, 2, 0, -196604, 1, 0, -196603, 1, 0, -196602, 2, 0, -196601, 3, 0, -131072, 8, 0, -131071, 48, 0, -131070, 49, 0, -131069, 50, 0, -131068, 50, 0, -131067, 50, 0, -131066, 51, 0, -131065, 7, 0, -2, 0, 0, -1, 1, 0, -65536, 31, 0, -65535, 39, 0, -65534, 54, 0, -65533, 32, 0, -65532, 62, 0, -65531, 62, 0, -65530, 63, 0, -65529, 11, 0, 65534, 8, 0, 65535, 5, 0, 0, 10, 0, 1, 43, 0, 2, 54, 0, 3, 55, 0, 4, 6, 0, 5, 6, 0, 6, 6, 0, 7, 20, 0, 131070, 27, 0, 131071, 48, 0, 65536, 45, 0, 65537, 47, 0, 65538, 32, 0, 65539, 63, 0, 65540, 6, 0, 65541, 6, 0, 65542, 6, 0, 65543, 11, 0, 196606, 27, 0, 196607, 56, 0, 131072, 53, 0, 131073, 54, 0, 131074, 36, 0, 131075, 6, 0, 131076, 6, 0, 131077, 16, 0, 131078, 17, 0, 131079, 15, 0, 262142, 23, 0, 262143, 60, 0, 196608, 62, 0, 196609, 62, 0, 196610, 63, 0, 196611, 16, 0, 196612, 17, 0, 196613, 15, 0, 327678, 12, 0, 327679, 13, 0, 262144, 14, 0, 262145, 14, 0, 262146, 14, 0, 262147, 15, 0 )
+_sections_unfolded = [ "Cell", "Transform" ]
 
 [node name="Bass" parent="Instruments/Island" index="0" instance=ExtResource( 3 )]
 
 position = Vector2( -20.6634, 8.67316 )
+growth = 18.0
+duration = 0.5
 
 [node name="Under" parent="Instruments/Island" index="1"]
 
-tile_data = PoolIntArray( 0, 66, 0, 1, 67, 0, 65536, 70, 0, 65537, 71, 0, 131072, 74, 0 )
+tile_data = PoolIntArray( 131077, 82, 0, 131078, 89, 0, 196611, 65, 0, 196612, 66, 0, 196613, 86, 0, 196614, 93, 0, 327678, 96, 0, 327679, 97, 0, 262144, 81, 0, 262145, 98, 0, 262147, 69, 0, 262148, 70, 0, 262149, 90, 0, 393214, 100, 0, 393215, 101, 0, 327680, 85, 0, 327681, 102, 0, 327685, 94, 0, 458751, 105, 0, 393216, 89, 0, 393217, 106, 0, 458752, 93, 0 )
 
 [node name="Under2" parent="Instruments/Island" index="2"]
 
-tile_data = PoolIntArray( 131070, 64, 0, 131071, 65, 0, 65536, 67, 0, 196606, 68, 0, 196607, 69, 0, 131072, 71, 0, 262143, 73, 0 )
+tile_data = PoolIntArray( 131079, 67, 0, 262143, 73, 0, 196613, 67, 0, 196615, 71, 0, 262146, 97, 0, 262147, 83, 0, 262149, 71, 0, 327682, 101, 0, 327683, 87, 0, 393218, 105, 0, 393219, 91, 0 )
 
-[node name="Island3" parent="Instruments" index="1" instance=ExtResource( 2 )]
+[node name="Gameboy" parent="Instruments/Island" index="3" instance=ExtResource( 4 )]
 
+position = Vector2( 100, 60 )
+
+[node name="Theremin" parent="Instruments/Island" index="4" instance=ExtResource( 5 )]
+
+position = Vector2( 200, 20 )
+
+[node name="IslandGoal" parent="Instruments" index="1" instance=ExtResource( 2 )]
+
+editor/display_folded = true
 position = Vector2( 380, -40 )
 tile_data = PoolIntArray( -196609, 0, 0, -262144, 1, 0, -262143, 2, 0, -262142, 3, 0, -131075, 0, 0, -131074, 1, 0, -131073, 31, 0, -196608, 48, 0, -196607, 51, 0, -196606, 7, 0, -65539, 8, 0, -65538, 48, 0, -65537, 49, 0, -131072, 47, 0, -131071, 55, 0, -131070, 28, 0, -131069, 3, 0, -3, 4, 0, -2, 60, 0, -1, 61, 0, -65536, 62, 0, -65535, 63, 0, -65534, 5, 0, -65533, 28, 0, -65532, 3, 0, 65533, 8, 0, 65534, 5, 0, 65535, 5, 0, 0, 5, 0, 1, 5, 0, 2, 5, 0, 3, 5, 0, 4, 24, 0, 131069, 12, 0, 131070, 14, 0, 131071, 19, 0, 65536, 5, 0, 65537, 5, 0, 65538, 5, 0, 65539, 16, 0, 65540, 15, 0, 196607, 8, 0, 131072, 16, 0, 131073, 19, 0, 131074, 5, 0, 131075, 24, 0, 262143, 12, 0, 196608, 15, 0, 196609, 12, 0, 196610, 14, 0, 196611, 15, 0 )
 
-[node name="Goal" parent="Instruments/Island3" index="0" instance=ExtResource( 4 )]
+[node name="Goal" parent="Instruments/IslandGoal" index="0" instance=ExtResource( 6 )]
 
 position = Vector2( 50, -10 )
 
-[node name="Under" parent="Instruments/Island3" index="1"]
+[node name="Path2D" parent="Instruments" index="2" instance=ExtResource( 7 )]
 
-tile_data = PoolIntArray( 131069, 76, 0, 131070, 77, 0, 131071, 78, 0, 65539, 78, 0, 65540, 79, 0, 196605, 80, 0, 196606, 81, 0, 196607, 82, 0, 131072, 81, 0, 131073, 82, 0, 131075, 82, 0, 131076, 83, 0, 262141, 84, 0, 262142, 85, 0, 262143, 86, 0, 196608, 85, 0, 196609, 86, 0, 196611, 86, 0, 196612, 87, 0, 327677, 88, 0, 327678, 89, 0, 327679, 90, 0, 262144, 89, 0, 262145, 90, 0, 262147, 90, 0, 262148, 91, 0, 393214, 93, 0, 393215, 94, 0, 327680, 93, 0, 327681, 94, 0, 327683, 94, 0 )
-
-[node name="Under2" parent="Instruments/Island3" index="2"]
-
-tile_data = PoolIntArray( 262143, 96, 0, 196608, 99, 0, 196609, 96, 0, 196610, 97, 0, 196611, 99, 0, 327679, 100, 0, 262144, 103, 0, 262145, 100, 0, 262146, 101, 0, 262147, 103, 0, 327682, 105, 0 )
-
-[node name="Path2D" parent="Instruments" index="2" instance=ExtResource( 5 )]
-
-position = Vector2( 270, 20 )
+editor/display_folded = true
+position = Vector2( 254.013, 16.8148 )
 curve = SubResource( 1 )
+_sections_unfolded = [ "Transform" ]
 
 [node name="PathFollow2D" parent="Instruments/Path2D" index="0"]
 
@@ -68,40 +74,17 @@ position = Vector2( -70, 20 )
 
 [node name="Island" parent="Instruments/Path2D/PathFollow2D" index="0" instance=ExtResource( 2 )]
 
-tile_data = PoolIntArray( -1, 0, 0, -65536, 3, 0, 65535, 12, 0, 0, 15, 0 )
+tile_data = PoolIntArray( -2, 0, 0, -1, 1, 0, -65536, 2, 0, -65535, 3, 0, 65534, 12, 0, 65535, 14, 0, 0, 13, 0, 1, 15, 0 )
 
-[node name="Xylophone" parent="Instruments/Path2D/PathFollow2D/Island" index="0" instance=ExtResource( 6 )]
+[node name="Xylophone" parent="Instruments/Path2D/PathFollow2D/Island" index="0" instance=ExtResource( 8 )]
 
 position = Vector2( 0, -10 )
 
 [node name="Under" parent="Instruments/Path2D/PathFollow2D/Island" index="1"]
 
-tile_data = PoolIntArray( 65535, 64, 0, 0, 67, 0, 131071, 68, 0, 65536, 71, 0 )
-
-[node name="Island2" parent="Instruments" index="3" instance=ExtResource( 2 )]
-
-position = Vector2( 130, 80 )
-tile_data = PoolIntArray( -131074, 0, 0, -131073, 1, 0, -196608, 3, 0, -65539, 0, 0, -65538, 31, 0, -65537, 5, 0, -131072, 28, 0, -131071, 3, 0, -3, 4, 0, -2, 5, 0, -1, 5, 0, -65536, 5, 0, -65535, 28, 0, -65534, 3, 0, 65533, 8, 0, 65534, 5, 0, 65535, 5, 0, 0, 16, 0, 1, 14, 0, 2, 15, 0, 131069, 12, 0, 131070, 14, 0, 131071, 14, 0, 65536, 15, 0 )
-
-[node name="Gameboy" parent="Instruments/Island2" index="0" instance=ExtResource( 7 )]
-
-position = Vector2( -50, -30 )
-
-[node name="Theremin" parent="Instruments/Island2" index="1" instance=ExtResource( 8 )]
-
-position = Vector2( 30, -20 )
-
-[node name="Under" parent="Instruments/Island2" index="2"]
-
-tile_data = PoolIntArray( 0, 97, 0, 1, 98, 0, 2, 99, 0, 65536, 101, 0, 65537, 102, 0, 65538, 103, 0, 131072, 105, 0, 131073, 106, 0 )
-
-[node name="Under2" parent="Instruments/Island2" index="3"]
-
-tile_data = PoolIntArray( 131069, 76, 0, 131070, 77, 0, 131071, 78, 0, 65536, 79, 0, 196605, 80, 0, 196606, 81, 0, 196607, 82, 0, 131072, 83, 0, 262141, 84, 0, 262142, 85, 0, 262143, 86, 0, 196608, 87, 0, 327677, 88, 0, 327678, 89, 0, 327679, 90, 0, 262144, 91, 0, 393214, 93, 0, 393215, 94, 0 )
+tile_data = PoolIntArray( 65534, 64, 0, 65535, 66, 0, 0, 66, 0, 1, 67, 0, 131070, 68, 0, 131071, 69, 0, 65536, 70, 0, 65537, 71, 0 )
 
 
 [editable path="Instruments/Island"]
-[editable path="Instruments/Island3"]
 [editable path="Instruments/Path2D"]
 [editable path="Instruments/Path2D/PathFollow2D/Island"]
-[editable path="Instruments/Island2"]

@@ -8,7 +8,7 @@
 [ext_resource path="res://assets/sound/bass_riff2.wav" type="AudioStream" id=6]
 [ext_resource path="res://assets/sound/bass_sfx.wav" type="AudioStream" id=7]
 
-[sub_resource type="Animation" id=4]
+[sub_resource type="Animation" id=1]
 
 resource_name = "active"
 length = 1.0
@@ -39,9 +39,8 @@ tracks/1/keys = {
 "values": [ Vector2( 0.2, 0.2 ), Vector2( 0.3, 0.3 ) ]
 }
 
-[sub_resource type="Animation" id=1]
+[sub_resource type="Animation" id=2]
 
-resource_name = "off"
 length = 0.01
 loop = false
 step = 0.1
@@ -58,12 +57,12 @@ tracks/0/keys = {
 "values": [ false ]
 }
 
-[sub_resource type="RectangleShape2D" id=2]
+[sub_resource type="RectangleShape2D" id=3]
 
 custom_solver_bias = 0.0
 extents = Vector2( 10, 10 )
 
-[sub_resource type="CircleShape2D" id=3]
+[sub_resource type="CircleShape2D" id=4]
 
 custom_solver_bias = 0.0
 radius = 10.0
@@ -99,7 +98,8 @@ _sections_unfolded = [ "Animation", "Offset", "Transform", "Visibility" ]
 [node name="WavePreview" type="Sprite" parent="." index="2"]
 
 visible = false
-modulate = Color( 1, 1, 1, 0.235294 )
+modulate = Color( 0.784314, 0.784314, 0.784314, 0.705882 )
+self_modulate = Color( 1, 1, 1, 0.470588 )
 scale = Vector2( 0.206304, 0.206304 )
 _sections_unfolded = [ "Transform", "Visibility" ]
 
@@ -110,20 +110,20 @@ autoplay = "off"
 playback_process_mode = 1
 playback_default_blend_time = 0.0
 playback_speed = 1.0
-anims/active = SubResource( 4 )
-anims/off = SubResource( 1 )
+anims/active = SubResource( 1 )
+anims/off = SubResource( 2 )
 blend_times = [  ]
 autoplay = "off"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="3"]
 
-shape = SubResource( 2 )
+shape = SubResource( 3 )
 _sections_unfolded = [ "Visibility" ]
 
 [node name="SoundWaveShape" type="CollisionShape2D" parent="." index="4"]
 
 visible = false
-shape = SubResource( 3 )
+shape = SubResource( 4 )
 script = ExtResource( 4 )
 
 [node name="Riff0" type="AudioStreamPlayer2D" parent="." index="5"]
