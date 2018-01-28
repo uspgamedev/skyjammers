@@ -49,6 +49,7 @@ func _on_Input_played():
 		activeInstrument.pulse()
 		camera_shake()
 	elif win:
+		get_node("/root/Progress").stage_finished()
 		get_tree().change_scene("res://menus/stage-selector/main.tscn")
 
 func _process(delta):
