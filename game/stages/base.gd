@@ -71,6 +71,7 @@ func _on_Input_pause():
 		else:
 			paused = true
 			filter.show()
+			audioManager.playSFX("Pause")
 			get_tree().set_pause(true)
 
 func _on_Input_played():
