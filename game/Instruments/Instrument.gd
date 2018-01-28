@@ -13,7 +13,7 @@ var stage
 func pulse():
 	var obj = get_node("TextureRect")
 	var tween = get_node("TextureRect/Tween")
-	tween.interpolate_property(obj, "rect_scale", obj.get_scale(), Vector2(25,25), .5, Tween.TRANS_LINEAR, Tween.EASE_IN)
+	tween.interpolate_property(obj, "rect_scale", obj.get_scale(), Vector2(growth,growth), self.duration, Tween.TRANS_LINEAR, Tween.EASE_IN)
 	tween.start()
 	
 	var sw = soundWave.instance()

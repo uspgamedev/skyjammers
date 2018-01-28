@@ -131,8 +131,8 @@ uniform sampler2D displacement;
 void fragment(){
 	vec4 displacementPixel = texture(displacement, UV);
 	vec2 pos = SCREEN_UV;
-	pos.x += (displacementPixel.r * 2.0) * 0.0025;
-	pos.y += (displacementPixel.g * 2.0) * 0.0025;	
+	pos.x += (displacementPixel.r * 2.0) * 0.0025 * displacementPixel.a;
+	pos.y += (displacementPixel.g * 2.0) * 0.0025 * displacementPixel.a;
 	vec4 pixel = texture(SCREEN_TEXTURE, pos);
 	
 	COLOR = pixel;
@@ -146,7 +146,7 @@ shader = SubResource( 8 )
 shader_param/displacement = ExtResource( 10 )
 _sections_unfolded = [ "shader_param" ]
 
-[node name="Instrument" type="KinematicBody2D" groups=[
+[node name="Instrument" type="KinematicBody2D" index="0" groups=[
 "bards",
 ]]
 
