@@ -7,7 +7,7 @@
 [ext_resource path="res://Instruments/Xylophone/Xylophone.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Movement/Rotate.tscn" type="PackedScene" id=6]
 
-[node name="Stage" index="0" instance=ExtResource( 1 )]
+[node name="Stage" instance=ExtResource( 1 )]
 
 initial_bard_path = NodePath("Instruments/Island/Theremin")
 
@@ -39,7 +39,7 @@ position = Vector2( 0.814499, -136.837 )
 
 [node name="Rotate" parent="Instruments/Island2/Xylophone/SoundWaveShape" index="0" instance=ExtResource( 6 )]
 
-angular_velocity = 15
+angular_velocity = 5
 
 
 [editable path="Instruments/Island2/Xylophone"]
