@@ -1,6 +1,7 @@
 extends Node
 
 const SAVEFILE = "user://progress.save"
+const STAGE_SELECTOR_SCENE = preload("res://menus/stage-selector/main.tscn")
 
 onready var total = 0
 
@@ -23,6 +24,11 @@ func stage_started(id):
 
 func stage_finished():
 	self.total = max(self.total, self.last+1)
+
+func go_to_stage_selector():
+	var stage_selector = STAGE_SELECTOR_SCENE.instance()
+	stage_selector.rect_position = Vector2(0, -8000)
+	get_tree().get_root().add_child(stage_selector)
 
 func _notification(what):
 	if (what == MainLoop.NOTIFICATION_WM_QUIT_REQUEST):

@@ -63,7 +63,8 @@ func _on_Input_played():
 		camera_shake()
 	elif win:
 		get_node("/root/Progress").stage_finished()
-		get_tree().change_scene("res://menus/stage-selector/main.tscn")
+		get_node("/root/Progress").go_to_stage_selector()
+		queue_free()
 
 func _process(delta):
 	var bg = get_node("ParallaxBackground/ParallaxLayer/Cloud")

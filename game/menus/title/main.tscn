@@ -1,0 +1,102 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://clouds/cloudBG.tscn" type="PackedScene" id=1]
+[ext_resource path="res://clouds/Cloud.tscn" type="PackedScene" id=2]
+[ext_resource path="res://menus/theme.tres" type="Theme" id=3]
+
+[sub_resource type="GDScript" id=4]
+
+script/source = "extends Node2D
+
+func _ready():
+	set_process_unhandled_input(true)
+	set_process(false)
+
+func _unhandled_input(event):
+	if event.is_action_pressed(\"action_play\"):
+		$LeaveTween.interpolate_method(self, \"_set_scroll\", 0, 800, 1, Tween.TRANS_LINEAR,
+									   Tween.EASE_IN_OUT)
+		$LeaveTween.start()
+		yield($LeaveTween, \"tween_completed\")
+		get_node(\"/root/Progress\").go_to_stage_selector()
+		queue_free()
+
+func _set_scroll(y):
+	$ParallaxBackground.scroll_offset.y = y
+	$GUI.position.y = y
+"
+
+[sub_resource type="GDScript" id=3]
+
+script/source = "extends ParallaxBackground
+
+func _process(delta):
+	self.scroll_offset.x += 100*delta"
+
+[node name="Title" type="Node2D" index="0"]
+
+script = SubResource( 4 )
+
+[node name="ParallaxBackground" parent="." index="0" instance=ExtResource( 1 )]
+
+script = SubResource( 3 )
+
+[node name="ParallaxLayer" parent="ParallaxBackground" index="0"]
+
+motion_mirroring = Vector2( 900, 0 )
+_sections_unfolded = [ "Motion", "Transform", "Z Index" ]
+
+[node name="Cloud" parent="ParallaxBackground/ParallaxLayer" index="0"]
+
+position = Vector2( 630, 270 )
+tile_data = PoolIntArray( -458764, 0, 0, -458763, 1, 0, -458762, 1, 0, -458761, 2, 0, -393228, 6, 0, -393227, 7, 0, -393226, 11, 0, -393225, 15, 0, -393224, 1, 0, -393223, 1, 0, -393222, 2, 0, -327690, 6, 0, -327689, 7, 0, -327688, 7, 0, -327687, 7, 0, -327686, 8, 0, -196609, 0, 0, -262144, 1, 0, -262143, 1, 0, -262142, 2, 0, -131076, 0, 0, -131075, 1, 0, -131074, 1, 0, -131073, 17, 0, -196608, 4, 0, -196607, 4, 0, -196606, 5, 0, -65540, 6, 0, -65539, 11, 0, -65538, 4, 0, -65537, 4, 0, -131072, 4, 0, -131071, 4, 0, -131070, 15, 0, -131069, 1, 0, -131068, 1, 0, -131067, 1, 0, -131066, 1, 0, -131065, 2, 0, -3, 6, 0, -2, 7, 0, -1, 7, 0, -65536, 11, 0, -65535, 4, 0, -65534, 4, 0, -65533, 4, 0, -65532, 4, 0, -65531, 4, 0, -65530, 4, 0, -65529, 5, 0, 65533, 0, 0, 65534, 1, 0, 65535, 1, 0, 0, 17, 0, 1, 4, 0, 2, 9, 0, 3, 7, 0, 4, 7, 0, 5, 7, 0, 6, 7, 0, 7, 8, 0, 131069, 6, 0, 131070, 7, 0, 131071, 7, 0, 65536, 7, 0, 65537, 7, 0, 65538, 8, 0, 458737, 0, 0, 458738, 1, 0, 458739, 1, 0, 458740, 1, 0, 458741, 2, 0, 524272, 0, 0, 524273, 17, 0, 524274, 4, 0, 524275, 4, 0, 524276, 4, 0, 524277, 15, 0, 524278, 1, 0, 524279, 1, 0, 524280, 1, 0, 524281, 1, 0, 524282, 1, 0, 524283, 2, 0, 589808, 6, 0, 589809, 10, 0, 589810, 7, 0, 589811, 7, 0, 589812, 7, 0, 589813, 7, 0, 589814, 11, 0, 589815, 4, 0, 589816, 4, 0, 589817, 4, 0, 589818, 9, 0, 589819, 8, 0, 655350, 6, 0, 655351, 7, 0, 655352, 7, 0, 655353, 7, 0, 655354, 8, 0 )
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground" index="1"]
+
+modulate = Color( 1, 1, 1, 0.364627 )
+z_index = 100
+z_as_relative = false
+motion_scale = Vector2( 4, 4 )
+motion_offset = Vector2( 0, 0 )
+motion_mirroring = Vector2( 1200, 0 )
+_sections_unfolded = [ "Material", "Motion", "Visibility" ]
+
+[node name="Cloud" parent="ParallaxBackground/ParallaxLayer2" index="0" instance=ExtResource( 2 )]
+
+tile_data = PoolIntArray( 196612, 0, 0, 196613, 1, 0, 196614, 1, 0, 196615, 1, 0, 196616, 1, 0, 196617, 1, 0, 196618, 1, 0, 196619, 2, 0, 262145, 0, 0, 262146, 1, 0, 262147, 1, 0, 262148, 17, 0, 262149, 4, 0, 262150, 4, 0, 262151, 4, 0, 262152, 4, 0, 262153, 4, 0, 262154, 4, 0, 262155, 15, 0, 262156, 2, 0, 327681, 14, 0, 327682, 4, 0, 327683, 4, 0, 327684, 4, 0, 327685, 4, 0, 327686, 4, 0, 327687, 4, 0, 327688, 4, 0, 327689, 4, 0, 327690, 4, 0, 327691, 4, 0, 327692, 5, 0, 393217, 14, 0, 393218, 4, 0, 393219, 4, 0, 393220, 4, 0, 393221, 4, 0, 393222, 4, 0, 393223, 4, 0, 393224, 4, 0, 393225, 4, 0, 393226, 4, 0, 393227, 9, 0, 393228, 8, 0, 458753, 6, 0, 458754, 7, 0, 458755, 11, 0, 458756, 4, 0, 458757, 4, 0, 458758, 4, 0, 458759, 4, 0, 458760, 4, 0, 458761, 4, 0, 458762, 9, 0, 458763, 8, 0, 524291, 14, 0, 524292, 4, 0, 524293, 4, 0, 524294, 4, 0, 524295, 4, 0, 524296, 4, 0, 524297, 9, 0, 524298, 8, 0, 524309, 0, 0, 524310, 16, 0, 524311, 16, 0, 524312, 16, 0, 524313, 16, 0, 524314, 16, 0, 524315, 2, 0, 589827, 6, 0, 589828, 7, 0, 589829, 7, 0, 589830, 7, 0, 589831, 7, 0, 589832, 7, 0, 589833, 8, 0, 589842, 0, 0, 589843, 16, 0, 589844, 16, 0, 589845, 17, 0, 589846, 4, 0, 589847, 4, 0, 589848, 4, 0, 589849, 4, 0, 589850, 4, 0, 589851, 15, 0, 589852, 2, 0, 655377, 0, 0, 655378, 17, 0, 655379, 4, 0, 655380, 4, 0, 655381, 4, 0, 655382, 4, 0, 655383, 4, 0, 655384, 4, 0, 655385, 4, 0, 655386, 4, 0, 655387, 4, 0, 655388, 15, 0, 655389, 2, 0, 720910, 0, 0, 720911, 1, 0, 720912, 1, 0, 720913, 17, 0, 720914, 4, 0, 720915, 4, 0, 720916, 4, 0, 720917, 4, 0, 720918, 4, 0, 720919, 4, 0, 720920, 4, 0, 720921, 4, 0, 720922, 4, 0, 720923, 4, 0, 720924, 4, 0, 720925, 15, 0, 720926, 16, 0, 720927, 2, 0, 786445, 0, 0, 786446, 17, 0, 786447, 4, 0, 786448, 4, 0, 786449, 4, 0, 786450, 4, 0, 786451, 4, 0, 786452, 4, 0, 786453, 4, 0, 786454, 4, 0, 786455, 4, 0, 786456, 4, 0, 786457, 4, 0, 786458, 4, 0, 786459, 4, 0, 786460, 4, 0, 786461, 4, 0, 786462, 4, 0, 786463, 12, 0, 851981, 6, 0, 851982, 11, 0, 851983, 4, 0, 851984, 4, 0, 851985, 4, 0, 851986, 4, 0, 851987, 4, 0, 851988, 4, 0, 851989, 4, 0, 851990, 4, 0, 851991, 4, 0, 851992, 4, 0, 851993, 4, 0, 851994, 4, 0, 851995, 4, 0, 851996, 4, 0, 851997, 4, 0, 851998, 4, 0, 851999, 12, 0, 917518, 6, 0, 917519, 10, 0, 917520, 10, 0, 917521, 10, 0, 917522, 11, 0, 917523, 4, 0, 917524, 4, 0, 917525, 4, 0, 917526, 4, 0, 917527, 4, 0, 917528, 4, 0, 917529, 4, 0, 917530, 4, 0, 917531, 4, 0, 917532, 4, 0, 917533, 9, 0, 917534, 10, 0, 917535, 8, 0, 983058, 14, 0, 983059, 4, 0, 983060, 9, 0, 983061, 10, 0, 983062, 10, 0, 983063, 10, 0, 983064, 10, 0, 983065, 10, 0, 983066, 10, 0, 983067, 10, 0, 983068, 10, 0, 983069, 8, 0, 1048594, 6, 0, 1048595, 10, 0, 1048596, 8, 0 )
+
+[node name="GUI" type="Node2D" parent="." index="1"]
+
+[node name="Label" type="Label" parent="GUI" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 42.0
+margin_top = 353.0
+margin_right = 140.0
+margin_bottom = 409.0
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+theme = ExtResource( 3 )
+text = "Touch to start!"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Theme" ]
+
+[node name="LeaveTween" type="Tween" parent="." index="2"]
+
+repeat = false
+playback_process_mode = 1
+playback_speed = 1.0
+playback/active = false
+playback/repeat = false
+playback/speed = 1.0
+
+
+[editable path="ParallaxBackground"]
