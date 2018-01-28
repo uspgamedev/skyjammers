@@ -48,7 +48,7 @@ use_filter = true
 font_data = ExtResource( 13 )
 _sections_unfolded = [ "Font", "Settings" ]
 
-[node name="StageSelector" type="Control"]
+[node name="StageSelector" type="Control" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -142,7 +142,6 @@ _sections_unfolded = [ "Anchor", "Margin", "custom_colors", "custom_fonts" ]
 
 [node name="Container" type="Container" parent="Panel" index="1"]
 
-editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.3
 anchor_right = 1.0

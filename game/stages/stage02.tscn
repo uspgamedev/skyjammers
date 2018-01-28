@@ -15,14 +15,14 @@
 
 bake_interval = 5.0
 _data = {
-"points": PoolVector2Array( 0, 0, -78.6548, 0.735091, 120, -20, -69.8337, 0.735091, 78.6548, -0.735091, 120, 80, 70.5688, -0.735091, 0, 0, 120, -20 )
+"points": PoolVector2Array( 0, 0, -143.655, -1.26491, 120, -20, -135.834, -4.26491, 149.655, -2.73509, 113, 152, 105.569, 0.264909, 0, 0, 120, -20 )
 }
 
 [sub_resource type="Curve2D" id=2]
 
 bake_interval = 5.0
 _data = {
-"points": PoolVector2Array( 0, 0, 0, 0, 240, 70, 0, 0, 0, 0, 240, 220, 0, 0, 0, 0, 170, 220 )
+"points": PoolVector2Array( 0, 0, 0, 0, 270, 10, 0, 0, 0, 0, 270, 250, 0, 0, 0, 0, 170, 250 )
 }
 
 [node name="Stage" index="0" instance=ExtResource( 1 )]
@@ -31,10 +31,10 @@ initial_bard_path = NodePath("Instruments/Island/Bass")
 
 [node name="Path2D" parent="Instruments" index="0" instance=ExtResource( 2 )]
 
-editor/display_folded = true
+position = Vector2( 1, -80 )
 curve = SubResource( 1 )
 cyclic = true
-speed = 0.5
+speed = 0.33
 
 [node name="PathFollow2D" parent="Instruments/Path2D" index="0"]
 
@@ -42,12 +42,13 @@ position = Vector2( 120, -20 )
 
 [node name="Island" parent="Instruments/Path2D/PathFollow2D" index="0" instance=ExtResource( 3 )]
 
-editor/display_folded = true
 _sections_unfolded = [ "Cell", "Transform" ]
 
 [node name="Gameboy" parent="Instruments/Path2D/PathFollow2D/Island" index="0" instance=ExtResource( 4 )]
 
 position = Vector2( 0, -10 )
+growth = 20.0
+duration = 1.0
 
 [node name="Under" parent="Instruments/Path2D/PathFollow2D/Island" index="1"]
 
@@ -59,7 +60,7 @@ tile_data = PoolIntArray( -2, 0, 0, -1, 1, 0, -65536, 3, 0, 65534, 12, 0, 65535,
 
 [node name="Island" parent="Instruments" index="1" instance=ExtResource( 5 )]
 
-position = Vector2( 0, 30 )
+position = Vector2( -116, -56 )
 _sections_unfolded = [ "Cell", "Transform" ]
 
 [node name="Under" parent="Instruments/Island" index="0"]
@@ -72,9 +73,11 @@ tile_data = PoolIntArray( -65537, 0, 0, -131072, 3, 0, -2, 0, 0, -1, 31, 0, -655
 
 [node name="Bass" parent="Instruments/Island" index="2" instance=ExtResource( 6 )]
 
+growth = 20.0
+duration = 1.0
+
 [node name="Island3" parent="Instruments" index="2" instance=ExtResource( 5 )]
 
-editor/display_folded = true
 position = Vector2( 120, 140 )
 tile_data = PoolIntArray( -2, 0, 0, -1, 1, 0, -65536, 1, 0, -65535, 3, 0, 65534, 12, 0, 65535, 18, 0, 0, 18, 0, 1, 15, 0 )
 
@@ -88,7 +91,6 @@ tile_data = PoolIntArray( 65534, 76, 0, 65535, 66, 0, 0, 66, 0, 1, 67, 0, 131070
 
 [node name="Island4" parent="Instruments" index="3" instance=ExtResource( 5 )]
 
-editor/display_folded = true
 position = Vector2( 120, 220 )
 tile_data = PoolIntArray( -65538, 21, 0, -65537, 21, 0, -131072, 21, 0, -131071, 21, 0 )
 _sections_unfolded = [ "Cell", "Transform" ]
@@ -103,14 +105,18 @@ tile_data = PoolIntArray( -65538, 21, 0, -65537, 21, 0, -131072, 21, 0, -131071,
 
 [node name="Goal" parent="Instruments/Island4" index="2" instance=ExtResource( 8 )]
 
+editor/display_folded = true
+
 [node name="Island2" parent="Instruments" index="4" instance=ExtResource( 3 )]
 
-position = Vector2( 241, 18 )
+position = Vector2( 328, -41 )
 _sections_unfolded = [ "Cell", "Transform" ]
 
 [node name="Theremin" parent="Instruments/Island2" index="0" instance=ExtResource( 9 )]
 
 position = Vector2( -1, -8 )
+growth = 20.0
+duration = 0.66
 
 [node name="Under" parent="Instruments/Island2" index="1"]
 
@@ -122,11 +128,13 @@ tile_data = PoolIntArray( -2, 0, 0, -1, 1, 0, -65536, 2, 0, -65535, 3, 0, 65534,
 
 [node name="Path2D2" parent="Instruments" index="5" instance=ExtResource( 2 )]
 
+position = Vector2( 80, 40 )
 curve = SubResource( 2 )
+speed = 0.66
 
 [node name="PathFollow2D" parent="Instruments/Path2D2" index="0"]
 
-position = Vector2( 240, 70 )
+position = Vector2( 270, 10 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="Island" parent="Instruments/Path2D2/PathFollow2D" index="0" instance=ExtResource( 3 )]
