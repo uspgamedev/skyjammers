@@ -39,6 +39,8 @@ func _physics_process(delta):
 		var rot = get_node("SoundWaveShape/Rotate").get_rotation()
 		
 		get_node("WavePreview").set_rotation(rot)
+	else:
+		get_node("WavePreview").set_rotation(get_node("SoundWaveShape").get_rotation())
 
 
 func activate():
