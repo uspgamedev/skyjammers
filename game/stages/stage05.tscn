@@ -45,7 +45,7 @@ _data = {
 }
 _sections_unfolded = [ "Resource" ]
 
-[node name="Stage" index="0" instance=ExtResource( 1 )]
+[node name="Stage" instance=ExtResource( 1 )]
 
 initial_bard_path = NodePath("Instruments/Initial/PathFollow2D/Island/Bass2")
 
@@ -85,6 +85,7 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="Initial" parent="Instruments" index="1" instance=ExtResource( 2 )]
 
+editor/display_folded = true
 position = Vector2( 0, 70 )
 curve = SubResource( 2 )
 _sections_unfolded = [ "Transform" ]
@@ -92,7 +93,6 @@ speed = 0.4
 
 [node name="PathFollow2D" parent="Instruments/Initial" index="0"]
 
-editor/display_folded = true
 position = Vector2( 250, 0 )
 
 [node name="Island" parent="Instruments/Initial/PathFollow2D" index="0" instance=ExtResource( 3 )]
@@ -102,8 +102,8 @@ tile_data = PoolIntArray( -2, 0, 0, -1, 1, 0, -65536, 2, 0, -65535, 3, 0, 65534,
 
 [node name="Bass2" parent="Instruments/Initial/PathFollow2D/Island" index="0" instance=ExtResource( 6 )]
 
-growth = 15.0
-duration = 0.1
+growth = 30.0
+duration = 0.5
 
 [node name="Under" parent="Instruments/Initial/PathFollow2D/Island" index="1"]
 
@@ -132,6 +132,9 @@ tile_data = PoolIntArray( 131070, 96, 0, 131071, 98, 0, 65536, 77, 0, 65537, 79,
 
 [node name="Xylophone" parent="Instruments/2/PathFollow2D/Island" index="2" instance=ExtResource( 7 )]
 
+growth = 15.0
+duration = 0.5
+
 [node name="SoundWaveShape" parent="Instruments/2/PathFollow2D/Island/Xylophone" index="4"]
 
 rotation = 0.785398
@@ -150,6 +153,7 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="3" parent="Instruments" index="5" instance=ExtResource( 2 )]
 
+editor/display_folded = true
 curve = SubResource( 4 )
 _sections_unfolded = [ "Transform" ]
 speed = 0.22
@@ -169,6 +173,8 @@ tile_data = PoolIntArray( 65534, 64, 0, 65535, 65, 0, 0, 66, 0, 1, 67, 0, 131070
 [node name="Theremin" parent="Instruments/3/PathFollow2D/Island" index="2" instance=ExtResource( 8 )]
 
 position = Vector2( 0, -8 )
+growth = 15.0
+duration = 0.5
 
 [node name="Island" parent="Instruments" index="6" instance=ExtResource( 3 )]
 
@@ -184,19 +190,21 @@ tile_data = PoolIntArray( 131071, 76, 0, 65536, 77, 0, 65537, 78, 0, 65538, 98, 
 [node name="Gameboy" parent="Instruments/Island" index="2" instance=ExtResource( 9 )]
 
 position = Vector2( 15, 0 )
+growth = 15.0
+duration = 0.5
 
 [node name="Goal" parent="Instruments/Island" index="3" instance=ExtResource( 10 )]
 
 position = Vector2( 135, -25 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="Camera2D" parent="." index="2"]
-
-editor/display_folded = true
-
 [node name="Cloud" parent="CanvasLayer" index="0"]
 
 position = Vector2( -1320, 10 )
+
+[node name="Camera2D" parent="." index="6"]
+
+editor/display_folded = true
 
 
 [editable path="Instruments/Chasers"]
