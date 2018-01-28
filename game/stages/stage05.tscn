@@ -66,7 +66,6 @@ _sections_unfolded = [ "Transform" ]
 
 editor/display_folded = true
 position = Vector2( 0, 70 )
-scale = Vector2( 1, 1 )
 curve = SubResource( 2 )
 _sections_unfolded = [ "Transform" ]
 speed = 0.4
@@ -92,7 +91,7 @@ speed = 0.3
 
 [node name="PathFollow2D" parent="Instruments/2" index="0"]
 
-position = Vector2( 510, 210 )
+position = Vector2( 510, 570 )
 
 [node name="Island" parent="Instruments/2/PathFollow2D" index="0" instance=ExtResource( 3 )]
 
