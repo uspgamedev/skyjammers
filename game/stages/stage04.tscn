@@ -35,6 +35,7 @@ initial_bard_path = NodePath("Instruments/Island/Bass")
 
 [node name="Island" parent="Instruments" index="0" instance=ExtResource( 2 )]
 
+editor/display_folded = true
 tile_data = PoolIntArray( -196608, 22, 0, -196607, 22, 0, -196606, 22, 0, -196605, 22, 0, -65542, 22, 0, -65541, 22, 0, -65540, 22, 0, -65539, 22, 0, -65538, 22, 0, -65537, 22, 0, -131072, 22, 0, -131071, 22, 0, -131070, 22, 0, -131069, 22, 0, -131068, 22, 0, -131067, 22, 0, -6, 22, 0, -5, 22, 0, -4, 22, 0, -3, 22, 0, -2, 22, 0, -1, 22, 0, -65536, 22, 0, -65535, 22, 0, -65534, 22, 0, -65533, 22, 0, -65532, 22, 0, -65531, 22, 0, 65530, 22, 0, 65531, 22, 0, 65532, 22, 0, 65533, 22, 0, 65534, 22, 0, 65535, 22, 0, 0, 22, 0, 1, 22, 0, 2, 22, 0, 3, 22, 0, 4, 22, 0, 5, 22, 0, 6, 22, 0, 131067, 22, 0, 131068, 22, 0, 131069, 22, 0, 131070, 22, 0, 131071, 22, 0, 65536, 22, 0, 65537, 22, 0, 65538, 22, 0, 65539, 22, 0, 65540, 22, 0, 65541, 22, 0, 65542, 22, 0, 131072, 22, 0, 131073, 22, 0, 131074, 22, 0, 131075, 22, 0, 131076, 22, 0 )
 
 [node name="Goal" parent="Instruments/Island" index="0" instance=ExtResource( 3 )]
@@ -56,6 +57,8 @@ tile_data = PoolIntArray( -5, 6, 0, -65532, 9, 0, 65530, 12, 0, 65531, 19, 0, 4,
 [node name="Bass" parent="Instruments/Island" index="4" instance=ExtResource( 5 )]
 
 position = Vector2( -140, -20 )
+growth = 15.0
+duration = 0.5
 
 [node name="Path2D" parent="Instruments" index="1" instance=ExtResource( 6 )]
 
@@ -82,11 +85,12 @@ tile_data = PoolIntArray( -1, 29, 0 )
 [node name="Xylophone" parent="Instruments/Path2D/PathFollow2D/Island" index="2" instance=ExtResource( 7 )]
 
 position = Vector2( 10, 10 )
-growth = 7.0
-duration = 1.0
+growth = 15.0
+duration = 0.5
 
 [node name="PathFollow2D2" parent="Instruments/Path2D" index="1" instance=ExtResource( 8 )]
 
+editor/display_folded = true
 position = Vector2( -212.614, 118.155 )
 offset = 506.734
 v_offset = 240.0
@@ -109,7 +113,7 @@ speed = 0.2
 
 [node name="PathFollow2D2" parent="Instruments/Path2D2" index="1" instance=ExtResource( 8 )]
 
-position = Vector2( -113.054, 346.13 )
+position = Vector2( -113.057, 346.129 )
 offset = 1827.06
 speed = -0.2
 override_parent_speed = true
@@ -126,6 +130,8 @@ tile_data = PoolIntArray( -2, 64, 0, -1, 65, 0, -65536, 66, 0, -65535, 67, 0, 65
 [node name="Gameboy" parent="Instruments/Path2D2/PathFollow2D2/Island" index="2" instance=ExtResource( 10 )]
 
 position = Vector2( 10, 20 )
+growth = 20.0
+duration = 0.5
 
 
 [editable path="Instruments/Island"]
