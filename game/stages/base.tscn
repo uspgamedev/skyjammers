@@ -14,12 +14,12 @@ script/source = "extends Camera2D
 var z = 1
 
 func _ready():
-	set_process_unhandled_input(true)
+	set_process_input(true)
 
-func _unhandled_input(event):
+func _input(event):
 	if event.is_action_pressed(\"zoom_in\"):
 		z -= 0.1
-		z = max(0.1, z)
+		z = max(0.5, z)
 	elif event.is_action_pressed(\"zoom_out\"):
 		z += 0.1
 		z = min(2, z)

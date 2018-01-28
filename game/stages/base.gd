@@ -10,6 +10,7 @@ onready var audioManager = get_node("AudioManager")
 onready var overlayAnimation = get_node("CanvasLayer/overlay/AnimationPlayer")
 onready var win = false
 onready var lose = false
+onready var lock = false
 
 var paused = false
 
@@ -86,7 +87,8 @@ func _on_Input_played():
 		elif not win and not activeInstrument.hasSoundwave:
 			activeInstrument.pulse()
 			camera_shake()
-		elif win:
+		elif win and not self.lock:
+			self.lock = true
 			camera.position.y = -2000
 			$Leave.start()
 			yield($Leave, 'timeout')

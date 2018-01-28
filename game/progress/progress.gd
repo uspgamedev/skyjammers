@@ -52,8 +52,9 @@ func save():
 	var progress = File.new()
 	progress.open(SAVEFILE, File.WRITE)
 	progress.store_16(self.total)
-	get_tree().quit()
+	progress.close()
 
 func _notification(what):
 	if (what == MainLoop.NOTIFICATION_WM_QUIT_REQUEST):
 		save()
+		get_tree().quit()
