@@ -28,6 +28,7 @@ func get_last():
 
 func stage_finished():
 	self.total = max(self.total, self.last+1)
+	save()
 
 func restart_stage():
 	var stage = current_stage_scene.instance()
@@ -47,10 +48,12 @@ func go_to_stage_selector():
 	get_tree().get_root().add_child(stage_selector)
 	$AudioManager.playBGM("LevelSelect")
 
+func save():
+	var progress = File.new()
+	progress.open(SAVEFILE, File.WRITE)
+	progress.store_16(self.total)
+	get_tree().quit()
+
 func _notification(what):
 	if (what == MainLoop.NOTIFICATION_WM_QUIT_REQUEST):
-		print("saving?")
-		var progress = File.new()
-		progress.open(SAVEFILE, File.WRITE)
-		progress.store_16(self.total)
-		get_tree().quit()
+		save()
