@@ -20,8 +20,7 @@ Progress="*res://progress/progress.tscn"
 
 [display]
 
-window/stretch/mode="viewport"
-window/stretch/aspect="keep"
+window/size/height=640
 
 [input]
 
