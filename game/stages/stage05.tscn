@@ -111,6 +111,7 @@ tile_data = PoolIntArray( 131070, 76, 0, 131071, 98, 0, 65537, 98, 0, 65538, 67,
 
 [node name="2" parent="Instruments" index="2" instance=ExtResource( 2 )]
 
+editor/display_folded = true
 position = Vector2( 0, 150 )
 curve = SubResource( 3 )
 _sections_unfolded = [ "Transform" ]
@@ -149,7 +150,6 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="3" parent="Instruments" index="5" instance=ExtResource( 2 )]
 
-editor/display_folded = true
 curve = SubResource( 4 )
 _sections_unfolded = [ "Transform" ]
 speed = 0.22
@@ -161,6 +161,10 @@ position = Vector2( 2200, -570 )
 [node name="Island" parent="Instruments/3/PathFollow2D" index="0" instance=ExtResource( 3 )]
 
 tile_data = PoolIntArray( -2, 0, 0, -1, 1, 0, -65536, 1, 0, -65535, 3, 0, 65534, 12, 0, 65535, 13, 0, 0, 14, 0, 1, 15, 0 )
+
+[node name="Under" parent="Instruments/3/PathFollow2D/Island" index="0"]
+
+tile_data = PoolIntArray( 65534, 64, 0, 65535, 65, 0, 0, 66, 0, 1, 67, 0, 131070, 68, 0, 131071, 69, 0, 65536, 70, 0, 65537, 71, 0 )
 
 [node name="Theremin" parent="Instruments/3/PathFollow2D/Island" index="2" instance=ExtResource( 8 )]
 
@@ -190,14 +194,6 @@ _sections_unfolded = [ "Transform" ]
 
 editor/display_folded = true
 
-[node name="ParallaxBackground" parent="." index="4"]
-
-editor/display_folded = true
-
-[node name="CanvasLayer" parent="." index="5"]
-
-editor/display_folded = true
-
 [node name="Cloud" parent="CanvasLayer" index="0"]
 
 position = Vector2( -1320, 10 )
@@ -211,4 +207,5 @@ position = Vector2( -1320, 10 )
 [editable path="Instruments/2/PathFollow2D/Island"]
 [editable path="Instruments/2/PathFollow2D/Island/Xylophone"]
 [editable path="Instruments/3"]
+[editable path="Instruments/3/PathFollow2D/Island"]
 [editable path="Instruments/Island"]
