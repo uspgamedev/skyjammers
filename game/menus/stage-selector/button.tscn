@@ -4,7 +4,7 @@
 [ext_resource path="res://menus/stage-selector/button.gd" type="Script" id=2]
 [ext_resource path="res://menus/stage-selector/enfeite.png" type="Texture" id=3]
 [ext_resource path="res://menus/YanoneKaffeesatz-Regular.ttf" type="DynamicFontData" id=4]
-[ext_resource path="res://menus/stage-selector/click_select.wav" type="AudioStream" id=5]
+[ext_resource path="res://menus/click-sfx.tscn" type="PackedScene" id=5]
 
 [sub_resource type="DynamicFont" id=1]
 
@@ -22,7 +22,7 @@ anchor_right = 0.0
 anchor_bottom = 0.0
 margin_right = 100.0
 margin_bottom = 100.0
-rect_pivot_offset = Vector2( 0, 0 )
+rect_pivot_offset = Vector2( 50, 50 )
 focus_mode = 2
 mouse_filter = 0
 mouse_default_cursor_shape = 0
@@ -36,7 +36,7 @@ group = null
 flat = false
 align = 1
 script = ExtResource( 2 )
-_sections_unfolded = [ "Anchor", "Margin", "Theme", "custom_fonts" ]
+_sections_unfolded = [ "Anchor", "Margin", "Rect", "Theme", "custom_fonts" ]
 
 [node name="TextureRect" type="TextureRect" parent="." index="0"]
 
@@ -76,14 +76,10 @@ lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "Anchor", "Margin", "Mouse", "Theme", "custom_colors", "custom_fonts" ]
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." index="2"]
+[node name="AudioStreamPlayer" parent="." index="2" instance=ExtResource( 5 )]
 
-stream = ExtResource( 5 )
-volume_db = -10.0
-autoplay = false
-mix_target = 0
-bus = "Master"
+[connection signal="mouse_entered" from="." to="." method="_hover"]
 
-[connection signal="pressed" from="." to="AudioStreamPlayer" method="play"]
+[connection signal="mouse_exited" from="." to="." method="_unhover"]
 
 

@@ -10,9 +10,9 @@ config_version=3
 
 [application]
 
-config/name="GGJ18"
+config/name="Skyjammers and the Drifting Stalkers"
 run/main_scene="res://menus/title/main.tscn"
-config/icon="res://icon.png"
+config/icon="res://assets/img/croc-xylo.png"
 
 [autoload]
 

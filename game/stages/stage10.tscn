@@ -12,21 +12,21 @@
 [ext_resource path="res://goal/Goal.tscn" type="PackedScene" id=10]
 [ext_resource path="res://clouds/Cloud.tscn" type="PackedScene" id=11]
 
-[sub_resource type="Curve2D" id=3]
+[sub_resource type="Curve2D" id=1]
 
 bake_interval = 5.0
 _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, 380, 190, 0, 0, 0, 0, 380, -980 )
 }
 
-[sub_resource type="Curve2D" id=1]
+[sub_resource type="Curve2D" id=2]
 
 bake_interval = 5.0
 _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, -11.7899, 37.4491, 0, 0, 0, 0, 2328.21, 37.4491 )
 }
 
-[sub_resource type="Curve2D" id=2]
+[sub_resource type="Curve2D" id=3]
 
 bake_interval = 5.0
 _data = {
@@ -61,7 +61,7 @@ _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, 40, -1000, 0, 0, 0, 0, 40, -2170 )
 }
 
-[node name="Stage" index="0" instance=ExtResource( 1 )]
+[node name="Stage" instance=ExtResource( 1 )]
 
 initial_bard_path = NodePath("Instruments/Path2D/PathFollow2D/Island/Gameboy")
 
@@ -69,7 +69,7 @@ initial_bard_path = NodePath("Instruments/Path2D/PathFollow2D/Island/Gameboy")
 
 editor/display_folded = true
 position = Vector2( 1880, -50 )
-curve = SubResource( 3 )
+curve = SubResource( 1 )
 speed = 0.3
 
 [node name="PathFollow2D" parent="Instruments/Path2D3" index="0"]
@@ -94,7 +94,7 @@ tile_data = PoolIntArray( -1, 0, 0, -65536, 2, 0, -65535, 3, 0, 65535, 8, 0, 0, 
 
 editor/display_folded = true
 position = Vector2( 11.7899, 2.55091 )
-curve = SubResource( 1 )
+curve = SubResource( 2 )
 speed = 0.15
 
 [node name="PathFollow2D" parent="Instruments/Path2D" index="0"]
@@ -122,7 +122,7 @@ duration = 0.35
 
 editor/display_folded = true
 position = Vector2( 0, 80 )
-curve = SubResource( 2 )
+curve = SubResource( 3 )
 speed = 0.15
 
 [node name="PathFollow2D" parent="Instruments/Path2D2" index="0"]
