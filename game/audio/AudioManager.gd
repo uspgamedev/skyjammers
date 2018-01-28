@@ -21,7 +21,8 @@ func _ready():
 func playBGM(bgm):
 	for b in BGMs:
 		if b.get_name() == bgm:
-			b.play()
+			if not b.playing:
+				b.play()
 		else:
 			b.stop()
 

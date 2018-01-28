@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://menus/stage-selector/StageSelector.gd" type="Script" id=1]
 [ext_resource path="res://menus/stage-selector/sceneref.tscn" type="PackedScene" id=2]
@@ -16,7 +16,6 @@
 [ext_resource path="res://menus/stage-selector/button.tscn" type="PackedScene" id=14]
 [ext_resource path="res://menus/stage-selector/left.png" type="Texture" id=15]
 [ext_resource path="res://menus/stage-selector/right.png" type="Texture" id=16]
-[ext_resource path="res://audio/AudioManager.tscn" type="PackedScene" id=17]
 
 [sub_resource type="Shader" id=1]
 
@@ -48,7 +47,7 @@ use_filter = true
 font_data = ExtResource( 13 )
 _sections_unfolded = [ "Font", "Settings" ]
 
-[node name="StageSelector" type="Control" index="0"]
+[node name="StageSelector" type="Control"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -291,9 +290,7 @@ expand = true
 stretch_mode = 6
 _sections_unfolded = [ "Anchor", "Margin", "Material" ]
 
-[node name="AudioManager" parent="." index="2" instance=ExtResource( 17 )]
-
-[node name="FadeInTween" type="Tween" parent="." index="3"]
+[node name="FadeInTween" type="Tween" parent="." index="2"]
 
 repeat = false
 playback_process_mode = 1
@@ -302,7 +299,7 @@ playback/active = false
 playback/repeat = false
 playback/speed = 1.0
 
-[node name="LoadButtonsTween" type="Tween" parent="." index="4"]
+[node name="LoadButtonsTween" type="Tween" parent="." index="3"]
 
 repeat = false
 playback_process_mode = 1

@@ -7,7 +7,7 @@
 [ext_resource path="res://Instruments/Xylophone/Xylophone.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Movement/Rotate.tscn" type="PackedScene" id=6]
 
-[node name="Stage" index="0" instance=ExtResource( 1 )]
+[node name="Stage" instance=ExtResource( 1 )]
 
 initial_bard_path = NodePath("Instruments/Island/Theremin")
 
@@ -26,12 +26,13 @@ tile_data = PoolIntArray( -458755, 76, 0, -458754, 77, 0, -458753, 77, 0, -52428
 
 [node name="Island" parent="Instruments" index="1" instance=ExtResource( 2 )]
 
+editor/display_folded = true
 tile_data = PoolIntArray( 131070, 0, 0, 131071, 1, 0, 65536, 2, 0, 65537, 3, 0, 196606, 8, 0, 196607, 5, 0, 131072, 5, 0, 131073, 11, 0, 262142, 12, 0, 262143, 19, 0, 196608, 5, 0, 196609, 7, 0, 327679, 12, 0, 262144, 14, 0, 262145, 15, 0 )
 
 [node name="Theremin" parent="Instruments/Island" index="0" instance=ExtResource( 4 )]
 
 position = Vector2( 2.9409, 85.0606 )
-growth = 45.0
+growth = 30.0
 duration = 1.0
 
 [node name="Under" parent="Instruments/Island" index="1"]
@@ -44,15 +45,14 @@ tile_data = PoolIntArray( 327679, 69, 0, 262144, 78, 0, 393215, 88, 0, 327680, 8
 
 [node name="Island2" parent="Instruments" index="2" instance=ExtResource( 2 )]
 
-editor/display_folded = true
 tile_data = PoolIntArray( -393220, 0, 0, -393219, 1, 0, -393218, 1, 0, -393217, 1, 0, -458752, 1, 0, -458751, 1, 0, -458750, 3, 0, -327684, 4, 0, -327683, 48, 0, -327682, 49, 0, -327681, 50, 0, -393216, 49, 0, -393215, 51, 0, -393214, 7, 0, -262148, 8, 0, -262147, 52, 0, -262146, 32, 0, -262145, 33, 0, -327680, 35, 0, -327679, 40, 0, -327678, 28, 0, -327677, 3, 0, -196612, 4, 0, -196611, 52, 0, -196610, 44, 0, -196609, 45, 0, -262144, 47, 0, -262143, 44, 0, -262142, 51, 0, -262141, 7, 0, -131076, 8, 0, -131075, 60, 0, -131074, 61, 0, -131073, 62, 0, -196608, 61, 0, -196607, 62, 0, -196606, 63, 0, -196605, 11, 0, -65540, 12, 0, -65539, 13, 0, -65538, 13, 0, -65537, 13, 0, -131072, 13, 0, -131071, 13, 0, -131070, 13, 0, -131069, 15, 0, -3, 0, 0, -2, 3, 0, 65533, 12, 0, 65534, 15, 0 )
 
 [node name="Xylophone" parent="Instruments/Island2" index="0" instance=ExtResource( 5 )]
 
 editor/display_folded = true
 position = Vector2( 0.814499, -136.837 )
-growth = 8.0
-duration = 0.7
+growth = 15.0
+duration = 0.5
 
 [node name="Rotate" parent="Instruments/Island2/Xylophone/SoundWaveShape" index="0" instance=ExtResource( 6 )]
 

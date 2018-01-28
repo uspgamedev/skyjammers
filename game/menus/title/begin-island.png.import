@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/cliff-tiles-v2.png-41c1ed86406b8fa1dae954f392ba6f2c.stex"
+path="res://.import/begin-island.png-c15e81c8e949e501c8df37f2e90a5097.stex"
 
 [deps]
 
-source_file="res://islands/cliff-tiles-v2.png"
-source_md5="801b93847e21ba671ec5894533470cf4"
+source_file="res://menus/title/begin-island.png"
+source_md5="83c478542bba974f814f74ecc8e68b7b"
 
-dest_files=[ "res://.import/cliff-tiles-v2.png-41c1ed86406b8fa1dae954f392ba6f2c.stex" ]
-dest_md5="7ec67e9a083135dd942d2763940b2c50"
+dest_files=[ "res://.import/begin-island.png-c15e81c8e949e501c8df37f2e90a5097.stex" ]
+dest_md5="0595453859b4430d5d60ac59da057875"
 
 [params]
 
