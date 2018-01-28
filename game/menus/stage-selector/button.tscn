@@ -1,7 +1,17 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://menus/theme.tres" type="Theme" id=1]
 [ext_resource path="res://menus/stage-selector/button.gd" type="Script" id=2]
+[ext_resource path="res://menus/stage-selector/enfeite.png" type="Texture" id=3]
+[ext_resource path="res://menus/YanoneKaffeesatz-Regular.ttf" type="DynamicFontData" id=4]
+
+[sub_resource type="DynamicFont" id=1]
+
+size = 48
+use_mipmaps = false
+use_filter = true
+font_data = ExtResource( 4 )
+_sections_unfolded = [ "Font", "Settings" ]
 
 [node name="Button" type="Button"]
 
@@ -9,26 +19,62 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_right = 156.0
-margin_bottom = 72.0
+margin_right = 100.0
+margin_bottom = 100.0
 rect_pivot_offset = Vector2( 0, 0 )
 focus_mode = 2
 mouse_filter = 0
 mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
+size_flags_horizontal = 2
+size_flags_vertical = 2
 theme = ExtResource( 1 )
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
 group = null
-text = " Stage 01 "
 flat = false
 align = 1
 script = ExtResource( 2 )
-_sections_unfolded = [ "Theme" ]
-stage_scene = null
+_sections_unfolded = [ "Anchor", "Margin", "Theme", "custom_fonts" ]
 
-[connection signal="pressed" from="." to="." method="_on_select"]
+[node name="TextureRect" type="TextureRect" parent="." index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.6
+anchor_right = 1.0
+anchor_bottom = 0.8
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+texture = ExtResource( 3 )
+expand = true
+stretch_mode = 6
+_sections_unfolded = [ "Anchor", "Margin", "Material", "Mouse", "Rect", "Visibility" ]
+
+[node name="Label" type="Label" parent="." index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 0.6
+margin_bottom = -4.0
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "1"
+align = 1
+valign = 2
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Anchor", "Margin", "Mouse", "Theme", "custom_colors", "custom_fonts" ]
+
+[connection signal="pressed" from="." to="." method="_on_selected"]
 
 
