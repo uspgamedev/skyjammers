@@ -1,6 +1,7 @@
 extends Control
 
 var current_page
+onready var lock = false
 
 func _set_offset(y):
 	self.rect_position.y = y
@@ -56,10 +57,12 @@ func _previous_page():
 
 
 func _on_selected(stage_id):
-	$FadeInTween.interpolate_method(self, "_set_offset", 0, -1000, 1,
-									Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
-	$FadeInTween.start()
-	yield($FadeInTween, "tween_completed")
-	queue_free()
-	var stage_scene = $Stages.get_child(stage_id).scene
-	get_node("/root/Progress").start_stage(stage_id, stage_scene)
+	if not lock:
+		lock = true
+		$FadeInTween.interpolate_method(self, "_set_offset", 0, -1000, 1,
+										Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
+		$FadeInTween.start()
+		yield($FadeInTween, "tween_completed")
+		queue_free()
+		var stage_scene = $Stages.get_child(stage_id).scene
+		get_node("/root/Progress").start_stage(stage_id, stage_scene)
