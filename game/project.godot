@@ -10,7 +10,7 @@ config_version=3
 
 [application]
 
-config/name="Skyjammers and the Drifting Stalkers"
+config/name="Sky Jammers and the Drifting Stalkers"
 run/main_scene="res://menus/title/main.tscn"
 config/icon="res://assets/img/croc-xylo.png"
 
